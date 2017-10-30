@@ -1,4 +1,4 @@
-var TYPES = {
+const TYPES = {
 	"Fire" : {
 		"Fire" : .5,
 		"Water" : .5,
@@ -359,4 +359,4 @@ var TYPES = {
 		"Steel" : .5,
 		"Fairy" : 1
 	}
-}
+};

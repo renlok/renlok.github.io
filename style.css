@@ -221,6 +221,13 @@ ul {
   padding-right: 3px;
 }
 
+.pokeDeleteButton {
+  color: red;
+  text-decoration: none;
+  position: relative;
+  left: -3px;
+}
+
 .pokeListName {
   text-decoration: none;
 }
@@ -236,7 +243,7 @@ ul {
     height: 220px;
     box-sizing: border-box;
     padding-left: 9px;
-    overflow: scroll;
+    overflow-y: scroll;
     border-bottom: solid 1px black;
 }
 
@@ -413,4 +420,13 @@ progress.expBar {
 
 .hidden {
   display: none;
+}
+
+#statisticsList li {
+  padding: 2px 15px;
+}
+#statisticsList li:nth-child(even) {background: #CCC}
+#statisticsList li:nth-child(odd) {background: #FFF}
+#statisticsDialog {
+  overflow: auto;
 }
