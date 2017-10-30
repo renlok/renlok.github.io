@@ -88,7 +88,7 @@ const Combat = {
                     this.enemyTimer();
                     this.playerTimer();
                     dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
-                    dom.renderPokeDex('playerPokes', player.getPokedexData())
+                    dom.renderPokeDex('playerPokes', player.getPokedexData());
                 }
             } else {
                 dom.gameConsoleLog(this.playerActivePoke.pokeName() + ' Fainted! ');
@@ -105,7 +105,7 @@ const Combat = {
                 }
                 dom.renderPokeList('playerPokes', player.getPokemon(), player, '#enableDelete')
             }
-            dom.renderPokeOnContainer('enemy', enemy.activePoke())
+            dom.renderPokeOnContainer('enemy', enemy.activePoke());
         }
     },
     attemptCatch: function() {
@@ -143,7 +143,7 @@ const Combat = {
         if (rngHappened2) {
             player.addBalls(ballName, ballsAmount);
             dom.gameConsoleLog('You found ' + ballsAmount + ' ' + ballName + 's!!', 'purple');
-            dom.renderBalls(player.ballsAmount())
+            dom.renderBalls(player.ballsAmount);
         }
     },
     init: function() {
@@ -154,7 +154,7 @@ const Combat = {
     },
     stop: function() {
         window.clearTimeout(this.playerTimerId);
-        window.clearTimeout(this.enemyTimerId)
+        window.clearTimeout(this.enemyTimerId);
     },
     refresh: function() {
         this.stop();
@@ -168,5 +168,5 @@ const Combat = {
         this.enemyActivePoke = newPoke;
         this.refresh()
     },
-    changeCatch: function(shouldCatch) { this.catchEnabled = shouldCatch }
+    changeCatch: function(shouldCatch) { this.catchEnabled = shouldCatch; }
 };
