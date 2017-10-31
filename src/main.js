@@ -68,16 +68,22 @@ const makeEnemy = (starter) => {
     }
 };
 
-const renderView = (dom, enemy, player) => {
-    dom.renderPokeOnContainer('enemy', enemy.activePoke());
-    dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
-    dom.renderPokeList('playerPokes', player.getPokemon(), player, '#enableDelete');
-    dom.renderPokeDex('playerPokes', player.getPokedexData())
-};
-
-// main
+// load everything we need
 let player = Player;
 let enemy = makeEnemy();
+const dom = Display;
+const combatLoop = Combat;
+const userInteractions = UserActions;
+// load old save data
+if (localStorage.getItem(`totalPokes`) !== null) {
+    player.loadPokes();
+    dom.refreshCatchOption(player.settings.catching);
+} else {
+    let starterPoke = new Poke(pokeById(randomArrayElement([1, 4, 7])), 5);
+    player.addPoke(starterPoke);
+    player.addPokedex(starterPoke.pokeName(), POKEDEXFLAGS.ownNormal)
+}
+
 enemy.generateNew(ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]);
 
 if (player.settings.spriteChoice === 'front') {
@@ -87,21 +93,9 @@ if (player.settings.spriteChoice === 'front') {
     document.getElementById('spriteChoiceBack').checked = true
 }
 
-const dom = Display;
 dom.bindEvents();
 dom.renderRouteList('areasList', ROUTES[player.settings.currentRegionId]);
 dom.renderBalls(player.ballsAmount);
-const combatLoop = Combat;
-const userInteractions = UserActions;
-
-// load old save data
-if (localStorage.getItem(`totalPokes`) !== null) {
-    player.loadPokes();
-} else {
-    let starterPoke = new Poke(pokeById(randomArrayElement([1, 4, 7])), 5);
-    player.addPoke(starterPoke);
-    player.addPokedex(starterPoke.pokeName(), POKEDEXFLAGS.ownNormal)
-}
 
 renderView(dom, enemy, player);
 

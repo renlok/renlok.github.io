@@ -14,7 +14,8 @@ let Player = {
         currentRouteId: 'starter',
         dexView: 'all',
         dexVersion: 194, // check if users dex is out of date
-        spriteChoice: 'back'
+        spriteChoice: 'back',
+        catching: false
     },
     statistics: {
         'seen':0,
@@ -129,14 +130,14 @@ let Player = {
         localStorage.setItem(`ballsAmount`, JSON.stringify(this.ballsAmount));
         localStorage.setItem(`pokedexData`, JSON.stringify(this.pokedexData));
         localStorage.setItem(`statistics`, JSON.stringify(this.statistics));
-        localStorage.setItem(`userSettings`, JSON.stringify(this.settings));
+        localStorage.setItem(`settings`, JSON.stringify(this.settings));
     },
     saveToString: function() {
         const saveData = JSON.stringify({
             pokes: this.pokemons.map((poke) => poke.save()),
             pokedexData: this.pokedexData,
             statistics: this.statistics,
-            userSettings: this.settings,
+            settings: this.settings,
             ballsAmount: this.ballsAmount
         });
         return btoa(this.checksum(saveData) + '|' + saveData)
@@ -164,8 +165,8 @@ let Player = {
         if (JSON.parse(localStorage.getItem('statistics'))) {
             this.statistics = JSON.parse(localStorage.getItem('statistics'))
         }
-        if (JSON.parse(localStorage.getItem('userSettings'))) {
-            this.userSettings = JSON.parse(localStorage.getItem('userSettings'))
+        if (JSON.parse(localStorage.getItem('settings'))) {
+            this.settings = JSON.parse(localStorage.getItem('settings'))
         }
     },
     loadFromString: function(saveData) {
@@ -188,8 +189,8 @@ let Player = {
             this.ballsAmount = saveData.ballsAmount;
             this.pokedexData = saveData.pokedexData ? saveData.pokedexData : [];
             this.statistics = saveData.statistics ? saveData.statistics : statistics;
-            if (saveData.userSettings) {
-                this.userSettings = saveData.userSettings
+            if (saveData.settings) {
+                this.settings = saveData.settings;
             }
         } else {
             alert('Invalid save data, loading canceled!')

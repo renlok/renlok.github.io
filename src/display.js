@@ -186,6 +186,16 @@ const Display = {
             $('.ball-ammount.' + ballType).innerHTML = ballsAmount[ballType]
         })
     },
+    refreshCatchOption: function(setCatchOption) {
+        $(`#enableCatchNew`).checked = false;
+        $(`#enableCatchAll`).checked = false;
+        if (setCatchOption === 'new') {
+            $(`#enableCatchNew`).checked = true;
+        } else if (setCatchOption === 'all') {
+            $(`#enableCatchAll`).checked = true;
+        }
+        userInteractions.changeCatchOption(setCatchOption);
+    },
     bindEvents: function() {
         $('#enableDelete').addEventListener( 'click', () => {
             if ($(`#enablePokedex`).checked) {
@@ -212,9 +222,12 @@ const Display = {
                 if ($(`#enableCatchAll`).checked) {
                     $(`#enableCatchNew`).checked = false;
                     setCatchSetting = 'all';
-                } else
+                } else {
                     setCatchSetting = false;
-                userInteractions.changeCatchOption(setCatchSetting)}
+                }
+                player.settings.catching = setCatchSetting;
+                userInteractions.changeCatchOption(setCatchSetting);
+            }
         );
 
         $(`#enableCatchNew`).addEventListener( 'click'
@@ -222,9 +235,12 @@ const Display = {
                 if ($(`#enableCatchNew`).checked) {
                     $(`#enableCatchAll`).checked = false;
                     setCatchSetting = 'new';
-                } else
+                } else {
                     setCatchSetting = false;
-                userInteractions.changeCatchOption(setCatchSetting)}
+                }
+                player.settings.catching = setCatchSetting;
+                userInteractions.changeCatchOption(setCatchSetting);
+            }
         );
 
         $(`#saveDialogContainer`).addEventListener( 'click'
@@ -235,4 +251,11 @@ const Display = {
             , (event) => { event.target === $(`#statisticsContainer`) && ($(`#statisticsContainer`).style.display = 'none') }
         )
     }
+};
+
+const renderView = (dom, enemy, player) => {
+    dom.renderPokeOnContainer('enemy', enemy.activePoke());
+    dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
+    dom.renderPokeList('playerPokes', player.getPokemon(), player, '#enableDelete');
+    dom.renderPokeDex('playerPokes', player.getPokedexData())
 };
