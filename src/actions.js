@@ -38,11 +38,17 @@ const UserActions = {
         if (event.shiftKey) {
             const pokemon = player.getPokemon()[index];
             player.deletePoke(index);
-            if (!player.hasPokemon(pokemon.pokeName()))
+            if (!player.hasPokemon(pokemon.pokeName())) {
                 player.addPokedex(pokemon.pokeName(), (pokemon.shiny() ? POKEDEXFLAGS.releasedShiny : POKEDEXFLAGS.releasedNormal));
+            }
             combatLoop.changePlayerPoke(player.activePoke());
             renderView(dom, enemy, player);
-            player.savePokes()
+            player.savePokes();
+            if (pokemon.shiny()) {
+                player.settings.releasedShiny++;
+            } else {
+                player.settings.releasedNormal++;
+            }
         } else {
             alert('Hold shift while clicking the X to release a pokemon')
         }
@@ -190,9 +196,11 @@ const UserActions = {
         let statisticStrings = {
             'seen':'Pokemon Seen',
             'caught':'Pokemon Caught',
+            'released':'Pokemon Released',
             'beaten':'Pokemon Beaten',
             'shinySeen':'Shiny Pokemon Seen',
             'shinyCaught':'Shiny Pokemon Caught',
+            'shinyReleased':'Shiny Pokemon Released',
             'shinyBeaten':'Shiny Pokemon Beaten',
             'totalDamage':'Total Damage Dealt',
             'totalThrows':'Total Catch Attempts',

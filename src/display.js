@@ -80,19 +80,19 @@ const Display = {
         if (poke.alive()) {
             if (poke === player.activePoke()) {
                 if (poke.shiny()) {
-                    return COLORS.activeShiny;
+                    return COLORS.pokemon.activeShiny;
                 } else {
-                    return COLORS.activeNormal;
+                    return COLORS.pokemon.activeNormal;
                 }
             } else {
                 if (poke.shiny()) {
-                    return COLORS.inactiveShiny;
+                    return COLORS.pokemon.inactiveShiny;
                 } else {
-                    return COLORS.inactiveNormal;
+                    return COLORS.pokemon.inactiveNormal;
                 }
             }
         } else {
-            return COLORS.dead;
+            return COLORS.pokemon.dead;
         }
     },
     renderPokeList: function(purge = true) {
@@ -151,10 +151,10 @@ const Display = {
             const routeOnClick = (route.unlocked) ? 'userInteractions.changeRoute(\'' + routeId + '\')' : '';
             let routeColor, routeWeight;
             if (route.unlocked) {
-                routeColor = (routeId === player.settings.currentRouteId) ? COLORS.routeCurrent : COLORS.routeUnlocked;
+                routeColor = (routeId === player.settings.currentRouteId) ? COLORS.route.current : COLORS.route.unlocked;
                 routeWeight = (routeId === player.settings.currentRouteId) ? 'bold' : 'normal';
             } else {
-                routeColor = COLORS.routeLocked;
+                routeColor = COLORS.route.locked;
                 routeWeight = 'normal';
             }
             const routeHTML = '<li><a href="#" onclick="' + routeOnClick + '" style="color: ' + routeColor + '; font-weight: ' + routeWeight + ';" >' + route.name + ' (' + route.minLevel + '~' + route.maxLevel + ')' + '</a><li>';

@@ -20,9 +20,11 @@ let Player = {
     statistics: {
         'seen':0,
         'caught':0,
+        'released':0,
         'beaten':0,
         'shinySeen':0,
         'shinyCaught':0,
+        'shinyReleased':0,
         'shinyBeaten':0,
         'totalDamage':0,
         'totalThrows':0,
@@ -155,18 +157,19 @@ let Player = {
             }
         });
         if (JSON.parse(localStorage.getItem('ballsAmount'))) {
-            this.ballsAmount = JSON.parse(localStorage.getItem('ballsAmount'))
+            this.ballsAmount = JSON.parse(localStorage.getItem('ballsAmount'));
         }
         if (JSON.parse(localStorage.getItem('pokedexData'))) {
-            this.pokedexData = JSON.parse(localStorage.getItem('pokedexData'))
+            this.pokedexData = JSON.parse(localStorage.getItem('pokedexData'));
         } else {
-            this.pokedexData = []
+            this.pokedexData = [];
         }
         if (JSON.parse(localStorage.getItem('statistics'))) {
-            this.statistics = JSON.parse(localStorage.getItem('statistics'))
+            let loadedStats = JSON.parse(localStorage.getItem('statistics'));
+            this.statistics = Object.assign({}, this.statistics, loadedStats);
         }
         if (JSON.parse(localStorage.getItem('settings'))) {
-            this.settings = JSON.parse(localStorage.getItem('settings'))
+            this.settings = JSON.parse(localStorage.getItem('settings'));
         }
     },
     loadFromString: function(saveData) {
@@ -188,7 +191,8 @@ let Player = {
             });
             this.ballsAmount = saveData.ballsAmount;
             this.pokedexData = saveData.pokedexData ? saveData.pokedexData : [];
-            this.statistics = saveData.statistics ? saveData.statistics : statistics;
+            let loadedStats = saveData.statistics ? saveData.statistics : {};
+            this.statistics = Object.assign({}, this.statistics, loadedStats);
             if (saveData.settings) {
                 this.settings = saveData.settings;
             }

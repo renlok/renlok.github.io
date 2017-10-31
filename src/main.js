@@ -17,14 +17,16 @@ EXP_TABLE["Medium Fast"] = [1, 2, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331
 EXP_TABLE["Fast"] = [1, 2, 6, 21, 51, 100, 172, 274, 409, 583, 800, 1064, 1382, 1757, 2195, 2700, 3276, 3930, 4665, 5487, 6400, 7408, 8518, 9733, 11059, 12500, 14060, 15746, 17561, 19511, 21600, 23832, 26214, 28749, 31443, 34300, 37324, 40522, 43897, 47455, 51200, 55136, 59270, 63605, 68147, 72900, 77868, 83058, 88473, 94119, 100000, 106120, 112486, 119101, 125971, 133100, 140492, 148154, 156089, 164303, 172800, 181584, 190662, 200037, 209715, 219700, 229996, 240610, 251545, 262807, 274400, 286328, 298598, 311213, 324179, 337500, 351180, 365226, 379641, 394431, 409600, 425152, 441094, 457429, 474163, 491300, 508844, 526802, 545177, 563975, 583200, 602856, 622950, 643485, 664467, 685900, 707788, 730138, 752953, 776239, 999999999999999999];
 
 const COLORS = {};
-COLORS['activeShiny'] = 'rgb(255, 230, 10)';
-COLORS['inactiveShiny'] = 'rgb(255, 255, 76)';
-COLORS['activeNormal'] = 'rgb(80, 157, 2)';
-COLORS['inactiveNormal'] = 'rgb(66, 116, 10)';
-COLORS['dead'] = 'red';
-COLORS['routeLocked'] = 'rgb(167, 167, 167)';
-COLORS['routeUnlocked'] = 'rgb(53, 50, 103)';
-COLORS['routeCurrent'] = 'rgb(51, 111, 22)';
+COLORS['pokemon'] = {};
+COLORS['pokemon']['activeShiny'] = 'rgb(255, 230, 10)';
+COLORS['pokemon']['inactiveShiny'] = 'rgb(255, 255, 76)';
+COLORS['pokemon']['activeNormal'] = 'rgb(80, 157, 2)';
+COLORS['pokemon']['inactiveNormal'] = 'rgb(66, 116, 10)';
+COLORS['pokemon']['dead'] = 'red';
+COLORS['route'] = {};
+COLORS['route']['locked'] = 'rgb(167, 167, 167)';
+COLORS['route']['unlocked'] = 'rgb(53, 50, 103)';
+COLORS['route']['current'] = 'rgb(51, 111, 22)';
 
 const POKEDEXFLAGS = {};
 POKEDEXFLAGS['unseen'] = 0;
