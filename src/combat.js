@@ -91,8 +91,9 @@ const Combat = {
         const afterExp = player.getPokemon().map((poke) => poke.level());
 
         // check if a pokemon leveled up
-        if (beforeExp !== afterExp) {
-            dom.renderPokeList('playerPokes', player.getPokemon(), player, '#enableDelete')
+        if (beforeExp.join('') !== afterExp.join('')) {
+            dom.gameConsoleLog('Your pokemon gained a level', 'rgb(153, 166, 11)');
+            dom.renderPokeList(false);
         }
 
         player.savePokes();
@@ -122,7 +123,7 @@ const Combat = {
             dom.gameConsoleLog('Go ' + this.playerActivePoke.pokeName() + '!');
             this.refresh();
         }
-        dom.renderPokeList('playerPokes', player.getPokemon(), player, '#enableDelete');
+        dom.renderPokeList(false);
     },
     attemptCatch: function() {
         if (this.catchEnabled == 'all' || (this.catchEnabled == 'new' && !player.hasPokemon(enemy.activePoke().pokeName(), 0)) || enemy.activePoke().shiny()) {
@@ -145,7 +146,7 @@ const Combat = {
                     } else {
                         player.statistics.caught++;
                     }
-                    renderView(dom, enemy, player)
+                    renderView(dom, enemy, player, false);
                 } else {
                     dom.gameConsoleLog(enemy.activePoke().pokeName() + ' escaped!!', 'purple')
                 }

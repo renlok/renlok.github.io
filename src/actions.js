@@ -60,7 +60,7 @@ const UserActions = {
         this.changeRoute(Object.keys(ROUTES[player.settings.currentRegionId])[0]);
     },
     enablePokeListDelete: function() {
-        dom.renderPokeList('playerPokes', player.getPokemon(), player, '#enableDelete')
+        dom.renderPokeList();
     },
     enableViewPokedex: function() {
         if (dom.checkConfirmed('#enablePokedex')) {
@@ -69,7 +69,7 @@ const UserActions = {
         } else {
             document.querySelector('#playerPokesList').classList.remove('hidden');
             document.querySelector('#playerPokeDex').classList.add('hidden');
-            dom.renderPokeList('playerPokes', player.getPokemon(), player, '#enableDelete')
+            dom.renderPokeList();
         }
     },
     changeDexView: function() {

@@ -70,7 +70,7 @@ const Display = {
             this.setValue(this.healElement, 'Heal!');
             player.healAllPokemons();
             combatLoop.refresh();
-            renderView(dom, enemy, player)
+            renderView(dom, enemy, player, false);
         }
         if (typeof canHeal === 'number') {
             this.setValue(this.healElement, 'Heal: ' + Math.floor(((canHeal/30000)*100)) + '%')
@@ -95,20 +95,25 @@ const Display = {
             return COLORS.dead;
         }
     },
-    renderPokeList: function(id, list, player, deleteEnabledId) {
-        const listElement = $('.container.list' + '#' + id).querySelector('#playerPokesList ul');
-        const deleteEnabled = deleteEnabledId && $(deleteEnabledId).checked;
+    renderPokeList: function(purge = true) {
+        const list = player.getPokemon();
+        const listElement = $('.container.list#playerPokes').querySelector('#playerPokesList ul');
+        const deleteEnabled = $('#enableDelete').checked;
         listElement.className = 'list' + (this.checkConfirmed('#enablePokedex') ? ' hidden' : '') + (deleteEnabled ? ' manageTeamEnabled' : '');
         let listElementsToAdd = '';
         list.forEach((poke, index) => {
             const listItemElement = listElement.querySelector('#listPoke' + index);
             if (listItemElement) {
                 const listItemNameElement = listItemElement.querySelector('.pokeListName');
+                let hasChanged = (listItemNameElement.innerHTML !== `${poke.pokeName()} (${poke.level()})`) || (listItemNameElement.style.color !== this.pokeColor(poke));
                 listItemNameElement.innerHTML = `${poke.pokeName()} (${poke.level()})`;
                 listItemNameElement.style.color = this.pokeColor(poke);
                 listItemNameElement.className = 'pokeListName'
                     + (poke === player.activePoke() ? ' activePoke' : '')
                     + (poke.canEvolve() ? ' canEvolve' : '');
+                if (!purge && hasChanged) {
+                    flash(listItemElement);
+                }
             } else {
                 const deleteButton = `<a href="#" onclick="userInteractions.deletePokemon(event, ${index});return false" class="pokeDeleteButton">X</a>`;
                 const upButton = `<button onclick="userInteractions.pokemonToUp('${index}')" class="pokeUpButton"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>`;
@@ -253,9 +258,9 @@ const Display = {
     }
 };
 
-const renderView = (dom, enemy, player) => {
+const renderView = (dom, enemy, player, purge = true) => {
     dom.renderPokeOnContainer('enemy', enemy.activePoke());
     dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
-    dom.renderPokeList('playerPokes', player.getPokemon(), player, '#enableDelete');
+    dom.renderPokeList(purge);
     dom.renderPokeDex('playerPokes', player.getPokedexData())
 };
