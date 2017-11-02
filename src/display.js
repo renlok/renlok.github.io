@@ -47,8 +47,9 @@ const Display = {
         this.setProp(domElements.expBar, 'max', poke.nextLevelExp() - poke.thisLevelExp());
         this.setValue(domElements.status, pokeStatusAsText(poke))
     },
-    renderPokeDex: function(id, dexData) {
-        const listElement = $('.container.list' + '#' + id).querySelector('#playerPokeDex ul');
+    renderPokeDex: function() {
+        const dexData = player.getPokedexData();
+        const listElement = $('.container.list#playerPokes').querySelector('#playerPokeDex ul');
         let listValue = '';
         function findFlag(obj){ return (this == obj.name) }
         let count = POKEDEX.length;
@@ -109,6 +110,10 @@ const Display = {
         if (purge) {
             // if doing a list purge then reorder the pokemon
             player.sortPokemon();
+        }
+        // check if pokedex is open
+        if (dom.checkConfirmed('#enablePokedex')) {
+            this.renderPokeDex();
         }
         const list = player.getPokemon();
         const listElement = $('.container.list#playerPokes').querySelector('#playerPokesList ul');
@@ -288,5 +293,5 @@ const renderView = (dom, enemy, player, purge = true) => {
     dom.renderPokeOnContainer('enemy', enemy.activePoke());
     dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
     dom.renderPokeList(purge);
-    dom.renderPokeDex('playerPokes', player.getPokedexData())
+    dom.renderPokeDex();
 };

@@ -108,7 +108,7 @@ const Combat = {
         this.enemyTimer();
         this.playerTimer();
         dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
-        dom.renderPokeDex('playerPokes', player.getPokedexData());
+        dom.renderPokeDex();
     },
     playerFaint: function() {
         dom.gameConsoleLog(this.playerActivePoke.pokeName() + ' Fainted! ');

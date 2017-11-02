@@ -12,7 +12,7 @@ const UserActions = {
         renderView(dom, enemy, player);
         player.savePokes();
         dom.renderRouteList('areasList', ROUTES[player.settings.currentRegionId]);
-        dom.renderPokeDex('playerPokes', player.getPokedexData());
+        dom.renderPokeDex();
     },
     changePokemon: function(newActiveIndex) {
         player.setActive(newActiveIndex);
@@ -66,7 +66,7 @@ const UserActions = {
     changeDexView: function() {
         const regionSelect = document.getElementById('dexView');
         player.settings.dexView = regionSelect.options[regionSelect.selectedIndex].value;
-        dom.renderPokeDex('playerPokes', player.getPokedexData())
+        dom.renderPokeDex();
     },
     changeCatchOption: function(newCatchOption) {
         combatLoop.changeCatch(newCatchOption)
@@ -78,7 +78,7 @@ const UserActions = {
         }
     },
     clearConsole: function() {
-        dom.gameConsoleClear()
+        dom.gameConsoleClear();
     },
     changeSelectedBall: function(newBall) {
         player.changeSelectedBall(newBall)
