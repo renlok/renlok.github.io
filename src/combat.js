@@ -146,7 +146,7 @@ const Combat = {
                     } else {
                         player.statistics.caught++;
                     }
-                    renderView(dom, enemy, player, false);
+                    renderView(dom, enemy, player);
                 } else {
                     dom.gameConsoleLog(enemy.activePoke().pokeName() + ' escaped!!', 'purple')
                 }

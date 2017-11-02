@@ -80,6 +80,35 @@ let Player = {
     reorderPokes: function(newList) {
         this.pokemons = newList;
     },
+    cmpFunctions: {
+        lvl: (lhs, rhs) => {
+            return lhs.level() - rhs.level()
+        },
+        dex: (lhs, rhs) => {
+            let index = p => POKEDEX.findIndex(x=>x.pokemon[0].Pokemon == p.pokeName());
+            return index(lhs) - index(rhs)
+        },
+        vlv: (lhs, rhs) => {
+            return lhs.level() - rhs.level() || lhs.avgAttack() - rhs.avgAttack();
+        },
+        time: (lhs, rhs) => {
+            return lhs.caughtAt - rhs.caughtAt;
+        },
+    },
+    inverseCmp: function(cmpFunc) {
+        return (lhs, rhs) => -cmpFunc(lhs, rhs);
+    },
+    sortPokemon: function() {
+        const dirSelect = document.getElementById('pokeSortDirSelect');
+        const direction = dirSelect.options[dirSelect.selectedIndex].value;
+        const orderSelect = document.getElementById('pokeSortOrderSelect');
+        const sortOrder = orderSelect.options[orderSelect.selectedIndex].value;
+        let cmpFunc = this.cmpFunctions[sortOrder];
+        if (direction === 'desc') {
+            cmpFunc = this.inverseCmp(cmpFunc)
+        }
+        player.reorderPokes(player.getPokemon().sort(cmpFunc));
+    },
     healAllPokemons: function() {
         if (this.canHeal() === true) {
             this.pokemons.forEach((poke) => poke.heal());

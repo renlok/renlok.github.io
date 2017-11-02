@@ -96,6 +96,10 @@ const Display = {
         }
     },
     renderPokeList: function(purge = true) {
+        if (purge) {
+            // if doing a list purge then reorder the pokemon
+            player.sortPokemon();
+        }
         const list = player.getPokemon();
         const listElement = $('.container.list#playerPokes').querySelector('#playerPokesList ul');
         const deleteEnabled = $('#enableDelete').checked;

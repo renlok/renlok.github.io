@@ -14,21 +14,6 @@ const UserActions = {
         dom.renderRouteList('areasList', ROUTES[player.settings.currentRegionId]);
         dom.renderPokeDex('playerPokes', player.getPokedexData());
     },
-    cmpFunctions: {
-        lvl: (lhs, rhs) => {
-            return lhs.level() - rhs.level()
-        },
-        dex: (lhs, rhs) => {
-            let index = p => POKEDEX.findIndex(x=>x.pokemon[0].Pokemon == p.pokeName());
-            return index(lhs) - index(rhs)
-        },
-        vlv: (lhs, rhs) => {
-            return lhs.level() - rhs.level() || lhs.avgAttack() - rhs.avgAttack()
-        }
-    },
-    inverseCmp: function(cmpFunc) {
-        return (lhs, rhs) => -cmpFunc(lhs, rhs);
-    },
     changePokemon: function(newActiveIndex) {
         player.setActive(newActiveIndex);
         combatLoop.changePlayerPoke(player.activePoke());
@@ -174,18 +159,10 @@ const UserActions = {
         window.getSelection().removeAllRanges()
     },
     changePokeSortOrder: function() {
-        const dirSelect = document.getElementById('pokeSortDirSelect');
-        const direction = dirSelect.options[dirSelect.selectedIndex].value;
-        const orderSelect = document.getElementById('pokeSortOrderSelect');
-        const sortOrder = orderSelect.options[orderSelect.selectedIndex].value;
-        let cmpFunc = this.cmpFunctions[sortOrder];
-        if (direction === 'desc') {
-            cmpFunc = this.inverseCmp(cmpFunc)
-        }
-        player.reorderPokes(player.getPokemon().sort(cmpFunc));
+        player.sortPokemon();
         player.savePokes();
         combatLoop.changePlayerPoke(player.activePoke());
-        renderView(dom, enemy, player)
+        renderView(dom, enemy, player);
     },
     changeSpriteChoice: function() {
         if (document.getElementById('spriteChoiceFront').checked) {
