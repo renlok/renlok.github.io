@@ -153,7 +153,8 @@ let Player = {
                 const pokeName = loadedPoke[0];
                 const exp = loadedPoke[1];
                 const shiny = (loadedPoke[2] === true);
-                this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny));
+                const caughtAt = loadedPoke[3];
+                this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
             }
         });
         if (JSON.parse(localStorage.getItem('ballsAmount'))) {
@@ -187,7 +188,8 @@ let Player = {
                 const pokeName = loadedPoke[0];
                 const exp = loadedPoke[1];
                 const shiny = (loadedPoke[2] === true);
-                this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny))
+                const caughtAt = loadedPoke[3];
+                this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt))
             });
             this.ballsAmount = saveData.ballsAmount;
             this.pokedexData = saveData.pokedexData ? saveData.pokedexData : [];

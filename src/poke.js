@@ -1,8 +1,9 @@
-let Poke = function(pokeModel, initialLevel, initialExp, shiny) {
+let Poke = function(pokeModel, initialLevel, initialExp, shiny, caughtAt) {
     this.poke = cloneJsonObject(pokeModel);
     this.expTable = EXP_TABLE[this.poke.stats[0]["growth rate"]];
     this.exp = initialLevel && this.expTable[initialLevel - 1] || initialExp;
     this.isShiny = (shiny === true);
+    this.caughtAt = caughtAt || Date.now();
     this.hp = this.setHpValue(this.poke.stats[0].hp) * 3;
 };
 Poke.prototype.currentLevel = function() {
@@ -95,6 +96,6 @@ Poke.prototype.takeDamage = function(enemyAttack) {
 };
 Poke.prototype.baseExp = function() { return Number(this.poke.exp[0]['base exp']); };
 Poke.prototype.heal = function() { return this.setHp(this.maxHp()); };
-Poke.prototype.save = function() { return [this.poke.pokemon[0].Pokemon, this.exp, this.isShiny]; };
+Poke.prototype.save = function() { return [this.poke.pokemon[0].Pokemon, this.exp, this.isShiny, this.caughtAt]; };
 
 const makeRandomPoke = (level) => new Poke(randomArrayElement(POKEDEX), level);
