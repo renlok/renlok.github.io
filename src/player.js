@@ -197,7 +197,7 @@ let Player = {
                 this.settings = saveData.settings;
             }
         } else {
-            alert('Invalid save data, loading canceled!')
+            alert('Invalid save data, loading canceled!');
         }
     }
 };

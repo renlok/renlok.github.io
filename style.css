@@ -44,7 +44,6 @@ ul {
 }
 
 #player .inner {
-  border-right: solid 1px rgb(7, 0, 90);
   border-bottom: solid 1px rgb(7, 0, 90);
 }
 
@@ -240,17 +239,13 @@ ul {
 #console {
     float: left;
     width: 259px;
-    height: 220px;
+    height:250px;
     box-sizing: border-box;
     padding-left: 9px;
     overflow-y: scroll;
-    border-bottom: solid 1px black;
+    border-left: solid 1px rgb(7, 0, 90);
+    border-bottom: solid 1px rgb(7, 0, 90);
 }
-
-#console .console-text {
-
-}
-
 
 #playerBox {
     width: 265px;
@@ -269,7 +264,7 @@ ul {
 }
 
 
-#saveDialogContainer, #statisticsContainer {
+.modalContainer {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -279,7 +274,7 @@ ul {
   z-index: 2;
 }
 
-#saveDialog, #statisticsDialog {
+.modalDialog {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -287,17 +282,33 @@ ul {
   bottom: 10vh;
   left: 10vw;
   right: 10vw;
-  padding: 10px;
+  padding: 15px;
   background-color: rgb(217, 217, 217);
   border: solid 1px rgb(10, 0, 130);
   box-shadow: 0 0 3px rgb(10, 0, 130);
   border-radius: 5px;
+  overflow: auto;
 }
 
-#saveDialogTitle, #statisticsTitle {
+.modalTitle {
   flex: 0 0 auto;
   margin: 0;
   padding: 0 0 10px;
+}
+
+.modalDialog h4 {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+#settingsDialog > div> p {
+  padding:0;
+  margin:5px 10px;
+}
+
+#forceSave {
+  color:red;
+  display:none;
 }
 
 #copySaveText {
@@ -308,7 +319,6 @@ ul {
 #saveText {
   flex: 1 1 auto;
 }
-
 
 #gitLink {
 	position: absolute;
@@ -427,6 +437,3 @@ progress.expBar {
 }
 #statisticsList li:nth-child(even) {background: #CCC}
 #statisticsList li:nth-child(odd) {background: #FFF}
-#statisticsDialog {
-  overflow: auto;
-}

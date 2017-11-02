@@ -188,7 +188,7 @@ const Display = {
     },
     renderBalls: function(ballsAmount) {
         Object.keys(ballsAmount).forEach(ballType => {
-            $('.ball-ammount.' + ballType).innerHTML = ballsAmount[ballType]
+            $('.ball-ammount.' + ballType).innerHTML = ballsAmount[ballType];
         })
     },
     refreshCatchOption: function(setCatchOption) {
@@ -249,12 +249,24 @@ const Display = {
         );
 
         $(`#saveDialogContainer`).addEventListener( 'click'
-            , (event) => { event.target === $(`#saveDialogContainer`) && ($(`#saveDialogContainer`).style.display = 'none') }
+            , (event) => { event.target === $(`#saveDialogContainer`) && ($(`#saveDialogContainer`).style.display = 'none'); }
         );
 
         $(`#statisticsContainer`).addEventListener( 'click'
-            , (event) => { event.target === $(`#statisticsContainer`) && ($(`#statisticsContainer`).style.display = 'none') }
-        )
+            , (event) => { event.target === $(`#statisticsContainer`) && ($(`#statisticsContainer`).style.display = 'none'); }
+        );
+
+        $(`#settingsContainer`).addEventListener( 'click'
+            , (event) => { event.target === $(`#settingsContainer`) && ($(`#settingsContainer`).style.display = 'none'); }
+        );
+
+        $(`#achievementsContainer`).addEventListener( 'click'
+            , (event) => { event.target === $(`#achievementsContainer`) && ($(`#achievementsContainer`).style.display = 'none'); }
+        );
+
+        $(`#townContainer`).addEventListener( 'click'
+            , (event) => { event.target === $(`#townContainer`) && ($(`#townContainer`).style.display = 'none'); }
+        );
     }
 };
 

@@ -91,32 +91,25 @@
         <progress class="expBar" value="0" max="100"></progress>
         <br>
         <span class="status"></span>
-        <span class="spriteChoice">
-          <input type="radio" id="spriteChoiceBack" name="spriteChoice" onchange="userInteractions.changeSpriteChoice()" /><label for="spriteChoiceBack">Back</label>
-          <input type="radio" id="spriteChoiceFront" name="spriteChoice" onchange="userInteractions.changeSpriteChoice()" /><label for="spriteChoiceFront">Front</label>
-        </span>
       </div>
       <div id="console">
         <span class="console-text"></span>
       </div>
       <div id="playerBox">
-        <input type="checkbox" checked="true" id="enableConsole"><span>Enable console</span><br>
-        <button onclick="userInteractions.clearConsole()">Clear Console</button>
+        <button onclick="userInteractions.viewAchievements()">Achievements</button>
         <button onclick="userInteractions.viewStatistics()">View Stats</button>
         <div id="saveLoadButtons">
-          <button onclick="userInteractions.exportSaveDialog()">Save</button>
-          <button onclick="userInteractions.importSaveDialog()">Load</button>
+          <button onclick="userInteractions.viewSettings()">Settings</button>
+          <button onclick="userInteractions.viewTown()">Town</button>
         </div>
-        <input type="checkbox" id="confirmClearData">
-        <a href="#" style="color: red;" onclick="userInteractions.clearGameData()">Clear game data</a>
       </div>
     </div>
 
-    <div id="saveDialogContainer" style="display: none">
-      <div id="saveDialog">
+    <div id="saveDialogContainer" class="modalContainer" style="display: none">
+      <div id="saveDialog" class="modalDialog">
         <div>
           <button id="copySaveText" onclick="userInteractions.copySaveText()" style="display: none">Copy to clipboard</button>
-          <h3 id="saveDialogTitle">Export your save</h3>
+          <h3 id="saveDialogTitle" class="modalTitle">Export your save</h3>
         </div>
         <textarea id="saveText" placeholder="Paste the save data here"></textarea>
         <div id="loadButtonContainer" style="display: none">
@@ -125,10 +118,23 @@
       </div>
     </div>
 
-    <div id="statisticsContainer" style="display: none">
-      <div id="statisticsDialog">
+    <div id="achievementsContainer" class="modalContainer" style="display: none">
+      <div id="achievementsDialog" class="modalDialog">
         <div>
-          <h3 id="statisticsTitle">Statistics</h3>
+          <h3 id="achievementsTitle" class="modalTitle">Achievements</h3>
+        </div>
+        <div>
+          <ul id="achievementsList">
+            <li>Nothing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="statisticsContainer" class="modalContainer" style="display: none">
+      <div id="statisticsDialog" class="modalDialog">
+        <div>
+          <h3 id="statisticsTitle" class="modalTitle">Statistics</h3>
         </div>
         <div>
           <ul id="statisticsList"></ul>
@@ -136,7 +142,47 @@
       </div>
     </div>
 
-    <span id="version">Version: NGGYU NGLYD</span>
+    <div id="settingsContainer" class="modalContainer" style="display: none">
+      <div id="settingsDialog" class="modalDialog">
+        <div>
+          <h3 id="settingsTitle" class="modalTitle">Settings</h3>
+        </div>
+        <div>
+          <h4>Visual Settings</h4>
+          <p>Choose which sprite You want to display for your pokemon:</p>
+          <p>
+            <span class="spriteChoice">
+              <input type="radio" id="spriteChoiceBack" name="spriteChoice" onchange="userInteractions.changeSpriteChoice()" /><label for="spriteChoiceBack">Back</label>
+              <input type="radio" id="spriteChoiceFront" name="spriteChoice" onchange="userInteractions.changeSpriteChoice()" /><label for="spriteChoiceFront">Front</label>
+            </span>
+          </p>
+          <h4>Console Settings</h4>
+          <p><input type="checkbox" checked="true" id="enableConsole"><span>Enable console</span></p>
+          <p><button onclick="userInteractions.clearConsole()">Clear Console</button></p>
+          <h4>Import and Export Save</h4>
+          <p><button onclick="userInteractions.forceSave()">Force Save</button> <span id="forceSave" style="color:red">Saved!</span></p>
+          <p><button onclick="userInteractions.exportSaveDialog()">Export</button></p>
+          <p><button onclick="userInteractions.importSaveDialog()">Import</button></p>
+          <h4>Clear Game Data</h4>
+          <p style="color:red;font-weight:bold">Warning! This cannot be undone.</p>
+          <p><input type="checkbox" id="confirmClearData">
+          <a href="#" style="color: red;" onclick="userInteractions.clearGameData()">Clear game data</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="townContainer" class="modalContainer" style="display: none">
+      <div id="townDialog" class="modalDialog">
+        <div>
+          <h3 id="townTitle" class="modalTitle">Town</h3>
+        </div>
+        <div>
+          Nothing
+        </div>
+      </div>
+    </div>
+
+    <span id="version">Version: </span>
     <a id="gitLink" href="https://github.com/RichardPaulAstley/richardpaulastley.github.io" target="_blank">Github</a>
     <a id="subLink" href="https://reddit.com/r/Pokeidle" target="_blank">Subreddit</a>
     <a id="disLink" href="https://discord.gg/pt57KfB" target="_blank">Discord</a>

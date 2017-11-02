@@ -139,21 +139,27 @@ const UserActions = {
         player.getPokemon()[pokemonIndex].tryEvolve(player.getPokemon()[pokemonIndex].shiny());
         renderView(dom, enemy, player)
     },
+    forceSave: function() {
+        player.savePokes();
+        $(`#forceSave`).style.display = 'inline';
+    },
     exportSaveDialog: function() {
         document.getElementById('saveDialogTitle').innerHTML = 'Export your save';
         if (document.queryCommandSupported('copy')) {
-            document.getElementById('copySaveText').style.display = 'initial'
+            document.getElementById('copySaveText').style.display = 'initial';
         }
         document.getElementById('saveText').value = player.saveToString();
         document.getElementById('loadButtonContainer').style.display = 'none';
-        document.getElementById('saveDialogContainer').style.display = 'block'
+        document.getElementById('saveDialogContainer').style.display = 'block';
+        $(`#settingsContainer`).style.display = 'none';
     },
     importSaveDialog: function() {
         document.getElementById('saveDialogTitle').innerHTML = 'Import a save';
         document.getElementById('copySaveText').style.display = 'none';
         document.getElementById('saveText').value = '';
         document.getElementById('loadButtonContainer').style.display = 'block';
-        document.getElementById('saveDialogContainer').style.display = 'block'
+        document.getElementById('saveDialogContainer').style.display = 'block';
+        $(`#settingsContainer`).style.display = 'none';
     },
     importSave: function() {
         if (window.confirm('Loading a save will overwrite your current progress, are you sure you wish to continue?')) {
@@ -218,5 +224,15 @@ const UserActions = {
         }
         document.getElementById('statisticsList').innerHTML = statList;
         document.getElementById('statisticsContainer').style.display = 'block'
+    },
+    viewSettings: function() {
+        document.getElementById('settingsContainer').style.display = 'block';
+        $(`#forceSave`).style.display = 'none';
+    },
+    viewAchievements: function() {
+        document.getElementById('achievementsContainer').style.display = 'block';
+    },
+    viewTown: function() {
+        document.getElementById('townContainer').style.display = 'block';
     }
 };
