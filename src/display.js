@@ -51,7 +51,13 @@ const Display = {
         const listElement = $('.container.list' + '#' + id).querySelector('#playerPokeDex ul');
         let listValue = '';
         function findFlag(obj){ return (this == obj.name) }
-        for(let y = 0; y < POKEDEX.length; y++) {
+        let count = POKEDEX.length;
+        if (player.settings.dexView === 'all') {
+            const highestPoke = player.getPokemon().sort(player.inverseCmp(player.cmpFunctions['dex']))[0];
+            let highestID = POKEDEX.findIndex(x=>x.pokemon[0].Pokemon == highestPoke.pokeName());
+            count = highestID + 5;
+        }
+        for(let y = 0; y < count; y++) {
             let dexEntry = dexData.find(findFlag, POKEDEX[y].pokemon[0].Pokemon);
             if (typeof dexEntry === 'undefined')
                 dexEntry = {name: '', flag: 0};
@@ -60,7 +66,11 @@ const Display = {
                 (player.settings.dexView == 'owned' && (dexEntry.flag >= POKEDEXFLAGS.releasedNormal)) ||
                 (player.settings.dexView == 'missing' && (dexEntry.flag != POKEDEXFLAGS.ownNormal && dexEntry.flag != POKEDEXFLAGS.ownShiny)) ||
                 (player.settings.dexView == 'shiny' && (dexEntry.flag == POKEDEXFLAGS.ownShiny))) {
-                listValue += '<li class="pokeDex' + dexEntry.flag + '">' + (y + 1) + ' ' + POKEDEX[y].pokemon[0].Pokemon + '</li>';
+                if (player.settings.dexView === 'all' && dexEntry.flag == POKEDEXFLAGS.unseen) {
+                    listValue += '<li class="pokeDex' + dexEntry.flag + '">' + (y + 1) + ' ???</li>';
+                } else {
+                    listValue += '<li class="pokeDex' + dexEntry.flag + '">' + (y + 1) + ' ' + POKEDEX[y].pokemon[0].Pokemon + '</li>';
+                }
             }
         }
         this.setValue(listElement, listValue, false)
