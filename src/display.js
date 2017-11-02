@@ -47,6 +47,22 @@ const Display = {
         this.setProp(domElements.expBar, 'max', poke.nextLevelExp() - poke.thisLevelExp());
         this.setValue(domElements.status, pokeStatusAsText(poke))
     },
+    renderPokeDexSort: function() {
+        let sortHTML = '<option value="all">All</option>';
+        let showList = false;
+        if (player.unlocked.completeDex) {
+            sortHTML += '<option value="missing"' + (player.settings.dexView === 'missing' ? ' selected="true"' : '') + '>Missing</option>';
+            showList = true;
+        }
+        if (player.unlocked.shinyDex) {
+            sortHTML += '<option value="shiny"' + (player.settings.dexView === 'shiny' ? ' selected="true")' : '') + '>Shiny</option>';
+            showList = true;
+        }
+        if (showList) {
+            $('#dexView').innerHTML = sortHTML;
+            $('#dexView').style.display = 'block';
+        }
+    },
     renderPokeDex: function() {
         const dexData = player.getPokedexData();
         const listElement = $('.container.list#playerPokes').querySelector('#playerPokeDex ul');
@@ -54,8 +70,13 @@ const Display = {
         function findFlag(obj){ return (this == obj.name) }
         let count = POKEDEX.length;
         if (player.settings.dexView === 'all') {
-            const highestPoke = player.getPokemon().sort(player.inverseCmp(player.cmpFunctions['dex']))[0];
-            let highestID = POKEDEX.findIndex(x=>x.pokemon[0].Pokemon == highestPoke.pokeName());
+            // TODO clean this up
+            let findIndex = p => POKEDEX.findIndex(x=>x.pokemon[0].Pokemon == p.name);
+            let dex = (lhs, rhs) => {
+                return findIndex(rhs) - findIndex(lhs);
+            };
+            const highestPoke = player.getPokedexData().sort(dex)[0];
+            let highestID = findIndex(highestPoke);
             count = highestID + 5;
         }
         for(let y = 0; y < count; y++) {
@@ -74,7 +95,8 @@ const Display = {
                 }
             }
         }
-        this.setValue(listElement, listValue, false)
+        this.setValue(listElement, listValue, false);
+        this.renderPokeDexSort();
     },
     renderHeal: function(canHeal) {
         if (canHeal === true) {
@@ -292,6 +314,4 @@ const Display = {
 const renderView = (dom, enemy, player, purge = true) => {
     dom.renderPokeOnContainer('enemy', enemy.activePoke());
     dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
-    dom.renderPokeList(purge);
-    dom.renderPokeDex();
 };

@@ -100,6 +100,8 @@ dom.renderRouteList('areasList', ROUTES[player.settings.currentRegionId]);
 dom.renderBalls(player.ballsAmount);
 
 renderView(dom, enemy, player);
+dom.renderPokeList();
+dom.renderPokeDex();
 
 combatLoop.init();
 

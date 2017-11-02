@@ -9,6 +9,10 @@ let Player = {
         greatball: 0,
         ultraball: 0
     },
+    unlocked: {
+        shinyDex: 0,
+        completeDex: 0
+    },
     settings: {
         currentRegionId: 'Kanto',
         currentRouteId: 'starter',
@@ -70,6 +74,8 @@ let Player = {
         } else {
             this.pokedexData.push({name: pokeName, flag: flag})
         }
+        dom.renderPokeList();
+        dom.renderPokeDex();
     },
     setActive: function(index) {
         this.activePokeID = index;
