@@ -155,12 +155,18 @@ const Combat = {
     },
     findPokeballs: function() {
         const ballsAmount = Math.floor(Math.random() * 10) + 1;
-        const ballName = randomArrayElement(['pokeball', 'pokeball', 'pokeball', 'pokeball', 'pokeball', 'pokeball', 'greatball', 'greatball', 'ultraball']);
-        const rngHappened2 = RNG(10);
-        if (rngHappened2) {
-            player.addBalls(ballName, ballsAmount);
-            dom.gameConsoleLog('You found ' + ballsAmount + ' ' + ballName + 's!!', 'purple');
-            dom.renderBalls(player.ballsAmount);
+        const ballWeights = {
+            'ultraball': 1,
+            'greatball': 10,
+            'pokeball': 100,
+        };
+        const rng = Math.floor(Math.random() * 2000);
+        for (let ballName in ballWeights) {
+            if (rng < ballWeights[ballName]) {
+                player.addBalls(ballName, ballsAmount);
+                dom.gameConsoleLog('You found ' + ballsAmount + ' ' + ballName + 's!!', 'purple');
+                dom.renderBalls(player.ballsAmount);
+            }
         }
     },
     changePlayerPoke: function(newPoke) {
