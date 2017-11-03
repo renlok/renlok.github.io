@@ -98,6 +98,7 @@ if (player.settings.spriteChoice === 'front') {
 dom.bindEvents();
 dom.renderRouteList('areasList', ROUTES[player.settings.currentRegionId]);
 dom.renderBalls(player.ballsAmount);
+dom.renderCurrency();
 
 renderView(dom, enemy, player);
 dom.renderPokeList();

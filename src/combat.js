@@ -81,7 +81,8 @@ const Combat = {
             player.statistics.beaten++;
         }
         this.attemptCatch();
-        this.findPokeballs();
+        this.findPokeballs(enemy.activePoke().level());
+        this.findCurrency(enemy.activePoke().level());
 
         const beforeExp = player.getPokemon().map((poke) => poke.level());
         const expToGive = (this.enemyActivePoke.baseExp() / 16) + (this.enemyActivePoke.level() * 3);
@@ -143,6 +144,7 @@ const Combat = {
                     player.addPokedex(enemy.activePoke().pokeName(), (enemy.activePoke().shiny() ? POKEDEXFLAGS.ownShiny : POKEDEXFLAGS.ownNormal));
                     if (enemy.activePoke().shiny()) {
                         player.statistics.shinyCaught++;
+                        player.unlocked.shinyDex = 1;
                     } else {
                         player.statistics.caught++;
                     }
@@ -153,20 +155,28 @@ const Combat = {
             }
         }
     },
-    findPokeballs: function() {
-        const ballsAmount = Math.floor(Math.random() * 10) + 1;
+    findPokeballs: function(pokeLevel) {
+        const ballsAmount = Math.floor(Math.random() * (pokeLevel/2)) + 1;
         const ballWeights = {
             'ultraball': 1,
             'greatball': 10,
             'pokeball': 100,
         };
-        const rng = Math.floor(Math.random() * 2000);
+        const rng = Math.floor(Math.random() * (2000 - (pokeLevel * 4)));
         for (let ballName in ballWeights) {
             if (rng < ballWeights[ballName]) {
                 player.addBalls(ballName, ballsAmount);
                 dom.gameConsoleLog('You found ' + ballsAmount + ' ' + ballName + 's!!', 'purple');
                 dom.renderBalls(player.ballsAmount);
             }
+        }
+    },
+    findCurrency: function(pokeLevel) {
+        if (RNG(5)) {
+            const foundCurrency = Math.floor(Math.random() * pokeLevel * 4) + 1;
+            player.currency += foundCurrency;
+            dom.gameConsoleLog('You found ¤' + foundCurrency + '!!', 'purple');
+            dom.renderCurrency();
         }
     },
     changePlayerPoke: function(newPoke) {

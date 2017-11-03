@@ -13,6 +13,7 @@ let Player = {
         shinyDex: 0,
         completeDex: 0
     },
+    currency: 0,
     settings: {
         currentRegionId: 'Kanto',
         currentRouteId: 'starter',
@@ -168,6 +169,8 @@ let Player = {
         localStorage.setItem(`pokedexData`, JSON.stringify(this.pokedexData));
         localStorage.setItem(`statistics`, JSON.stringify(this.statistics));
         localStorage.setItem(`settings`, JSON.stringify(this.settings));
+        localStorage.setItem(`unlocked`, JSON.stringify(this.unlocked));
+        localStorage.setItem(`currency`, JSON.stringify(this.currency));
     },
     saveToString: function() {
         const saveData = JSON.stringify({
@@ -175,7 +178,9 @@ let Player = {
             pokedexData: this.pokedexData,
             statistics: this.statistics,
             settings: this.settings,
-            ballsAmount: this.ballsAmount
+            ballsAmount: this.ballsAmount,
+            unlocked: this.unlocked,
+            currency: this.currency,
         });
         return btoa(this.checksum(saveData) + '|' + saveData)
     },
@@ -207,6 +212,13 @@ let Player = {
         if (JSON.parse(localStorage.getItem('settings'))) {
             this.settings = JSON.parse(localStorage.getItem('settings'));
         }
+        if (JSON.parse(localStorage.getItem('unlocked'))) {
+            let loadedUnlocked = JSON.parse(localStorage.getItem('unlocked'));
+            this.unlocked = Object.assign({}, this.unlocked, loadedUnlocked);
+        }
+        if (JSON.parse(localStorage.getItem('currency'))) {
+            this.currency = JSON.parse(localStorage.getItem('currency'));
+        }
     },
     loadFromString: function(saveData) {
         saveData = atob(saveData);
@@ -233,6 +245,9 @@ let Player = {
             if (saveData.settings) {
                 this.settings = saveData.settings;
             }
+            let loadedUnlocked = saveData.unlocked ? saveData.unlocked : [];
+            this.unlocked = Object.assign({}, this.unlocked, loadedUnlocked);
+            this.currency = saveData.currency ? saveData.currency : 0;
         } else {
             alert('Invalid save data, loading canceled!');
         }

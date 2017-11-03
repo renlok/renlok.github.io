@@ -70,11 +70,8 @@ const Display = {
         function findFlag(obj){ return (this == obj.name) }
         let count = POKEDEX.length;
         if (player.settings.dexView === 'all') {
-            // TODO clean this up
             let findIndex = p => POKEDEX.findIndex(x=>x.pokemon[0].Pokemon == p.name);
-            let dex = (lhs, rhs) => {
-                return findIndex(rhs) - findIndex(lhs);
-            };
+            let dex = (lhs, rhs) => findIndex(rhs) - findIndex(lhs);
             const highestPoke = player.getPokedexData().sort(dex)[0];
             let highestID = findIndex(highestPoke);
             count = highestID + 5;
@@ -231,6 +228,11 @@ const Display = {
         Object.keys(ballsAmount).forEach(ballType => {
             $('.ball-ammount.' + ballType).innerHTML = ballsAmount[ballType];
         })
+    },
+    renderCurrency: function() {
+        const currencyElement = $('#currency');
+        currencyElement.innerHTML = '¤' + player.currency;
+        flash(currencyElement);
     },
     refreshCatchOption: function(setCatchOption) {
         $(`#enableCatchNew`).checked = false;
