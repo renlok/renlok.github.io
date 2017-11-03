@@ -23,7 +23,8 @@ const UserActions = {
         if (event.shiftKey) {
             const pokemon = player.getPokemon()[index];
             player.deletePoke(index);
-            if (!player.hasPokemon(pokemon.pokeName())) {
+            const hasPoke = player.hasPokemon(pokemon.pokeName(), pokemon.shiny());
+            if (!hasPoke) {
                 player.addPokedex(pokemon.pokeName(), (pokemon.shiny() ? POKEDEXFLAGS.releasedShiny : POKEDEXFLAGS.releasedNormal));
             }
             combatLoop.changePlayerPoke(player.activePoke());
