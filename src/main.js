@@ -96,7 +96,7 @@ if (player.settings.spriteChoice === 'front') {
 }
 
 dom.bindEvents();
-dom.renderBalls(player.ballsAmount);
+dom.renderBalls();
 dom.renderCurrency();
 
 renderView(dom, enemy, player);

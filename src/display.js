@@ -245,9 +245,9 @@ const Display = {
     gameConsoleClear: function() {
         this.logElement.innerHTML = ''
     },
-    renderBalls: function(ballsAmount) {
-        Object.keys(ballsAmount).forEach(ballType => {
-            $('.ball-ammount.' + ballType).innerHTML = ballsAmount[ballType];
+    renderBalls: function() {
+        Object.keys(player.ballsAmount).forEach(ballType => {
+            $('.ball-ammount.' + ballType).innerHTML = player.ballsAmount[ballType];
         })
     },
     renderCurrency: function() {

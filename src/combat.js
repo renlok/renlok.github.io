@@ -134,8 +134,9 @@ const Combat = {
                 // add throw to statistics
                 player.statistics.totalThrows++;
                 player.statistics[selectedBall+'Throws']++;
-                dom.renderBalls(player.ballsAmount);
-                const rngHappened = RNG((enemy.activePoke().catchRate() * player.ballRNG(selectedBall)) / 3);
+                dom.renderBalls();
+                const catchBonus = (player.unlocked.razzBerry) ? 1.25 : 1;
+                const rngHappened = RNG(((enemy.activePoke().catchRate() * player.ballRNG(selectedBall)) / 3) * catchBonus);
                 if (rngHappened) {
                     player.statistics.successfulThrows++;
                     player.statistics[selectedBall+'SuccessfulThrows']++;
@@ -167,7 +168,7 @@ const Combat = {
             if (rng < ballWeights[ballName]) {
                 player.addBalls(ballName, ballsAmount);
                 dom.gameConsoleLog('You found ' + ballsAmount + ' ' + ballName + 's!!', 'purple');
-                dom.renderBalls(player.ballsAmount);
+                dom.renderBalls();
             }
         }
     },

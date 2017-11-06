@@ -204,7 +204,62 @@ const UserActions = {
     viewAchievements: function() {
         document.getElementById('achievementsContainer').style.display = 'block';
     },
+    shopItems: [
+        {
+            name: 'Complete Pokedex',
+            cost: 100000,
+            unlockable: 'completeDex'
+        },
+        {
+            name: 'Pokeball',
+            cost: 10,
+            ball: 'pokeball'
+        },
+        {
+            name: 'Greatball',
+            cost: 100,
+            ball: 'greatball'
+        },
+        {
+            name: 'Ultraball',
+            cost: 1000,
+            ball: 'ultraball'
+        },
+        {
+            name: 'Razz Berry',
+            cost: 250000,
+            unlockable: 'razzBerry'
+        }
+    ],
     viewTown: function() {
+        let shopHTML = '';
+        for (let i = 0; i < this.shopItems.length; i++) {
+            let canBuy = true;
+            if (player.currency < this.shopItems[i].cost)
+                canBuy = false;
+            if (this.shopItems[i].unlockable && player.unlocked[this.shopItems[i].unlockable])
+                canBuy = false;
+            shopHTML += '<li>' + this.shopItems[i].name + ': ¤' + this.shopItems[i].cost + (canBuy ? ' <button onclick="userInteractions.buyItem(\'' + i + '\')">Buy</button>' : '') + '</li>';
+        }
+        $('#shopItems').innerHTML = shopHTML;
         document.getElementById('townContainer').style.display = 'block';
+    },
+    buyItem: function(index) {
+        const item = this.shopItems[index];
+        if (player.currency < item.cost) {
+            return false;
+        } else {
+            player.currency -= item.cost;
+            if (item.ball) {
+                player.ballsAmount[item.ball]++;
+                dom.renderBalls();
+            }
+            if (item.unlockable) {
+                player.unlocked[item.unlockable] = 1;
+                dom.renderListBox();
+            }
+            dom.renderCurrency();
+            return true;
+        }
     }
 };
