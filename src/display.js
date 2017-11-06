@@ -29,7 +29,7 @@ const Display = {
             output += '\nDefense: ' + poke.avgDefense() + '<br>';
             return output
         };
-        const container = $('.container.poke' + '#' + id);
+        const container = $('#' + id + 'Box').querySelector('.pokeBox');
         const domElements  = {
             name: container.querySelector('.name'),
             img: container.querySelector('.img'),
@@ -65,7 +65,7 @@ const Display = {
     },
     renderPokeDex: function() {
         const dexData = player.getPokedexData();
-        const listElement = $('.container.list#playerPokes').querySelector('#playerPokeDex ul');
+        const listElement = $('#dexList');
         let listValue = '';
         function findFlag(obj){ return (this == obj.name) }
         let count = POKEDEX.length;
@@ -130,14 +130,10 @@ const Display = {
             // if doing a list purge then reorder the pokemon
             player.sortPokemon();
         }
-        // check if pokedex is open
-        if (dom.checkConfirmed('#enablePokedex')) {
-            this.renderPokeDex();
-        }
         const list = player.getPokemon();
-        const listElement = $('.container.list#playerPokes').querySelector('#playerPokesList ul');
+        const listElement = $('#rosterList');
         const deleteEnabled = $('#enableDelete').checked;
-        listElement.className = 'list' + (this.checkConfirmed('#enablePokedex') ? ' hidden' : '') + (deleteEnabled ? ' manageTeamEnabled' : '');
+        listElement.className = 'list' + (deleteEnabled ? ' manageTeamEnabled' : '');
         let listElementsToAdd = '';
         list.forEach((poke, index) => {
             const listItemElement = listElement.querySelector('#listPoke' + index);
@@ -179,10 +175,10 @@ const Display = {
             i++
         }
     },
-    renderRouteList: function(id, routes) {
-        const listContainer = $('.container.list' + '#' + id);
-        const listElement = listContainer.querySelector('.list');
-        listContainer.querySelector('#regionSelect').value = player.settings.currentRegionId;
+    renderRouteList: function() {
+        const routes = ROUTES[player.settings.currentRegionId];
+        const listElement = $('#routeList');
+        $('#regionSelect').value = player.settings.currentRegionId;
         this.setValue(listElement, '');
         Object.keys(routes).forEach((routeId) => {
             const route = routes[routeId];
@@ -195,9 +191,32 @@ const Display = {
                 routeColor = COLORS.route.locked;
                 routeWeight = 'normal';
             }
-            const routeHTML = '<li><a href="#" onclick="' + routeOnClick + '" style="color: ' + routeColor + '; font-weight: ' + routeWeight + ';" >' + route.name + ' (' + route.minLevel + '~' + route.maxLevel + ')' + '</a><li>';
+            const routeHTML = '<li><a href="#" onclick="' + routeOnClick + '" style="color: ' + routeColor + '; font-weight: ' + routeWeight + ';" >' + route.name + ' (' + route.minLevel + '~' + route.maxLevel + ')' + '</a></li>';
             this.setValue(listElement, routeHTML, true);
         })
+    },
+    renderListBox: function() {
+        const routes = $('#routesBox');
+        const roster = $('#rosterBox');
+        const pokeDex = $('#pokedexBox');
+        // which is showing
+        if (player.settings.listView === 'routes') {
+            routes.style.display = 'block';
+            roster.style.display = 'none';
+            pokeDex.style.display = 'none';
+            this.renderRouteList();
+        } else if (player.settings.listView === 'pokeDex') {
+            routes.style.display = 'none';
+            roster.style.display = 'none';
+            pokeDex.style.display = 'block';
+            this.renderPokeDex();
+        } else {
+            routes.style.display = 'none';
+            roster.style.display = 'block';
+            pokeDex.style.display = 'none';
+            this.renderPokeList();
+
+        }
     },
     checkConfirmed: function(id) {
         return $(id).checked
@@ -246,19 +265,16 @@ const Display = {
     },
     bindEvents: function() {
         $('#enableDelete').addEventListener( 'click', () => {
-            if ($(`#enablePokedex`).checked) {
-                $(`#enablePokedex`).checked = false;
-                userInteractions.enableViewPokedex();
-            }
-            userInteractions.enablePokeListDelete()
+            userInteractions.enablePokeListDelete();
         });
-
-        $('#enablePokedex').addEventListener( 'click', () => {
-            if ($(`#enableDelete`).checked) {
-                $(`#enableDelete`).checked = false;
-                userInteractions.enablePokeListDelete();
-            }
-            userInteractions.enableViewPokedex()
+        $('#viewRoutes').addEventListener( 'click', () => {
+            userInteractions.changeListView('routes');
+        });
+        $('#viewRoster').addEventListener( 'click', () => {
+            userInteractions.changeListView('roster');
+        });
+        $('#viewPokeDex').addEventListener( 'click', () => {
+            userInteractions.changeListView('pokeDex');
         });
 
         $('#dexView').addEventListener( 'change'

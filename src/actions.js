@@ -11,8 +11,7 @@ const UserActions = {
         combatLoop.changeEnemyPoke(enemy.activePoke());
         renderView(dom, enemy, player);
         player.savePokes();
-        dom.renderRouteList('areasList', ROUTES[player.settings.currentRegionId]);
-        dom.renderPokeDex();
+        dom.renderRouteList();
     },
     changePokemon: function(newActiveIndex) {
         player.setActive(newActiveIndex);
@@ -52,17 +51,8 @@ const UserActions = {
         this.changeRoute(Object.keys(ROUTES[player.settings.currentRegionId])[0]);
     },
     enablePokeListDelete: function() {
-        dom.renderPokeList();
-    },
-    enableViewPokedex: function() {
-        if (dom.checkConfirmed('#enablePokedex')) {
-            document.querySelector('#playerPokesList').classList.add('hidden');
-            document.querySelector('#playerPokeDex').classList.remove('hidden')
-        } else {
-            document.querySelector('#playerPokesList').classList.remove('hidden');
-            document.querySelector('#playerPokeDex').classList.add('hidden');
-            dom.renderPokeList();
-        }
+        player.settings.listView = 'roster';
+        dom.renderListBox();
     },
     changeDexView: function() {
         const regionSelect = document.getElementById('dexView');
@@ -71,6 +61,10 @@ const UserActions = {
     },
     changeCatchOption: function(newCatchOption) {
         combatLoop.changeCatch(newCatchOption)
+    },
+    changeListView: function(view) {
+        player.settings.listView = view;
+        dom.renderListBox();
     },
     clearGameData: function() {
         if (dom.checkConfirmed('#confirmClearData')) {

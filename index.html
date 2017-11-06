@@ -1,214 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pokeidle 2</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="font-awesome.min.css" media="screen" title="no title" charset="utf-8">
-  <link rel="icon" type="image/png" href="assets/other/icon.png">
+    <meta charset="UTF-8">
+    <title>PokeIdle Extended</title>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-  <div id="gameContainer">
-
-    <div id="areasList" class="container list">
-      <div id="regionSelectContainer">
-        <select id="regionSelect" onchange="userInteractions.changeRegion()">
-          <option value="Kanto">Kanto</option>
-          <option value="Johto">Johto</option>
-          <option value="Hoenn">Hoenn</option>
-          <option value="Sinnoh">Sinnoh</option>
-          <option value="Unova">Unova</option>
-          <option value="Kalos">Kalos (Custom)</option>
-          <option value="Alola">Alola (Custom)</option>
-          <option value="Event">Event</option>
-        </select>
-      </div>
-      <ul class="list">
-      </ul>
-    </div>
-
-
-
-    <div id="playerPokes" class="container list">
-      <div class="controls">
-        <input type="checkbox" id="enableDelete"><label for="enableDelete"><span class="checkDescription">Manage Team</span></label><br>
-        <input type="checkbox" id="enablePokedex"><label for="enablePokedex"><span class="checkDescription" id="viewPokedexString">View Pokedex</span></label>
-        <div id="heal">Heal</div>
-      </div>
-      <div id="playerPokesList" class="list">
-        <select id="pokeSortOrderSelect" onchange="userInteractions.changePokeSortOrder()">
-          <option value="lvl">Level</option>
-          <option value="dex">Pokedex #</option>
-          <option value="vlv">Level, attack</option>
-          <option value="time">Newest</option>
-        </select>
-        <select id="pokeSortDirSelect" onchange="userInteractions.changePokeSortOrder()">
-          <option value="asc">Asc</option>
-          <option value="desc">Desc</option>
-        </select>
-        <ul></ul>
-      </div>
-      <div id="playerPokeDex" class="list hidden">
-        <select id="dexView" style="display: none;">
-          <option value="all">All</option>
-        </select>
-        <ul></ul>
-      </div>
-    </div>
-
-    <div id="enemy" class="container poke">
-      <div class="inner">
-        <span class="name"></span><br>
-        <img id="enemyImg" class="img" src="" alt=""><br>
-        <span class="hp"></span><br>
-        <span>hp: </span>
-        <progress class="hpBar" value="0" max="100"></progress><br>
-        <progress class="expBar" value="0" max="100"></progress>
-        <br>
-        <span class="status"></span>
-      </div>
-      <div id="capture-options">
-        Catch: <label><input type="checkbox" id="enableCatchAll"><span>All</span></label> <label><input type="checkbox" id="enableCatchNew"><span>New</span></label>
-        <p>Using:</p>
-        <input type="radio" name="name" value="pokeball" checked="true" onclick="userInteractions.changeSelectedBall('pokeball')" id="pokeball"><label for="pokeball"><span>Pokeballs: </span><span class="ball-ammount pokeball">10</span></label><br>
-        <input type="radio" name="name" value="greatball" onclick="userInteractions.changeSelectedBall('greatball')" id="greatball"><label for="greatball"><span>Greatballs: </span><span class="ball-ammount greatball">0</span></label><br>
-        <input type="radio" name="name" value="ultraball" onclick="userInteractions.changeSelectedBall('ultraball')" id="ultraball"><label for="ultraball"><span>Ultraballs: </span><span class="ball-ammount ultraball">0</span></label><br>
-      </div>
-    </div>
-
-    <div id="player" class="container poke">
-      <div id="playerCard">
-        <div class="inner">
-          <span class="name"></span><br>
-          <img id="playerImg" class="img" src="" alt=""><br>
-          <span class="hp"></span><br>
-          <span>hp: </span>
-          <progress class="hpBar" value="0" max="100"></progress><br>
-          <span>xp: </span>
-          <progress class="expBar" value="0" max="100"></progress>
-          <br>
-          <span class="status"></span>
+    <small id="version"></small>
+    <div id="gameContainer">
+        <div id="listBox">
+            <div id="routesBox">
+                <select id="regionSelect" onchange="userInteractions.changeRegion()">
+                    <option value="Kanto">Kanto</option>
+                    <option value="Johto">Johto</option>
+                    <option value="Hoenn">Hoenn</option>
+                    <option value="Sinnoh">Sinnoh</option>
+                    <option value="Unova">Unova</option>
+                    <option value="Kalos">Kalos (Custom)</option>
+                    <option value="Alola">Alola (Custom)</option>
+                    <option value="Event">Event</option>
+                </select>
+                <ul id="routeList"></ul>
+            </div>
+            <div id="rosterBox" style="display: none;">
+                <input type="checkbox" id="enableDelete"><label for="enableDelete"><span class="checkDescription">Manage Team</span></label>
+                <select id="pokeSortOrderSelect" onchange="userInteractions.changePokeSortOrder()">
+                    <option value="lvl">Level</option>
+                    <option value="dex">Pokedex #</option>
+                    <option value="vlv">Level, attack</option>
+                    <option value="time">Newest</option>
+                </select>
+                <select id="pokeSortDirSelect" onchange="userInteractions.changePokeSortOrder()">
+                    <option value="asc">Asc</option>
+                    <option value="desc">Desc</option>
+                </select>
+                <ul id="rosterList"></ul>
+            </div>
+            <div id="pokedexBox" style="display: none;">
+                <select id="dexView" style="display: none;">
+                    <option value="all">All</option>
+                </select>
+                <ul id="dexList"></ul>
+            </div>
         </div>
-        <span id="currency">¤0</span>
-      </div>
-      <div id="console">
-        <span class="console-text"></span>
-      </div>
-      <div id="playerBox">
-        <button onclick="userInteractions.viewAchievements()">Achievements</button>
-        <button onclick="userInteractions.viewStatistics()">View Stats</button>
-        <div id="saveLoadButtons">
-          <button onclick="userInteractions.viewSettings()">Settings</button>
-          <button onclick="userInteractions.viewTown()">Town</button>
+        <div id="viewSelectBox">
+            <p><button id="heal">Heal</button></p>
+            <p><button id="viewRoutes">Routes</button></p>
+            <p><button id="viewRoster">Pokemon</button></p>
+            <p><button id="viewPokeDex">PokeDex</button></p>
         </div>
-      </div>
+        <div id="invBox">
+            Catch: <label><input type="checkbox" id="enableCatchAll"><span>All</span></label> <label><input type="checkbox" id="enableCatchNew"><span>New</span></label>
+            <p>Using:</p>
+            <input type="radio" name="name" value="pokeball" checked="true" onclick="userInteractions.changeSelectedBall('pokeball')" id="pokeball"><label for="pokeball"><span>Pokeballs: </span><span class="ball-ammount pokeball">10</span></label><br>
+            <input type="radio" name="name" value="greatball" onclick="userInteractions.changeSelectedBall('greatball')" id="greatball"><label for="greatball"><span>Greatballs: </span><span class="ball-ammount greatball">0</span></label><br>
+            <input type="radio" name="name" value="ultraball" onclick="userInteractions.changeSelectedBall('ultraball')" id="ultraball"><label for="ultraball"><span>Ultraballs: </span><span class="ball-ammount ultraball">0</span></label><br>
+            Currency: <span id="currency">¤0</span>
+        </div>
+        <div id="enemyBox">
+            <div class="pokeBox">
+                <span class="name"></span><br>
+                <img id="enemyImg" class="img" src="" alt=""><br>
+                <span class="hp"></span><br>
+                <span>hp: </span>
+                <progress class="hpBar" value="0" max="100"></progress><br>
+                <progress class="expBar" value="0" max="100"></progress>
+                <br>
+                <span class="status"></span>
+            </div>
+        </div>
+        <div id="playerBox">
+            <div class="pokeBox">
+                <span class="name"></span><br>
+                <img id="playerImg" class="img" src="" alt=""><br>
+                <span class="hp"></span><br>
+                <span>hp: </span>
+                <progress class="hpBar" value="0" max="100"></progress><br>
+                <progress class="expBar" value="0" max="100"></progress>
+                <br>
+                <span class="status"></span>
+            </div>
+        </div>
+        <div id="console">
+            <div class="console-text"></div>
+        </div>
+        <div id="navBox">
+            <button onclick="userInteractions.viewAchievements()">Achievements</button>
+            <button onclick="userInteractions.viewStatistics()">View Stats</button>
+            <button onclick="userInteractions.viewTown()">Town</button>
+            <p>
+                <button onclick="userInteractions.viewSettings()">Settings</button>
+            </p>
+        </div>
     </div>
 
     <div id="saveDialogContainer" class="modalContainer" style="display: none">
-      <div id="saveDialog" class="modalDialog">
-        <div>
-          <button id="copySaveText" onclick="userInteractions.copySaveText()" style="display: none">Copy to clipboard</button>
-          <h3 id="saveDialogTitle" class="modalTitle">Export your save</h3>
+        <div id="saveDialog" class="modalDialog">
+            <div>
+                <button id="copySaveText" onclick="userInteractions.copySaveText()" style="display: none">Copy to clipboard</button>
+                <h3 id="saveDialogTitle" class="modalTitle">Export your save</h3>
+            </div>
+            <textarea id="saveText" placeholder="Paste the save data here"></textarea>
+            <div id="loadButtonContainer" style="display: none">
+                <button onclick="userInteractions.importSave()">Load</button>
+            </div>
         </div>
-        <textarea id="saveText" placeholder="Paste the save data here"></textarea>
-        <div id="loadButtonContainer" style="display: none">
-          <button onclick="userInteractions.importSave()">Load</button>
-        </div>
-      </div>
     </div>
 
     <div id="achievementsContainer" class="modalContainer" style="display: none">
-      <div id="achievementsDialog" class="modalDialog">
-        <div>
-          <h3 id="achievementsTitle" class="modalTitle">Achievements</h3>
+        <div id="achievementsDialog" class="modalDialog">
+            <div>
+                <h3 id="achievementsTitle" class="modalTitle">Achievements</h3>
+            </div>
+            <div>
+                <ul id="achievementsList">
+                    <li>Nothing</li>
+                </ul>
+            </div>
         </div>
-        <div>
-          <ul id="achievementsList">
-            <li>Nothing</li>
-          </ul>
-        </div>
-      </div>
     </div>
 
     <div id="statisticsContainer" class="modalContainer" style="display: none">
-      <div id="statisticsDialog" class="modalDialog">
-        <div>
-          <h3 id="statisticsTitle" class="modalTitle">Statistics</h3>
+        <div id="statisticsDialog" class="modalDialog">
+            <div>
+                <h3 id="statisticsTitle" class="modalTitle">Statistics</h3>
+            </div>
+            <div>
+                <ul id="statisticsList"></ul>
+            </div>
         </div>
-        <div>
-          <ul id="statisticsList"></ul>
-        </div>
-      </div>
     </div>
 
     <div id="settingsContainer" class="modalContainer" style="display: none">
-      <div id="settingsDialog" class="modalDialog">
-        <div>
-          <h3 id="settingsTitle" class="modalTitle">Settings</h3>
-        </div>
-        <div>
-          <h4>Visual Settings</h4>
-          <p>Choose which sprite You want to display for your pokemon:</p>
-          <p>
+        <div id="settingsDialog" class="modalDialog">
+            <div>
+                <h3 id="settingsTitle" class="modalTitle">Settings</h3>
+            </div>
+            <div>
+                <h4>Visual Settings</h4>
+                <p>Choose which sprite You want to display for your pokemon:</p>
+                <p>
             <span class="spriteChoice">
               <input type="radio" id="spriteChoiceBack" name="spriteChoice" onchange="userInteractions.changeSpriteChoice()" /><label for="spriteChoiceBack">Back</label>
               <input type="radio" id="spriteChoiceFront" name="spriteChoice" onchange="userInteractions.changeSpriteChoice()" /><label for="spriteChoiceFront">Front</label>
             </span>
-          </p>
-          <h4>Console Settings</h4>
-          <p><input type="checkbox" checked="true" id="enableConsole"><span>Enable console</span></p>
-          <p><button onclick="userInteractions.clearConsole()">Clear Console</button></p>
-          <h4>Import and Export Save</h4>
-          <p><button onclick="userInteractions.forceSave()">Force Save</button> <span id="forceSave" style="color:red">Saved!</span></p>
-          <p><button onclick="userInteractions.exportSaveDialog()">Export</button></p>
-          <p><button onclick="userInteractions.importSaveDialog()">Import</button></p>
-          <h4>Clear Game Data</h4>
-          <p style="color:red;font-weight:bold">Warning! This cannot be undone.</p>
-          <p><input type="checkbox" id="confirmClearData">
-          <a href="#" style="color: red;" onclick="userInteractions.clearGameData()">Clear game data</a></p>
+                </p>
+                <h4>Console Settings</h4>
+                <p><input type="checkbox" checked="true" id="enableConsole"><span>Enable console</span></p>
+                <p><button onclick="userInteractions.clearConsole()">Clear Console</button></p>
+                <h4>Import and Export Save</h4>
+                <p><button onclick="userInteractions.forceSave()">Force Save</button> <span id="forceSave" style="color:red">Saved!</span></p>
+                <p><button onclick="userInteractions.exportSaveDialog()">Export</button></p>
+                <p><button onclick="userInteractions.importSaveDialog()">Import</button></p>
+                <h4>Clear Game Data</h4>
+                <p style="color:red;font-weight:bold">Warning! This cannot be undone.</p>
+                <p><input type="checkbox" id="confirmClearData">
+                    <a href="#" style="color: red;" onclick="userInteractions.clearGameData()">Clear game data</a></p>
+            </div>
         </div>
-      </div>
     </div>
 
     <div id="townContainer" class="modalContainer" style="display: none">
-      <div id="townDialog" class="modalDialog">
-        <div>
-          <h3 id="townTitle" class="modalTitle">Town</h3>
+        <div id="townDialog" class="modalDialog">
+            <div>
+                <h3 id="townTitle" class="modalTitle">Town</h3>
+            </div>
+            <div id="shop">
+                <h4>Poke Shop</h4>
+                <ul>
+                    <li>Complete Pokedex</li>
+                    <li>Pokeball x 100</li>
+                    <li>Greatball x 50</li>
+                    <li>Ultraball x 10</li>
+                    <li>Razz Berry (Gives a catch rate boost)</li>
+                </ul>
+            </div>
         </div>
-        <div id="shop">
-          <h4>Poke Shop</h4>
-          <ul>
-            <li>Complete Pokedex</li>
-            <li>Pokeball x 100</li>
-            <li>Greatball x 50</li>
-            <li>Ultraball x 10</li>
-            <li>Razz Berry (Gives a catch rate boost)</li>
-          </ul>
-        </div>
-      </div>
     </div>
 
-    <span id="version">Version: </span>
-    <a id="gitLink" href="https://github.com/RichardPaulAstley/richardpaulastley.github.io" target="_blank">Github</a>
-    <a id="subLink" href="https://reddit.com/r/Pokeidle" target="_blank">Subreddit</a>
-    <a id="disLink" href="https://discord.gg/pt57KfB" target="_blank">Discord</a>
-  </div>
-
-  <!-- <script src="//cdn.jsdelivr.net/ramda/latest/ramda.min.js"></script> -->
-  <script src="src/db.js"></script>
-  <script src="src/evolutions.js"></script>
-  <script src="src/typeModifiers.js"></script>
-  <script src="src/routes.js"></script>
-  <script src="src/utilities.js"></script>
-  <script src="src/display.js"></script>
-  <script src="src/poke.js"></script>
-  <script src="src/player.js"></script>
-  <script src="src/combat.js"></script>
-  <script src="src/actions.js"></script>
-  <script src="src/main.js"></script>
-  
+    <script src="src/db.js"></script>
+    <script src="src/evolutions.js"></script>
+    <script src="src/typeModifiers.js"></script>
+    <script src="src/routes.js"></script>
+    <script src="src/utilities.js"></script>
+    <script src="src/display.js"></script>
+    <script src="src/poke.js"></script>
+    <script src="src/player.js"></script>
+    <script src="src/combat.js"></script>
+    <script src="src/actions.js"></script>
+    <script src="src/main.js"></script>
 </body>
 </html>

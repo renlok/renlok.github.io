@@ -45,9 +45,9 @@ const BALLRNG = {
     ultraball: 2
 };
 
-const gameVersionMajor = '1';
-const gameVersionMinor = '9';
-const gameVersionPatch = '4';
+const gameVersionMajor = '0';
+const gameVersionMinor = '0';
+const gameVersionPatch = '0';
 const gameVersion = gameVersionMajor + '.' + gameVersionMinor + '.' + gameVersionPatch;
 $('#version').innerHTML = 'Version ' + gameVersion;
 
@@ -96,13 +96,11 @@ if (player.settings.spriteChoice === 'front') {
 }
 
 dom.bindEvents();
-dom.renderRouteList('areasList', ROUTES[player.settings.currentRegionId]);
 dom.renderBalls(player.ballsAmount);
 dom.renderCurrency();
 
 renderView(dom, enemy, player);
-dom.renderPokeList();
-dom.renderPokeDex();
+dom.renderListBox();
 
 combatLoop.init();
 

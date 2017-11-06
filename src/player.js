@@ -17,6 +17,7 @@ let Player = {
     settings: {
         currentRegionId: 'Kanto',
         currentRouteId: 'starter',
+        listView: 'routes',
         dexView: 'all',
         dexVersion: 194, // check if users dex is out of date
         spriteChoice: 'back',
@@ -75,8 +76,7 @@ let Player = {
         } else {
             this.pokedexData.push({name: pokeName, flag: flag})
         }
-        dom.renderPokeList();
-        dom.renderPokeDex();
+        dom.renderListBox();
     },
     setActive: function(index) {
         this.activePokeID = index;
