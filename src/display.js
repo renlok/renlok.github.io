@@ -43,8 +43,10 @@ const Display = {
         this.setValue(domElements.hp, poke.lifeAsText());
         this.setProp(domElements.hpBar, 'value', poke.getHp());
         this.setProp(domElements.hpBar, 'max', poke.maxHp());
-        this.setProp(domElements.expBar, 'value', Math.floor(poke.currentExp() - poke.thisLevelExp()));
-        this.setProp(domElements.expBar, 'max', poke.nextLevelExp() - poke.thisLevelExp());
+        if (id === 'player') {
+            this.setProp(domElements.expBar, 'value', Math.floor(poke.currentExp() - poke.thisLevelExp()));
+            this.setProp(domElements.expBar, 'max', poke.nextLevelExp() - poke.thisLevelExp());
+        }
         this.setValue(domElements.status, pokeStatusAsText(poke))
     },
     renderPokeDexSort: function() {
