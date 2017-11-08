@@ -54,6 +54,12 @@ const UserActions = {
         player.settings.listView = 'roster';
         dom.renderListBox();
     },
+    enablePokeListAutoSort: function() {
+        player.settings.autoSort = $('#autoSort').checked;
+        // hide or show sort dropdowns
+        dom.renderPokeSort();
+        dom.renderListBox();
+    },
     changeDexView: function() {
         const regionSelect = document.getElementById('dexView');
         player.settings.dexView = regionSelect.options[regionSelect.selectedIndex].value;

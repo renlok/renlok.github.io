@@ -19,6 +19,7 @@ let Player = {
         currentRegionId: 'Kanto',
         currentRouteId: 'starter',
         listView: 'routes',
+        autoSort: true,
         dexView: 'all',
         dexVersion: 194, // check if users dex is out of date
         spriteChoice: 'back',

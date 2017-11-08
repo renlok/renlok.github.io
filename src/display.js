@@ -127,8 +127,18 @@ const Display = {
             return COLORS.pokemon.dead;
         }
     },
+    renderPokeSort: function() {
+        $('#autoSort').checked = player.settings.autoSort;
+        if (player.settings.autoSort) {
+            $('#pokeSortOrderSelect').style.display = 'inline';
+            $('#pokeSortDirSelect').style.display = 'inline';
+        } else {
+            $('#pokeSortOrderSelect').style.display = 'none';
+            $('#pokeSortDirSelect').style.display = 'none';
+        }
+    },
     renderPokeList: function(purge = true) {
-        if (purge) {
+        if (purge && player.settings.autoSort) {
             // if doing a list purge then reorder the pokemon
             player.sortPokemon();
         }
@@ -268,6 +278,9 @@ const Display = {
     bindEvents: function() {
         $('#enableDelete').addEventListener( 'click', () => {
             userInteractions.enablePokeListDelete();
+        });
+        $('#autoSort').addEventListener( 'click', () => {
+            userInteractions.enablePokeListAutoSort();
         });
         $('#viewRoutes').addEventListener( 'click', () => {
             userInteractions.changeListView('routes');
