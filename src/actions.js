@@ -188,13 +188,13 @@ const UserActions = {
             'shinyBeaten':'Shiny Pokemon Beaten',
             'totalDamage':'Total Damage Dealt',
             'totalThrows':'Total Catch Attempts',
-            'successfulThrows':'Successful Catches',
+            'successfulThrows':'Successfully Caught',
             'pokeballThrows':'Pokeball Throws',
-            'pokeballSuccessfulThrows':'Catches with Pokeball',
+            'pokeballSuccessfulThrows':'Caught with Pokeball',
             'greatballThrows':'Greatball Throws',
-            'greatballSuccessfulThrows':'Catches with Greatball',
+            'greatballSuccessfulThrows':'Caught with Greatball',
             'ultraballThrows':'Ultraball Throws',
-            'ultraballSuccessfulThrows':'Catches with Ultraball',
+            'ultraballSuccessfulThrows':'Caught with Ultraball',
         };
         let statList = '';
         for (let statValue in player.statistics) {
