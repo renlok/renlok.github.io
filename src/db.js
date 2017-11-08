@@ -24349,12 +24349,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/650.png",
-            "back": "sprites/back/650.png"
+            "front": "assets/sprites/650.png",
+            "back": "assets/sprites/back/650.png"
          },
          "shiny": {
-            "front": "sprites/s650.png",
-            "back": "sprites/back/s650.png"
+            "front": "assets/sprites/s650.png",
+            "back": "assets/sprites/back/s650.png"
          }
       }
    },
@@ -24386,12 +24386,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/651.png",
-            "back": "sprites/back/651.png"
+            "front": "assets/sprites/651.png",
+            "back": "assets/sprites/back/651.png"
          },
          "shiny": {
-            "front": "sprites/s651.png",
-            "back": "sprites/back/s651.png"
+            "front": "assets/sprites/s651.png",
+            "back": "assets/sprites/back/s651.png"
          }
       }
    },
@@ -24424,12 +24424,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/652.png",
-            "back": "sprites/back/652.png"
+            "front": "assets/sprites/652.png",
+            "back": "assets/sprites/back/652.png"
          },
          "shiny": {
-            "front": "sprites/s652.png",
-            "back": "sprites/back/s652.png"
+            "front": "assets/sprites/s652.png",
+            "back": "assets/sprites/back/s652.png"
          }
       }
    },
@@ -24461,12 +24461,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/653.png",
-            "back": "sprites/back/653.png"
+            "front": "assets/sprites/653.png",
+            "back": "assets/sprites/back/653.png"
          },
          "shiny": {
-            "front": "sprites/s653.png",
-            "back": "sprites/back/s653.png"
+            "front": "assets/sprites/s653.png",
+            "back": "assets/sprites/back/s653.png"
          }
       }
    },
@@ -24498,12 +24498,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/654.png",
-            "back": "sprites/back/654.png"
+            "front": "assets/sprites/654.png",
+            "back": "assets/sprites/back/654.png"
          },
          "shiny": {
-            "front": "sprites/s654.png",
-            "back": "sprites/back/s654.png"
+            "front": "assets/sprites/s654.png",
+            "back": "assets/sprites/back/s654.png"
          }
       }
    },
@@ -24536,12 +24536,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/655.png",
-            "back": "sprites/back/655.png"
+            "front": "assets/sprites/655.png",
+            "back": "assets/sprites/back/655.png"
          },
          "shiny": {
-            "front": "sprites/s655.png",
-            "back": "sprites/back/s655.png"
+            "front": "assets/sprites/s655.png",
+            "back": "assets/sprites/back/s655.png"
          }
       }
    },
@@ -24573,12 +24573,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/656.png",
-            "back": "sprites/back/656.png"
+            "front": "assets/sprites/656.png",
+            "back": "assets/sprites/back/656.png"
          },
          "shiny": {
-            "front": "sprites/s656.png",
-            "back": "sprites/back/s656.png"
+            "front": "assets/sprites/s656.png",
+            "back": "assets/sprites/back/s656.png"
          }
       }
    },
@@ -24610,12 +24610,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/657.png",
-            "back": "sprites/back/657.png"
+            "front": "assets/sprites/657.png",
+            "back": "assets/sprites/back/657.png"
          },
          "shiny": {
-            "front": "sprites/s657.png",
-            "back": "sprites/back/s657.png"
+            "front": "assets/sprites/s657.png",
+            "back": "assets/sprites/back/s657.png"
          }
       }
    },
@@ -24648,12 +24648,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/658.png",
-            "back": "sprites/back/658.png"
+            "front": "assets/sprites/658.png",
+            "back": "assets/sprites/back/658.png"
          },
          "shiny": {
-            "front": "sprites/s658.png",
-            "back": "sprites/back/s658.png"
+            "front": "assets/sprites/s658.png",
+            "back": "assets/sprites/back/s658.png"
          }
       }
    },
@@ -24685,12 +24685,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/659.png",
-            "back": "sprites/back/659.png"
+            "front": "assets/sprites/659.png",
+            "back": "assets/sprites/back/659.png"
          },
          "shiny": {
-            "front": "sprites/s659.png",
-            "back": "sprites/back/s659.png"
+            "front": "assets/sprites/s659.png",
+            "back": "assets/sprites/back/s659.png"
          }
       }
    },
@@ -24723,12 +24723,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/660.png",
-            "back": "sprites/back/660.png"
+            "front": "assets/sprites/660.png",
+            "back": "assets/sprites/back/660.png"
          },
          "shiny": {
-            "front": "sprites/s660.png",
-            "back": "sprites/back/s660.png"
+            "front": "assets/sprites/s660.png",
+            "back": "assets/sprites/back/s660.png"
          }
       }
    },
@@ -24761,12 +24761,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/661.png",
-            "back": "sprites/back/661.png"
+            "front": "assets/sprites/661.png",
+            "back": "assets/sprites/back/661.png"
          },
          "shiny": {
-            "front": "sprites/s661.png",
-            "back": "sprites/back/s661.png"
+            "front": "assets/sprites/s661.png",
+            "back": "assets/sprites/back/s661.png"
          }
       }
    },
@@ -24799,12 +24799,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/662.png",
-            "back": "sprites/back/662.png"
+            "front": "assets/sprites/662.png",
+            "back": "assets/sprites/back/662.png"
          },
          "shiny": {
-            "front": "sprites/s662.png",
-            "back": "sprites/back/s662.png"
+            "front": "assets/sprites/s662.png",
+            "back": "assets/sprites/back/s662.png"
          }
       }
    },
@@ -24837,12 +24837,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/663.png",
-            "back": "sprites/back/663.png"
+            "front": "assets/sprites/663.png",
+            "back": "assets/sprites/back/663.png"
          },
          "shiny": {
-            "front": "sprites/s663.png",
-            "back": "sprites/back/s663.png"
+            "front": "assets/sprites/s663.png",
+            "back": "assets/sprites/back/s663.png"
          }
       }
    },
@@ -24874,12 +24874,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/664.png",
-            "back": "sprites/back/664.png"
+            "front": "assets/sprites/664.png",
+            "back": "assets/sprites/back/664.png"
          },
          "shiny": {
-            "front": "sprites/s664.png",
-            "back": "sprites/back/s664.png"
+            "front": "assets/sprites/s664.png",
+            "back": "assets/sprites/back/s664.png"
          }
       }
    },
@@ -24911,12 +24911,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/665.png",
-            "back": "sprites/back/665.png"
+            "front": "assets/sprites/665.png",
+            "back": "assets/sprites/back/665.png"
          },
          "shiny": {
-            "front": "sprites/s665.png",
-            "back": "sprites/back/s665.png"
+            "front": "assets/sprites/s665.png",
+            "back": "assets/sprites/back/s665.png"
          }
       }
    },
@@ -24949,12 +24949,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/666.png",
-            "back": "sprites/back/666.png"
+            "front": "assets/sprites/666.png",
+            "back": "assets/sprites/back/666.png"
          },
          "shiny": {
-            "front": "sprites/s666.png",
-            "back": "sprites/back/s666.png"
+            "front": "assets/sprites/s666.png",
+            "back": "assets/sprites/back/s666.png"
          }
       }
    },
@@ -24987,12 +24987,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/667.png",
-            "back": "sprites/back/667.png"
+            "front": "assets/sprites/667.png",
+            "back": "assets/sprites/back/667.png"
          },
          "shiny": {
-            "front": "sprites/s667.png",
-            "back": "sprites/back/s667.png"
+            "front": "assets/sprites/s667.png",
+            "back": "assets/sprites/back/s667.png"
          }
       }
    },
@@ -25025,12 +25025,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/668.png",
-            "back": "sprites/back/668.png"
+            "front": "assets/sprites/668.png",
+            "back": "assets/sprites/back/668.png"
          },
          "shiny": {
-            "front": "sprites/s668.png",
-            "back": "sprites/back/s668.png"
+            "front": "assets/sprites/s668.png",
+            "back": "assets/sprites/back/s668.png"
          }
       }
    },
@@ -25062,12 +25062,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/669.png",
-            "back": "sprites/back/669.png"
+            "front": "assets/sprites/669.png",
+            "back": "assets/sprites/back/669.png"
          },
          "shiny": {
-            "front": "sprites/s669.png",
-            "back": "sprites/back/s669.png"
+            "front": "assets/sprites/s669.png",
+            "back": "assets/sprites/back/s669.png"
          }
       }
    },
@@ -25099,12 +25099,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/670.png",
-            "back": "sprites/back/670.png"
+            "front": "assets/sprites/670.png",
+            "back": "assets/sprites/back/670.png"
          },
          "shiny": {
-            "front": "sprites/s670.png",
-            "back": "sprites/back/s670.png"
+            "front": "assets/sprites/s670.png",
+            "back": "assets/sprites/back/s670.png"
          }
       }
    },
@@ -25136,12 +25136,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/671.png",
-            "back": "sprites/back/671.png"
+            "front": "assets/sprites/671.png",
+            "back": "assets/sprites/back/671.png"
          },
          "shiny": {
-            "front": "sprites/s671.png",
-            "back": "sprites/back/s671.png"
+            "front": "assets/sprites/s671.png",
+            "back": "assets/sprites/back/s671.png"
          }
       }
    },
@@ -25173,12 +25173,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/672.png",
-            "back": "sprites/back/672.png"
+            "front": "assets/sprites/672.png",
+            "back": "assets/sprites/back/672.png"
          },
          "shiny": {
-            "front": "sprites/s672.png",
-            "back": "sprites/back/s672.png"
+            "front": "assets/sprites/s672.png",
+            "back": "assets/sprites/back/s672.png"
          }
       }
    },
@@ -25210,12 +25210,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/673.png",
-            "back": "sprites/back/673.png"
+            "front": "assets/sprites/673.png",
+            "back": "assets/sprites/back/673.png"
          },
          "shiny": {
-            "front": "sprites/s673.png",
-            "back": "sprites/back/s673.png"
+            "front": "assets/sprites/s673.png",
+            "back": "assets/sprites/back/s673.png"
          }
       }
    },
@@ -25247,12 +25247,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/674.png",
-            "back": "sprites/back/674.png"
+            "front": "assets/sprites/674.png",
+            "back": "assets/sprites/back/674.png"
          },
          "shiny": {
-            "front": "sprites/s674.png",
-            "back": "sprites/back/s674.png"
+            "front": "assets/sprites/s674.png",
+            "back": "assets/sprites/back/s674.png"
          }
       }
    },
@@ -25285,12 +25285,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/675.png",
-            "back": "sprites/back/675.png"
+            "front": "assets/sprites/675.png",
+            "back": "assets/sprites/back/675.png"
          },
          "shiny": {
-            "front": "sprites/s675.png",
-            "back": "sprites/back/s675.png"
+            "front": "assets/sprites/s675.png",
+            "back": "assets/sprites/back/s675.png"
          }
       }
    },
@@ -25322,12 +25322,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/676.png",
-            "back": "sprites/back/676.png"
+            "front": "assets/sprites/676.png",
+            "back": "assets/sprites/back/676.png"
          },
          "shiny": {
-            "front": "sprites/s676.png",
-            "back": "sprites/back/s676.png"
+            "front": "assets/sprites/s676.png",
+            "back": "assets/sprites/back/s676.png"
          }
       }
    },
@@ -25359,12 +25359,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/677.png",
-            "back": "sprites/back/677.png"
+            "front": "assets/sprites/677.png",
+            "back": "assets/sprites/back/677.png"
          },
          "shiny": {
-            "front": "sprites/s677.png",
-            "back": "sprites/back/s677.png"
+            "front": "assets/sprites/s677.png",
+            "back": "assets/sprites/back/s677.png"
          }
       }
    },
@@ -25396,12 +25396,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/678.png",
-            "back": "sprites/back/678.png"
+            "front": "assets/sprites/678.png",
+            "back": "assets/sprites/back/678.png"
          },
          "shiny": {
-            "front": "sprites/s678.png",
-            "back": "sprites/back/s678.png"
+            "front": "assets/sprites/s678.png",
+            "back": "assets/sprites/back/s678.png"
          }
       }
    },
@@ -25434,12 +25434,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/679.png",
-            "back": "sprites/back/679.png"
+            "front": "assets/sprites/679.png",
+            "back": "assets/sprites/back/679.png"
          },
          "shiny": {
-            "front": "sprites/s679.png",
-            "back": "sprites/back/s679.png"
+            "front": "assets/sprites/s679.png",
+            "back": "assets/sprites/back/s679.png"
          }
       }
    },
@@ -25472,12 +25472,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/680.png",
-            "back": "sprites/back/680.png"
+            "front": "assets/sprites/680.png",
+            "back": "assets/sprites/back/680.png"
          },
          "shiny": {
-            "front": "sprites/s680.png",
-            "back": "sprites/back/s680.png"
+            "front": "assets/sprites/s680.png",
+            "back": "assets/sprites/back/s680.png"
          }
       }
    },
@@ -25510,12 +25510,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/681.png",
-            "back": "sprites/back/681.png"
+            "front": "assets/sprites/681.png",
+            "back": "assets/sprites/back/681.png"
          },
          "shiny": {
-            "front": "sprites/s681.png",
-            "back": "sprites/back/s681.png"
+            "front": "assets/sprites/s681.png",
+            "back": "assets/sprites/back/s681.png"
          }
       }
    },
@@ -25547,12 +25547,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/682.png",
-            "back": "sprites/back/682.png"
+            "front": "assets/sprites/682.png",
+            "back": "assets/sprites/back/682.png"
          },
          "shiny": {
-            "front": "sprites/s682.png",
-            "back": "sprites/back/s682.png"
+            "front": "assets/sprites/s682.png",
+            "back": "assets/sprites/back/s682.png"
          }
       }
    },
@@ -25584,12 +25584,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/683.png",
-            "back": "sprites/back/683.png"
+            "front": "assets/sprites/683.png",
+            "back": "assets/sprites/back/683.png"
          },
          "shiny": {
-            "front": "sprites/s683.png",
-            "back": "sprites/back/s683.png"
+            "front": "assets/sprites/s683.png",
+            "back": "assets/sprites/back/s683.png"
          }
       }
    },
@@ -25621,12 +25621,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/684.png",
-            "back": "sprites/back/684.png"
+            "front": "assets/sprites/684.png",
+            "back": "assets/sprites/back/684.png"
          },
          "shiny": {
-            "front": "sprites/s684.png",
-            "back": "sprites/back/s684.png"
+            "front": "assets/sprites/s684.png",
+            "back": "assets/sprites/back/s684.png"
          }
       }
    },
@@ -25658,12 +25658,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/685.png",
-            "back": "sprites/back/685.png"
+            "front": "assets/sprites/685.png",
+            "back": "assets/sprites/back/685.png"
          },
          "shiny": {
-            "front": "sprites/s685.png",
-            "back": "sprites/back/s685.png"
+            "front": "assets/sprites/s685.png",
+            "back": "assets/sprites/back/s685.png"
          }
       }
    },
@@ -25696,12 +25696,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/686.png",
-            "back": "sprites/back/686.png"
+            "front": "assets/sprites/686.png",
+            "back": "assets/sprites/back/686.png"
          },
          "shiny": {
-            "front": "sprites/s686.png",
-            "back": "sprites/back/s686.png"
+            "front": "assets/sprites/s686.png",
+            "back": "assets/sprites/back/s686.png"
          }
       }
    },
@@ -25734,12 +25734,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/687.png",
-            "back": "sprites/back/687.png"
+            "front": "assets/sprites/687.png",
+            "back": "assets/sprites/back/687.png"
          },
          "shiny": {
-            "front": "sprites/s687.png",
-            "back": "sprites/back/s687.png"
+            "front": "assets/sprites/s687.png",
+            "back": "assets/sprites/back/s687.png"
          }
       }
    },
@@ -25772,12 +25772,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/688.png",
-            "back": "sprites/back/688.png"
+            "front": "assets/sprites/688.png",
+            "back": "assets/sprites/back/688.png"
          },
          "shiny": {
-            "front": "sprites/s688.png",
-            "back": "sprites/back/s688.png"
+            "front": "assets/sprites/s688.png",
+            "back": "assets/sprites/back/s688.png"
          }
       }
    },
@@ -25810,12 +25810,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/689.png",
-            "back": "sprites/back/689.png"
+            "front": "assets/sprites/689.png",
+            "back": "assets/sprites/back/689.png"
          },
          "shiny": {
-            "front": "sprites/s689.png",
-            "back": "sprites/back/s689.png"
+            "front": "assets/sprites/s689.png",
+            "back": "assets/sprites/back/s689.png"
          }
       }
    },
@@ -25848,12 +25848,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/690.png",
-            "back": "sprites/back/690.png"
+            "front": "assets/sprites/690.png",
+            "back": "assets/sprites/back/690.png"
          },
          "shiny": {
-            "front": "sprites/s690.png",
-            "back": "sprites/back/s690.png"
+            "front": "assets/sprites/s690.png",
+            "back": "assets/sprites/back/s690.png"
          }
       }
    },
@@ -25886,12 +25886,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/691.png",
-            "back": "sprites/back/691.png"
+            "front": "assets/sprites/691.png",
+            "back": "assets/sprites/back/691.png"
          },
          "shiny": {
-            "front": "sprites/s691.png",
-            "back": "sprites/back/s691.png"
+            "front": "assets/sprites/s691.png",
+            "back": "assets/sprites/back/s691.png"
          }
       }
    },
@@ -25923,12 +25923,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/692.png",
-            "back": "sprites/back/692.png"
+            "front": "assets/sprites/692.png",
+            "back": "assets/sprites/back/692.png"
          },
          "shiny": {
-            "front": "sprites/s692.png",
-            "back": "sprites/back/s692.png"
+            "front": "assets/sprites/s692.png",
+            "back": "assets/sprites/back/s692.png"
          }
       }
    },
@@ -25960,12 +25960,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/693.png",
-            "back": "sprites/back/693.png"
+            "front": "assets/sprites/693.png",
+            "back": "assets/sprites/back/693.png"
          },
          "shiny": {
-            "front": "sprites/s693.png",
-            "back": "sprites/back/s693.png"
+            "front": "assets/sprites/s693.png",
+            "back": "assets/sprites/back/s693.png"
          }
       }
    },
@@ -25998,12 +25998,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/694.png",
-            "back": "sprites/back/694.png"
+            "front": "assets/sprites/694.png",
+            "back": "assets/sprites/back/694.png"
          },
          "shiny": {
-            "front": "sprites/s694.png",
-            "back": "sprites/back/s694.png"
+            "front": "assets/sprites/s694.png",
+            "back": "assets/sprites/back/s694.png"
          }
       }
    },
@@ -26036,12 +26036,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/695.png",
-            "back": "sprites/back/695.png"
+            "front": "assets/sprites/695.png",
+            "back": "assets/sprites/back/695.png"
          },
          "shiny": {
-            "front": "sprites/s695.png",
-            "back": "sprites/back/s695.png"
+            "front": "assets/sprites/s695.png",
+            "back": "assets/sprites/back/s695.png"
          }
       }
    },
@@ -26074,12 +26074,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/696.png",
-            "back": "sprites/back/696.png"
+            "front": "assets/sprites/696.png",
+            "back": "assets/sprites/back/696.png"
          },
          "shiny": {
-            "front": "sprites/s696.png",
-            "back": "sprites/back/s696.png"
+            "front": "assets/sprites/s696.png",
+            "back": "assets/sprites/back/s696.png"
          }
       }
    },
@@ -26112,12 +26112,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/697.png",
-            "back": "sprites/back/697.png"
+            "front": "assets/sprites/697.png",
+            "back": "assets/sprites/back/697.png"
          },
          "shiny": {
-            "front": "sprites/s697.png",
-            "back": "sprites/back/s697.png"
+            "front": "assets/sprites/s697.png",
+            "back": "assets/sprites/back/s697.png"
          }
       }
    },
@@ -26150,12 +26150,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/698.png",
-            "back": "sprites/back/698.png"
+            "front": "assets/sprites/698.png",
+            "back": "assets/sprites/back/698.png"
          },
          "shiny": {
-            "front": "sprites/s698.png",
-            "back": "sprites/back/s698.png"
+            "front": "assets/sprites/s698.png",
+            "back": "assets/sprites/back/s698.png"
          }
       }
    },
@@ -26188,12 +26188,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/699.png",
-            "back": "sprites/back/699.png"
+            "front": "assets/sprites/699.png",
+            "back": "assets/sprites/back/699.png"
          },
          "shiny": {
-            "front": "sprites/s699.png",
-            "back": "sprites/back/s699.png"
+            "front": "assets/sprites/s699.png",
+            "back": "assets/sprites/back/s699.png"
          }
       }
    },
@@ -26225,12 +26225,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/700.png",
-            "back": "sprites/back/700.png"
+            "front": "assets/sprites/700.png",
+            "back": "assets/sprites/back/700.png"
          },
          "shiny": {
-            "front": "sprites/s700.png",
-            "back": "sprites/back/s700.png"
+            "front": "assets/sprites/s700.png",
+            "back": "assets/sprites/back/s700.png"
          }
       }
    },
@@ -26263,12 +26263,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/701.png",
-            "back": "sprites/back/701.png"
+            "front": "assets/sprites/701.png",
+            "back": "assets/sprites/back/701.png"
          },
          "shiny": {
-            "front": "sprites/s701.png",
-            "back": "sprites/back/s701.png"
+            "front": "assets/sprites/s701.png",
+            "back": "assets/sprites/back/s701.png"
          }
       }
    },
@@ -26301,12 +26301,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/702.png",
-            "back": "sprites/back/702.png"
+            "front": "assets/sprites/702.png",
+            "back": "assets/sprites/back/702.png"
          },
          "shiny": {
-            "front": "sprites/s702.png",
-            "back": "sprites/back/s702.png"
+            "front": "assets/sprites/s702.png",
+            "back": "assets/sprites/back/s702.png"
          }
       }
    },
@@ -26339,12 +26339,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/703.png",
-            "back": "sprites/back/703.png"
+            "front": "assets/sprites/703.png",
+            "back": "assets/sprites/back/703.png"
          },
          "shiny": {
-            "front": "sprites/s703.png",
-            "back": "sprites/back/s703.png"
+            "front": "assets/sprites/s703.png",
+            "back": "assets/sprites/back/s703.png"
          }
       }
    },
@@ -26376,12 +26376,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/704.png",
-            "back": "sprites/back/704.png"
+            "front": "assets/sprites/704.png",
+            "back": "assets/sprites/back/704.png"
          },
          "shiny": {
-            "front": "sprites/s704.png",
-            "back": "sprites/back/s704.png"
+            "front": "assets/sprites/s704.png",
+            "back": "assets/sprites/back/s704.png"
          }
       }
    },
@@ -26413,12 +26413,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/705.png",
-            "back": "sprites/back/705.png"
+            "front": "assets/sprites/705.png",
+            "back": "assets/sprites/back/705.png"
          },
          "shiny": {
-            "front": "sprites/s705.png",
-            "back": "sprites/back/s705.png"
+            "front": "assets/sprites/s705.png",
+            "back": "assets/sprites/back/s705.png"
          }
       }
    },
@@ -26450,12 +26450,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/706.png",
-            "back": "sprites/back/706.png"
+            "front": "assets/sprites/706.png",
+            "back": "assets/sprites/back/706.png"
          },
          "shiny": {
-            "front": "sprites/s706.png",
-            "back": "sprites/back/s706.png"
+            "front": "assets/sprites/s706.png",
+            "back": "assets/sprites/back/s706.png"
          }
       }
    },
@@ -26488,12 +26488,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/707.png",
-            "back": "sprites/back/707.png"
+            "front": "assets/sprites/707.png",
+            "back": "assets/sprites/back/707.png"
          },
          "shiny": {
-            "front": "sprites/s707.png",
-            "back": "sprites/back/s707.png"
+            "front": "assets/sprites/s707.png",
+            "back": "assets/sprites/back/s707.png"
          }
       }
    },
@@ -26526,12 +26526,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/708.png",
-            "back": "sprites/back/708.png"
+            "front": "assets/sprites/708.png",
+            "back": "assets/sprites/back/708.png"
          },
          "shiny": {
-            "front": "sprites/s708.png",
-            "back": "sprites/back/s708.png"
+            "front": "assets/sprites/s708.png",
+            "back": "assets/sprites/back/s708.png"
          }
       }
    },
@@ -26564,12 +26564,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/709.png",
-            "back": "sprites/back/709.png"
+            "front": "assets/sprites/709.png",
+            "back": "assets/sprites/back/709.png"
          },
          "shiny": {
-            "front": "sprites/s709.png",
-            "back": "sprites/back/s709.png"
+            "front": "assets/sprites/s709.png",
+            "back": "assets/sprites/back/s709.png"
          }
       }
    },
@@ -26602,12 +26602,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/710.png",
-            "back": "sprites/back/710.png"
+            "front": "assets/sprites/710.png",
+            "back": "assets/sprites/back/710.png"
          },
          "shiny": {
-            "front": "sprites/s710.png",
-            "back": "sprites/back/s710.png"
+            "front": "assets/sprites/s710.png",
+            "back": "assets/sprites/back/s710.png"
          }
       }
    },
@@ -26640,12 +26640,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/711.png",
-            "back": "sprites/back/711.png"
+            "front": "assets/sprites/711.png",
+            "back": "assets/sprites/back/711.png"
          },
          "shiny": {
-            "front": "sprites/s711.png",
-            "back": "sprites/back/s711.png"
+            "front": "assets/sprites/s711.png",
+            "back": "assets/sprites/back/s711.png"
          }
       }
    },
@@ -26677,12 +26677,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/712.png",
-            "back": "sprites/back/712.png"
+            "front": "assets/sprites/712.png",
+            "back": "assets/sprites/back/712.png"
          },
          "shiny": {
-            "front": "sprites/s712.png",
-            "back": "sprites/back/s712.png"
+            "front": "assets/sprites/s712.png",
+            "back": "assets/sprites/back/s712.png"
          }
       }
    },
@@ -26714,12 +26714,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/713.png",
-            "back": "sprites/back/713.png"
+            "front": "assets/sprites/713.png",
+            "back": "assets/sprites/back/713.png"
          },
          "shiny": {
-            "front": "sprites/s713.png",
-            "back": "sprites/back/s713.png"
+            "front": "assets/sprites/s713.png",
+            "back": "assets/sprites/back/s713.png"
          }
       }
    },
@@ -26752,12 +26752,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/714.png",
-            "back": "sprites/back/714.png"
+            "front": "assets/sprites/714.png",
+            "back": "assets/sprites/back/714.png"
          },
          "shiny": {
-            "front": "sprites/s714.png",
-            "back": "sprites/back/s714.png"
+            "front": "assets/sprites/s714.png",
+            "back": "assets/sprites/back/s714.png"
          }
       }
    },
@@ -26790,12 +26790,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/715.png",
-            "back": "sprites/back/715.png"
+            "front": "assets/sprites/715.png",
+            "back": "assets/sprites/back/715.png"
          },
          "shiny": {
-            "front": "sprites/s715.png",
-            "back": "sprites/back/s715.png"
+            "front": "assets/sprites/s715.png",
+            "back": "assets/sprites/back/s715.png"
          }
       }
    },
@@ -26827,12 +26827,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/716.png",
-            "back": "sprites/back/716.png"
+            "front": "assets/sprites/716.png",
+            "back": "assets/sprites/back/716.png"
          },
          "shiny": {
-            "front": "sprites/s716.png",
-            "back": "sprites/back/s716.png"
+            "front": "assets/sprites/s716.png",
+            "back": "assets/sprites/back/s716.png"
          }
       }
    },
@@ -26865,12 +26865,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/717.png",
-            "back": "sprites/back/717.png"
+            "front": "assets/sprites/717.png",
+            "back": "assets/sprites/back/717.png"
          },
          "shiny": {
-            "front": "sprites/s717.png",
-            "back": "sprites/back/s717.png"
+            "front": "assets/sprites/s717.png",
+            "back": "assets/sprites/back/s717.png"
          }
       }
    },
@@ -26903,12 +26903,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/718.png",
-            "back": "sprites/back/718.png"
+            "front": "assets/sprites/718.png",
+            "back": "assets/sprites/back/718.png"
          },
          "shiny": {
-            "front": "sprites/s718.png",
-            "back": "sprites/back/s718.png"
+            "front": "assets/sprites/s718.png",
+            "back": "assets/sprites/back/s718.png"
          }
       }
    },
@@ -26941,12 +26941,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/719.png",
-            "back": "sprites/back/719.png"
+            "front": "assets/sprites/719.png",
+            "back": "assets/sprites/back/719.png"
          },
          "shiny": {
-            "front": "sprites/s719.png",
-            "back": "sprites/back/s719.png"
+            "front": "assets/sprites/s719.png",
+            "back": "assets/sprites/back/s719.png"
          }
       }
    },
@@ -26979,12 +26979,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/720.png",
-            "back": "sprites/back/720.png"
+            "front": "assets/sprites/720.png",
+            "back": "assets/sprites/back/720.png"
          },
          "shiny": {
-            "front": "sprites/s720.png",
-            "back": "sprites/back/s720.png"
+            "front": "assets/sprites/s720.png",
+            "back": "assets/sprites/back/s720.png"
          }
       }
    },
@@ -27017,12 +27017,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/721.png",
-            "back": "sprites/back/721.png"
+            "front": "assets/sprites/721.png",
+            "back": "assets/sprites/back/721.png"
          },
          "shiny": {
-            "front": "sprites/s721.png",
-            "back": "sprites/back/s721.png"
+            "front": "assets/sprites/s721.png",
+            "back": "assets/sprites/back/s721.png"
          }
       }
    },
@@ -27055,12 +27055,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/722.png",
-            "back": "sprites/back/722.png"
+            "front": "assets/sprites/722.png",
+            "back": "assets/sprites/back/722.png"
          },
          "shiny": {
-            "front": "sprites/s722.png",
-            "back": "sprites/back/s722.png"
+            "front": "assets/sprites/s722.png",
+            "back": "assets/sprites/back/s722.png"
          }
       }
    },
@@ -27093,12 +27093,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/723.png",
-            "back": "sprites/back/723.png"
+            "front": "assets/sprites/723.png",
+            "back": "assets/sprites/back/723.png"
          },
          "shiny": {
-            "front": "sprites/s723.png",
-            "back": "sprites/back/s723.png"
+            "front": "assets/sprites/s723.png",
+            "back": "assets/sprites/back/s723.png"
          }
       }
    },
@@ -27131,12 +27131,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/724.png",
-            "back": "sprites/back/724.png"
+            "front": "assets/sprites/724.png",
+            "back": "assets/sprites/back/724.png"
          },
          "shiny": {
-            "front": "sprites/s724.png",
-            "back": "sprites/back/s724.png"
+            "front": "assets/sprites/s724.png",
+            "back": "assets/sprites/back/s724.png"
          }
       }
    },
@@ -27168,12 +27168,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/725.png",
-            "back": "sprites/back/725.png"
+            "front": "assets/sprites/725.png",
+            "back": "assets/sprites/back/725.png"
          },
          "shiny": {
-            "front": "sprites/s725.png",
-            "back": "sprites/back/s725.png"
+            "front": "assets/sprites/s725.png",
+            "back": "assets/sprites/back/s725.png"
          }
       }
    },
@@ -27205,12 +27205,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/726.png",
-            "back": "sprites/back/726.png"
+            "front": "assets/sprites/726.png",
+            "back": "assets/sprites/back/726.png"
          },
          "shiny": {
-            "front": "sprites/s726.png",
-            "back": "sprites/back/s726.png"
+            "front": "assets/sprites/s726.png",
+            "back": "assets/sprites/back/s726.png"
          }
       }
    },
@@ -27243,12 +27243,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/727.png",
-            "back": "sprites/back/727.png"
+            "front": "assets/sprites/727.png",
+            "back": "assets/sprites/back/727.png"
          },
          "shiny": {
-            "front": "sprites/s727.png",
-            "back": "sprites/back/s727.png"
+            "front": "assets/sprites/s727.png",
+            "back": "assets/sprites/back/s727.png"
          }
       }
    },
@@ -27280,12 +27280,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/728.png",
-            "back": "sprites/back/728.png"
+            "front": "assets/sprites/728.png",
+            "back": "assets/sprites/back/728.png"
          },
          "shiny": {
-            "front": "sprites/s728.png",
-            "back": "sprites/back/s728.png"
+            "front": "assets/sprites/s728.png",
+            "back": "assets/sprites/back/s728.png"
          }
       }
    },
@@ -27317,12 +27317,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/729.png",
-            "back": "sprites/back/729.png"
+            "front": "assets/sprites/729.png",
+            "back": "assets/sprites/back/729.png"
          },
          "shiny": {
-            "front": "sprites/s729.png",
-            "back": "sprites/back/s729.png"
+            "front": "assets/sprites/s729.png",
+            "back": "assets/sprites/back/s729.png"
          }
       }
    },
@@ -27355,12 +27355,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/730.png",
-            "back": "sprites/back/730.png"
+            "front": "assets/sprites/730.png",
+            "back": "assets/sprites/back/730.png"
          },
          "shiny": {
-            "front": "sprites/s730.png",
-            "back": "sprites/back/s730.png"
+            "front": "assets/sprites/s730.png",
+            "back": "assets/sprites/back/s730.png"
          }
       }
    },
@@ -27393,12 +27393,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/731.png",
-            "back": "sprites/back/731.png"
+            "front": "assets/sprites/731.png",
+            "back": "assets/sprites/back/731.png"
          },
          "shiny": {
-            "front": "sprites/s731.png",
-            "back": "sprites/back/s731.png"
+            "front": "assets/sprites/s731.png",
+            "back": "assets/sprites/back/s731.png"
          }
       }
    },
@@ -27431,12 +27431,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/732.png",
-            "back": "sprites/back/732.png"
+            "front": "assets/sprites/732.png",
+            "back": "assets/sprites/back/732.png"
          },
          "shiny": {
-            "front": "sprites/s732.png",
-            "back": "sprites/back/s732.png"
+            "front": "assets/sprites/s732.png",
+            "back": "assets/sprites/back/s732.png"
          }
       }
    },
@@ -27469,12 +27469,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/733.png",
-            "back": "sprites/back/733.png"
+            "front": "assets/sprites/733.png",
+            "back": "assets/sprites/back/733.png"
          },
          "shiny": {
-            "front": "sprites/s733.png",
-            "back": "sprites/back/s733.png"
+            "front": "assets/sprites/s733.png",
+            "back": "assets/sprites/back/s733.png"
          }
       }
    },
@@ -27506,12 +27506,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/734.png",
-            "back": "sprites/back/734.png"
+            "front": "assets/sprites/734.png",
+            "back": "assets/sprites/back/734.png"
          },
          "shiny": {
-            "front": "sprites/s734.png",
-            "back": "sprites/back/s734.png"
+            "front": "assets/sprites/s734.png",
+            "back": "assets/sprites/back/s734.png"
          }
       }
    },
@@ -27543,12 +27543,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/735.png",
-            "back": "sprites/back/735.png"
+            "front": "assets/sprites/735.png",
+            "back": "assets/sprites/back/735.png"
          },
          "shiny": {
-            "front": "sprites/s735.png",
-            "back": "sprites/back/s735.png"
+            "front": "assets/sprites/s735.png",
+            "back": "assets/sprites/back/s735.png"
          }
       }
    },
@@ -27580,12 +27580,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/736.png",
-            "back": "sprites/back/736.png"
+            "front": "assets/sprites/736.png",
+            "back": "assets/sprites/back/736.png"
          },
          "shiny": {
-            "front": "sprites/s736.png",
-            "back": "sprites/back/s736.png"
+            "front": "assets/sprites/s736.png",
+            "back": "assets/sprites/back/s736.png"
          }
       }
    },
@@ -27618,12 +27618,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/737.png",
-            "back": "sprites/back/737.png"
+            "front": "assets/sprites/737.png",
+            "back": "assets/sprites/back/737.png"
          },
          "shiny": {
-            "front": "sprites/s737.png",
-            "back": "sprites/back/s737.png"
+            "front": "assets/sprites/s737.png",
+            "back": "assets/sprites/back/s737.png"
          }
       }
    },
@@ -27656,12 +27656,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/738.png",
-            "back": "sprites/back/738.png"
+            "front": "assets/sprites/738.png",
+            "back": "assets/sprites/back/738.png"
          },
          "shiny": {
-            "front": "sprites/s738.png",
-            "back": "sprites/back/s738.png"
+            "front": "assets/sprites/s738.png",
+            "back": "assets/sprites/back/s738.png"
          }
       }
    },
@@ -27693,12 +27693,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/739.png",
-            "back": "sprites/back/739.png"
+            "front": "assets/sprites/739.png",
+            "back": "assets/sprites/back/739.png"
          },
          "shiny": {
-            "front": "sprites/s739.png",
-            "back": "sprites/back/s739.png"
+            "front": "assets/sprites/s739.png",
+            "back": "assets/sprites/back/s739.png"
          }
       }
    },
@@ -27731,12 +27731,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/740.png",
-            "back": "sprites/back/740.png"
+            "front": "assets/sprites/740.png",
+            "back": "assets/sprites/back/740.png"
          },
          "shiny": {
-            "front": "sprites/s740.png",
-            "back": "sprites/back/s740.png"
+            "front": "assets/sprites/s740.png",
+            "back": "assets/sprites/back/s740.png"
          }
       }
    },
@@ -27769,12 +27769,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/741.png",
-            "back": "sprites/back/741.png"
+            "front": "assets/sprites/741.png",
+            "back": "assets/sprites/back/741.png"
          },
          "shiny": {
-            "front": "sprites/s741.png",
-            "back": "sprites/back/s741.png"
+            "front": "assets/sprites/s741.png",
+            "back": "assets/sprites/back/s741.png"
          }
       }
    },
@@ -27807,12 +27807,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/742.png",
-            "back": "sprites/back/742.png"
+            "front": "assets/sprites/742.png",
+            "back": "assets/sprites/back/742.png"
          },
          "shiny": {
-            "front": "sprites/s742.png",
-            "back": "sprites/back/s742.png"
+            "front": "assets/sprites/s742.png",
+            "back": "assets/sprites/back/s742.png"
          }
       }
    },
@@ -27845,12 +27845,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/743.png",
-            "back": "sprites/back/743.png"
+            "front": "assets/sprites/743.png",
+            "back": "assets/sprites/back/743.png"
          },
          "shiny": {
-            "front": "sprites/s743.png",
-            "back": "sprites/back/s743.png"
+            "front": "assets/sprites/s743.png",
+            "back": "assets/sprites/back/s743.png"
          }
       }
    },
@@ -27882,12 +27882,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/744.png",
-            "back": "sprites/back/744.png"
+            "front": "assets/sprites/744.png",
+            "back": "assets/sprites/back/744.png"
          },
          "shiny": {
-            "front": "sprites/s744.png",
-            "back": "sprites/back/s744.png"
+            "front": "assets/sprites/s744.png",
+            "back": "assets/sprites/back/s744.png"
          }
       }
    },
@@ -27919,12 +27919,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/745.png",
-            "back": "sprites/back/745.png"
+            "front": "assets/sprites/745.png",
+            "back": "assets/sprites/back/745.png"
          },
          "shiny": {
-            "front": "sprites/s745.png",
-            "back": "sprites/back/s745.png"
+            "front": "assets/sprites/s745.png",
+            "back": "assets/sprites/back/s745.png"
          }
       }
    },
@@ -27956,12 +27956,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/746.png",
-            "back": "sprites/back/746.png"
+            "front": "assets/sprites/746.png",
+            "back": "assets/sprites/back/746.png"
          },
          "shiny": {
-            "front": "sprites/s746.png",
-            "back": "sprites/back/s746.png"
+            "front": "assets/sprites/s746.png",
+            "back": "assets/sprites/back/s746.png"
          }
       }
    },
@@ -27994,12 +27994,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/747.png",
-            "back": "sprites/back/747.png"
+            "front": "assets/sprites/747.png",
+            "back": "assets/sprites/back/747.png"
          },
          "shiny": {
-            "front": "sprites/s747.png",
-            "back": "sprites/back/s747.png"
+            "front": "assets/sprites/s747.png",
+            "back": "assets/sprites/back/s747.png"
          }
       }
    },
@@ -28032,12 +28032,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/748.png",
-            "back": "sprites/back/748.png"
+            "front": "assets/sprites/748.png",
+            "back": "assets/sprites/back/748.png"
          },
          "shiny": {
-            "front": "sprites/s748.png",
-            "back": "sprites/back/s748.png"
+            "front": "assets/sprites/s748.png",
+            "back": "assets/sprites/back/s748.png"
          }
       }
    },
@@ -28069,12 +28069,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/749.png",
-            "back": "sprites/back/749.png"
+            "front": "assets/sprites/749.png",
+            "back": "assets/sprites/back/749.png"
          },
          "shiny": {
-            "front": "sprites/s749.png",
-            "back": "sprites/back/s749.png"
+            "front": "assets/sprites/s749.png",
+            "back": "assets/sprites/back/s749.png"
          }
       }
    },
@@ -28106,12 +28106,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/750.png",
-            "back": "sprites/back/750.png"
+            "front": "assets/sprites/750.png",
+            "back": "assets/sprites/back/750.png"
          },
          "shiny": {
-            "front": "sprites/s750.png",
-            "back": "sprites/back/s750.png"
+            "front": "assets/sprites/s750.png",
+            "back": "assets/sprites/back/s750.png"
          }
       }
    },
@@ -28144,12 +28144,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/751.png",
-            "back": "sprites/back/751.png"
+            "front": "assets/sprites/751.png",
+            "back": "assets/sprites/back/751.png"
          },
          "shiny": {
-            "front": "sprites/s751.png",
-            "back": "sprites/back/s751.png"
+            "front": "assets/sprites/s751.png",
+            "back": "assets/sprites/back/s751.png"
          }
       }
    },
@@ -28182,12 +28182,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/752.png",
-            "back": "sprites/back/752.png"
+            "front": "assets/sprites/752.png",
+            "back": "assets/sprites/back/752.png"
          },
          "shiny": {
-            "front": "sprites/s752.png",
-            "back": "sprites/back/s752.png"
+            "front": "assets/sprites/s752.png",
+            "back": "assets/sprites/back/s752.png"
          }
       }
    },
@@ -28219,12 +28219,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/753.png",
-            "back": "sprites/back/753.png"
+            "front": "assets/sprites/753.png",
+            "back": "assets/sprites/back/753.png"
          },
          "shiny": {
-            "front": "sprites/s753.png",
-            "back": "sprites/back/s753.png"
+            "front": "assets/sprites/s753.png",
+            "back": "assets/sprites/back/s753.png"
          }
       }
    },
@@ -28256,12 +28256,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/754.png",
-            "back": "sprites/back/754.png"
+            "front": "assets/sprites/754.png",
+            "back": "assets/sprites/back/754.png"
          },
          "shiny": {
-            "front": "sprites/s754.png",
-            "back": "sprites/back/s754.png"
+            "front": "assets/sprites/s754.png",
+            "back": "assets/sprites/back/s754.png"
          }
       }
    },
@@ -28294,12 +28294,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/755.png",
-            "back": "sprites/back/755.png"
+            "front": "assets/sprites/755.png",
+            "back": "assets/sprites/back/755.png"
          },
          "shiny": {
-            "front": "sprites/s755.png",
-            "back": "sprites/back/s755.png"
+            "front": "assets/sprites/s755.png",
+            "back": "assets/sprites/back/s755.png"
          }
       }
    },
@@ -28332,12 +28332,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/756.png",
-            "back": "sprites/back/756.png"
+            "front": "assets/sprites/756.png",
+            "back": "assets/sprites/back/756.png"
          },
          "shiny": {
-            "front": "sprites/s756.png",
-            "back": "sprites/back/s756.png"
+            "front": "assets/sprites/s756.png",
+            "back": "assets/sprites/back/s756.png"
          }
       }
    },
@@ -28370,12 +28370,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/757.png",
-            "back": "sprites/back/757.png"
+            "front": "assets/sprites/757.png",
+            "back": "assets/sprites/back/757.png"
          },
          "shiny": {
-            "front": "sprites/s757.png",
-            "back": "sprites/back/s757.png"
+            "front": "assets/sprites/s757.png",
+            "back": "assets/sprites/back/s757.png"
          }
       }
    },
@@ -28408,12 +28408,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/758.png",
-            "back": "sprites/back/758.png"
+            "front": "assets/sprites/758.png",
+            "back": "assets/sprites/back/758.png"
          },
          "shiny": {
-            "front": "sprites/s758.png",
-            "back": "sprites/back/s758.png"
+            "front": "assets/sprites/s758.png",
+            "back": "assets/sprites/back/s758.png"
          }
       }
    },
@@ -28446,12 +28446,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/759.png",
-            "back": "sprites/back/759.png"
+            "front": "assets/sprites/759.png",
+            "back": "assets/sprites/back/759.png"
          },
          "shiny": {
-            "front": "sprites/s759.png",
-            "back": "sprites/back/s759.png"
+            "front": "assets/sprites/s759.png",
+            "back": "assets/sprites/back/s759.png"
          }
       }
    },
@@ -28484,12 +28484,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/760.png",
-            "back": "sprites/back/760.png"
+            "front": "assets/sprites/760.png",
+            "back": "assets/sprites/back/760.png"
          },
          "shiny": {
-            "front": "sprites/s760.png",
-            "back": "sprites/back/s760.png"
+            "front": "assets/sprites/s760.png",
+            "back": "assets/sprites/back/s760.png"
          }
       }
    },
@@ -28521,12 +28521,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/761.png",
-            "back": "sprites/back/761.png"
+            "front": "assets/sprites/761.png",
+            "back": "assets/sprites/back/761.png"
          },
          "shiny": {
-            "front": "sprites/s761.png",
-            "back": "sprites/back/s761.png"
+            "front": "assets/sprites/s761.png",
+            "back": "assets/sprites/back/s761.png"
          }
       }
    },
@@ -28558,12 +28558,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/762.png",
-            "back": "sprites/back/762.png"
+            "front": "assets/sprites/762.png",
+            "back": "assets/sprites/back/762.png"
          },
          "shiny": {
-            "front": "sprites/s762.png",
-            "back": "sprites/back/s762.png"
+            "front": "assets/sprites/s762.png",
+            "back": "assets/sprites/back/s762.png"
          }
       }
    },
@@ -28595,12 +28595,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/763.png",
-            "back": "sprites/back/763.png"
+            "front": "assets/sprites/763.png",
+            "back": "assets/sprites/back/763.png"
          },
          "shiny": {
-            "front": "sprites/s763.png",
-            "back": "sprites/back/s763.png"
+            "front": "assets/sprites/s763.png",
+            "back": "assets/sprites/back/s763.png"
          }
       }
    },
@@ -28632,12 +28632,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/764.png",
-            "back": "sprites/back/764.png"
+            "front": "assets/sprites/764.png",
+            "back": "assets/sprites/back/764.png"
          },
          "shiny": {
-            "front": "sprites/s764.png",
-            "back": "sprites/back/s764.png"
+            "front": "assets/sprites/s764.png",
+            "back": "assets/sprites/back/s764.png"
          }
       }
    },
@@ -28670,12 +28670,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/765.png",
-            "back": "sprites/back/765.png"
+            "front": "assets/sprites/765.png",
+            "back": "assets/sprites/back/765.png"
          },
          "shiny": {
-            "front": "sprites/s765.png",
-            "back": "sprites/back/s765.png"
+            "front": "assets/sprites/s765.png",
+            "back": "assets/sprites/back/s765.png"
          }
       }
    },
@@ -28707,12 +28707,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/766.png",
-            "back": "sprites/back/766.png"
+            "front": "assets/sprites/766.png",
+            "back": "assets/sprites/back/766.png"
          },
          "shiny": {
-            "front": "sprites/s766.png",
-            "back": "sprites/back/s766.png"
+            "front": "assets/sprites/s766.png",
+            "back": "assets/sprites/back/s766.png"
          }
       }
    },
@@ -28745,12 +28745,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/767.png",
-            "back": "sprites/back/767.png"
+            "front": "assets/sprites/767.png",
+            "back": "assets/sprites/back/767.png"
          },
          "shiny": {
-            "front": "sprites/s767.png",
-            "back": "sprites/back/s767.png"
+            "front": "assets/sprites/s767.png",
+            "back": "assets/sprites/back/s767.png"
          }
       }
    },
@@ -28783,12 +28783,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/768.png",
-            "back": "sprites/back/768.png"
+            "front": "assets/sprites/768.png",
+            "back": "assets/sprites/back/768.png"
          },
          "shiny": {
-            "front": "sprites/s768.png",
-            "back": "sprites/back/s768.png"
+            "front": "assets/sprites/s768.png",
+            "back": "assets/sprites/back/s768.png"
          }
       }
    },
@@ -28821,12 +28821,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/769.png",
-            "back": "sprites/back/769.png"
+            "front": "assets/sprites/769.png",
+            "back": "assets/sprites/back/769.png"
          },
          "shiny": {
-            "front": "sprites/s769.png",
-            "back": "sprites/back/s769.png"
+            "front": "assets/sprites/s769.png",
+            "back": "assets/sprites/back/s769.png"
          }
       }
    },
@@ -28859,12 +28859,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/770.png",
-            "back": "sprites/back/770.png"
+            "front": "assets/sprites/770.png",
+            "back": "assets/sprites/back/770.png"
          },
          "shiny": {
-            "front": "sprites/s770.png",
-            "back": "sprites/back/s770.png"
+            "front": "assets/sprites/s770.png",
+            "back": "assets/sprites/back/s770.png"
          }
       }
    },
@@ -28896,12 +28896,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/771.png",
-            "back": "sprites/back/771.png"
+            "front": "assets/sprites/771.png",
+            "back": "assets/sprites/back/771.png"
          },
          "shiny": {
-            "front": "sprites/s771.png",
-            "back": "sprites/back/s771.png"
+            "front": "assets/sprites/s771.png",
+            "back": "assets/sprites/back/s771.png"
          }
       }
    },
@@ -28933,12 +28933,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/772.png",
-            "back": "sprites/back/772.png"
+            "front": "assets/sprites/772.png",
+            "back": "assets/sprites/back/772.png"
          },
          "shiny": {
-            "front": "sprites/s772.png",
-            "back": "sprites/back/s772.png"
+            "front": "assets/sprites/s772.png",
+            "back": "assets/sprites/back/s772.png"
          }
       }
    },
@@ -28970,12 +28970,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/773.png",
-            "back": "sprites/back/773.png"
+            "front": "assets/sprites/773.png",
+            "back": "assets/sprites/back/773.png"
          },
          "shiny": {
-            "front": "sprites/s773.png",
-            "back": "sprites/back/s773.png"
+            "front": "assets/sprites/s773.png",
+            "back": "assets/sprites/back/s773.png"
          }
       }
    },
@@ -29008,12 +29008,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/774.png",
-            "back": "sprites/back/774.png"
+            "front": "assets/sprites/774.png",
+            "back": "assets/sprites/back/774.png"
          },
          "shiny": {
-            "front": "sprites/s774.png",
-            "back": "sprites/back/s774.png"
+            "front": "assets/sprites/s774.png",
+            "back": "assets/sprites/back/s774.png"
          }
       }
    },
@@ -29045,12 +29045,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/775.png",
-            "back": "sprites/back/775.png"
+            "front": "assets/sprites/775.png",
+            "back": "assets/sprites/back/775.png"
          },
          "shiny": {
-            "front": "sprites/s775.png",
-            "back": "sprites/back/s775.png"
+            "front": "assets/sprites/s775.png",
+            "back": "assets/sprites/back/s775.png"
          }
       }
    },
@@ -29083,12 +29083,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/776.png",
-            "back": "sprites/back/776.png"
+            "front": "assets/sprites/776.png",
+            "back": "assets/sprites/back/776.png"
          },
          "shiny": {
-            "front": "sprites/s776.png",
-            "back": "sprites/back/s776.png"
+            "front": "assets/sprites/s776.png",
+            "back": "assets/sprites/back/s776.png"
          }
       }
    },
@@ -29121,12 +29121,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/777.png",
-            "back": "sprites/back/777.png"
+            "front": "assets/sprites/777.png",
+            "back": "assets/sprites/back/777.png"
          },
          "shiny": {
-            "front": "sprites/s777.png",
-            "back": "sprites/back/s777.png"
+            "front": "assets/sprites/s777.png",
+            "back": "assets/sprites/back/s777.png"
          }
       }
    },
@@ -29159,12 +29159,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/778.png",
-            "back": "sprites/back/778.png"
+            "front": "assets/sprites/778.png",
+            "back": "assets/sprites/back/778.png"
          },
          "shiny": {
-            "front": "sprites/s778.png",
-            "back": "sprites/back/s778.png"
+            "front": "assets/sprites/s778.png",
+            "back": "assets/sprites/back/s778.png"
          }
       }
    },
@@ -29197,12 +29197,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/779.png",
-            "back": "sprites/back/779.png"
+            "front": "assets/sprites/779.png",
+            "back": "assets/sprites/back/779.png"
          },
          "shiny": {
-            "front": "sprites/s779.png",
-            "back": "sprites/back/s779.png"
+            "front": "assets/sprites/s779.png",
+            "back": "assets/sprites/back/s779.png"
          }
       }
    },
@@ -29235,12 +29235,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/780.png",
-            "back": "sprites/back/780.png"
+            "front": "assets/sprites/780.png",
+            "back": "assets/sprites/back/780.png"
          },
          "shiny": {
-            "front": "sprites/s780.png",
-            "back": "sprites/back/s780.png"
+            "front": "assets/sprites/s780.png",
+            "back": "assets/sprites/back/s780.png"
          }
       }
    },
@@ -29273,12 +29273,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/781.png",
-            "back": "sprites/back/781.png"
+            "front": "assets/sprites/781.png",
+            "back": "assets/sprites/back/781.png"
          },
          "shiny": {
-            "front": "sprites/s781.png",
-            "back": "sprites/back/s781.png"
+            "front": "assets/sprites/s781.png",
+            "back": "assets/sprites/back/s781.png"
          }
       }
    },
@@ -29310,12 +29310,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/782.png",
-            "back": "sprites/back/782.png"
+            "front": "assets/sprites/782.png",
+            "back": "assets/sprites/back/782.png"
          },
          "shiny": {
-            "front": "sprites/s782.png",
-            "back": "sprites/back/s782.png"
+            "front": "assets/sprites/s782.png",
+            "back": "assets/sprites/back/s782.png"
          }
       }
    },
@@ -29348,12 +29348,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/783.png",
-            "back": "sprites/back/783.png"
+            "front": "assets/sprites/783.png",
+            "back": "assets/sprites/back/783.png"
          },
          "shiny": {
-            "front": "sprites/s783.png",
-            "back": "sprites/back/s783.png"
+            "front": "assets/sprites/s783.png",
+            "back": "assets/sprites/back/s783.png"
          }
       }
    },
@@ -29386,12 +29386,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/784.png",
-            "back": "sprites/back/784.png"
+            "front": "assets/sprites/784.png",
+            "back": "assets/sprites/back/784.png"
          },
          "shiny": {
-            "front": "sprites/s784.png",
-            "back": "sprites/back/s784.png"
+            "front": "assets/sprites/s784.png",
+            "back": "assets/sprites/back/s784.png"
          }
       }
    },
@@ -29424,12 +29424,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/785.png",
-            "back": "sprites/back/785.png"
+            "front": "assets/sprites/785.png",
+            "back": "assets/sprites/back/785.png"
          },
          "shiny": {
-            "front": "sprites/s785.png",
-            "back": "sprites/back/s785.png"
+            "front": "assets/sprites/s785.png",
+            "back": "assets/sprites/back/s785.png"
          }
       }
    },
@@ -29462,12 +29462,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/786.png",
-            "back": "sprites/back/786.png"
+            "front": "assets/sprites/786.png",
+            "back": "assets/sprites/back/786.png"
          },
          "shiny": {
-            "front": "sprites/s786.png",
-            "back": "sprites/back/s786.png"
+            "front": "assets/sprites/s786.png",
+            "back": "assets/sprites/back/s786.png"
          }
       }
    },
@@ -29500,12 +29500,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/787.png",
-            "back": "sprites/back/787.png"
+            "front": "assets/sprites/787.png",
+            "back": "assets/sprites/back/787.png"
          },
          "shiny": {
-            "front": "sprites/s787.png",
-            "back": "sprites/back/s787.png"
+            "front": "assets/sprites/s787.png",
+            "back": "assets/sprites/back/s787.png"
          }
       }
    },
@@ -29538,12 +29538,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/788.png",
-            "back": "sprites/back/788.png"
+            "front": "assets/sprites/788.png",
+            "back": "assets/sprites/back/788.png"
          },
          "shiny": {
-            "front": "sprites/s788.png",
-            "back": "sprites/back/s788.png"
+            "front": "assets/sprites/s788.png",
+            "back": "assets/sprites/back/s788.png"
          }
       }
    },
@@ -29575,12 +29575,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/789.png",
-            "back": "sprites/back/789.png"
+            "front": "assets/sprites/789.png",
+            "back": "assets/sprites/back/789.png"
          },
          "shiny": {
-            "front": "sprites/s789.png",
-            "back": "sprites/back/s789.png"
+            "front": "assets/sprites/s789.png",
+            "back": "assets/sprites/back/s789.png"
          }
       }
    },
@@ -29612,12 +29612,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/790.png",
-            "back": "sprites/back/790.png"
+            "front": "assets/sprites/790.png",
+            "back": "assets/sprites/back/790.png"
          },
          "shiny": {
-            "front": "sprites/s790.png",
-            "back": "sprites/back/s790.png"
+            "front": "assets/sprites/s790.png",
+            "back": "assets/sprites/back/s790.png"
          }
       }
    },
@@ -29650,12 +29650,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/791.png",
-            "back": "sprites/back/791.png"
+            "front": "assets/sprites/791.png",
+            "back": "assets/sprites/back/791.png"
          },
          "shiny": {
-            "front": "sprites/s791.png",
-            "back": "sprites/back/s791.png"
+            "front": "assets/sprites/s791.png",
+            "back": "assets/sprites/back/s791.png"
          }
       }
    },
@@ -29688,12 +29688,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/792.png",
-            "back": "sprites/back/792.png"
+            "front": "assets/sprites/792.png",
+            "back": "assets/sprites/back/792.png"
          },
          "shiny": {
-            "front": "sprites/s792.png",
-            "back": "sprites/back/s792.png"
+            "front": "assets/sprites/s792.png",
+            "back": "assets/sprites/back/s792.png"
          }
       }
    },
@@ -29726,12 +29726,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/793.png",
-            "back": "sprites/back/793.png"
+            "front": "assets/sprites/793.png",
+            "back": "assets/sprites/back/793.png"
          },
          "shiny": {
-            "front": "sprites/s793.png",
-            "back": "sprites/back/s793.png"
+            "front": "assets/sprites/s793.png",
+            "back": "assets/sprites/back/s793.png"
          }
       }
    },
@@ -29764,12 +29764,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/794.png",
-            "back": "sprites/back/794.png"
+            "front": "assets/sprites/794.png",
+            "back": "assets/sprites/back/794.png"
          },
          "shiny": {
-            "front": "sprites/s794.png",
-            "back": "sprites/back/s794.png"
+            "front": "assets/sprites/s794.png",
+            "back": "assets/sprites/back/s794.png"
          }
       }
    },
@@ -29802,12 +29802,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/795.png",
-            "back": "sprites/back/795.png"
+            "front": "assets/sprites/795.png",
+            "back": "assets/sprites/back/795.png"
          },
          "shiny": {
-            "front": "sprites/s795.png",
-            "back": "sprites/back/s795.png"
+            "front": "assets/sprites/s795.png",
+            "back": "assets/sprites/back/s795.png"
          }
       }
    },
@@ -29839,12 +29839,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/796.png",
-            "back": "sprites/back/796.png"
+            "front": "assets/sprites/796.png",
+            "back": "assets/sprites/back/796.png"
          },
          "shiny": {
-            "front": "sprites/s796.png",
-            "back": "sprites/back/s796.png"
+            "front": "assets/sprites/s796.png",
+            "back": "assets/sprites/back/s796.png"
          }
       }
    },
@@ -29877,12 +29877,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/797.png",
-            "back": "sprites/back/797.png"
+            "front": "assets/sprites/797.png",
+            "back": "assets/sprites/back/797.png"
          },
          "shiny": {
-            "front": "sprites/s797.png",
-            "back": "sprites/back/s797.png"
+            "front": "assets/sprites/s797.png",
+            "back": "assets/sprites/back/s797.png"
          }
       }
    },
@@ -29915,12 +29915,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/798.png",
-            "back": "sprites/back/798.png"
+            "front": "assets/sprites/798.png",
+            "back": "assets/sprites/back/798.png"
          },
          "shiny": {
-            "front": "sprites/s798.png",
-            "back": "sprites/back/s798.png"
+            "front": "assets/sprites/s798.png",
+            "back": "assets/sprites/back/s798.png"
          }
       }
    },
@@ -29953,12 +29953,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/799.png",
-            "back": "sprites/back/799.png"
+            "front": "assets/sprites/799.png",
+            "back": "assets/sprites/back/799.png"
          },
          "shiny": {
-            "front": "sprites/s799.png",
-            "back": "sprites/back/s799.png"
+            "front": "assets/sprites/s799.png",
+            "back": "assets/sprites/back/s799.png"
          }
       }
    },
@@ -29990,12 +29990,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/800.png",
-            "back": "sprites/back/800.png"
+            "front": "assets/sprites/800.png",
+            "back": "assets/sprites/back/800.png"
          },
          "shiny": {
-            "front": "sprites/s800.png",
-            "back": "sprites/back/s800.png"
+            "front": "assets/sprites/s800.png",
+            "back": "assets/sprites/back/s800.png"
          }
       }
    },
@@ -30028,12 +30028,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/801.png",
-            "back": "sprites/back/801.png"
+            "front": "assets/sprites/801.png",
+            "back": "assets/sprites/back/801.png"
          },
          "shiny": {
-            "front": "sprites/s801.png",
-            "back": "sprites/back/s801.png"
+            "front": "assets/sprites/s801.png",
+            "back": "assets/sprites/back/s801.png"
          }
       }
    },
@@ -30066,12 +30066,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/802.png",
-            "back": "sprites/back/802.png"
+            "front": "assets/sprites/802.png",
+            "back": "assets/sprites/back/802.png"
          },
          "shiny": {
-            "front": "sprites/s802.png",
-            "back": "sprites/back/s802.png"
+            "front": "assets/sprites/s802.png",
+            "back": "assets/sprites/back/s802.png"
          }
       }
    },
@@ -30104,12 +30104,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/003m.png",
-            "back": "sprites/back/003m.png"
+            "front": "assets/sprites/003m.png",
+            "back": "assets/sprites/back/003m.png"
          },
          "shiny": {
-            "front": "sprites/s003m.png",
-            "back": "sprites/back/s003m.png"
+            "front": "assets/sprites/s003m.png",
+            "back": "assets/sprites/back/s003m.png"
          }
       }
    },
@@ -30142,12 +30142,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/006mx.png",
-            "back": "sprites/back/006mx.png"
+            "front": "assets/sprites/006mx.png",
+            "back": "assets/sprites/back/006mx.png"
          },
          "shiny": {
-            "front": "sprites/s006mx.png",
-            "back": "sprites/back/s006mx.png"
+            "front": "assets/sprites/s006mx.png",
+            "back": "assets/sprites/back/s006mx.png"
          }
       }
    },
@@ -30180,12 +30180,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/006my.png",
-            "back": "sprites/back/006my.png"
+            "front": "assets/sprites/006my.png",
+            "back": "assets/sprites/back/006my.png"
          },
          "shiny": {
-            "front": "sprites/s006my.png",
-            "back": "sprites/back/s006my.png"
+            "front": "assets/sprites/s006my.png",
+            "back": "assets/sprites/back/s006my.png"
          }
       }
    },
@@ -30217,12 +30217,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/009m.png",
-            "back": "sprites/back/009m.png"
+            "front": "assets/sprites/009m.png",
+            "back": "assets/sprites/back/009m.png"
          },
          "shiny": {
-            "front": "sprites/s009m.png",
-            "back": "sprites/back/s009m.png"
+            "front": "assets/sprites/s009m.png",
+            "back": "assets/sprites/back/s009m.png"
          }
       }
    },
@@ -30255,12 +30255,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/015m.png",
-            "back": "sprites/back/015m.png"
+            "front": "assets/sprites/015m.png",
+            "back": "assets/sprites/back/015m.png"
          },
          "shiny": {
-            "front": "sprites/s015m.png",
-            "back": "sprites/back/s015m.png"
+            "front": "assets/sprites/s015m.png",
+            "back": "assets/sprites/back/s015m.png"
          }
       }
    },
@@ -30293,12 +30293,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/018m.png",
-            "back": "sprites/back/018m.png"
+            "front": "assets/sprites/018m.png",
+            "back": "assets/sprites/back/018m.png"
          },
          "shiny": {
-            "front": "sprites/s018m.png",
-            "back": "sprites/back/s018m.png"
+            "front": "assets/sprites/s018m.png",
+            "back": "assets/sprites/back/s018m.png"
          }
       }
    },
@@ -30331,12 +30331,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/019a.png",
-            "back": "sprites/back/019a.png"
+            "front": "assets/sprites/019a.png",
+            "back": "assets/sprites/back/019a.png"
          },
          "shiny": {
-            "front": "sprites/s019a.png",
-            "back": "sprites/back/s019a.png"
+            "front": "assets/sprites/s019a.png",
+            "back": "assets/sprites/back/s019a.png"
          }
       }
    },
@@ -30369,12 +30369,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/020a.png",
-            "back": "sprites/back/020a.png"
+            "front": "assets/sprites/020a.png",
+            "back": "assets/sprites/back/020a.png"
          },
          "shiny": {
-            "front": "sprites/s020a.png",
-            "back": "sprites/back/s020a.png"
+            "front": "assets/sprites/s020a.png",
+            "back": "assets/sprites/back/s020a.png"
          }
       }
    },
@@ -30407,12 +30407,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/026a.png",
-            "back": "sprites/back/026a.png"
+            "front": "assets/sprites/026a.png",
+            "back": "assets/sprites/back/026a.png"
          },
          "shiny": {
-            "front": "sprites/s026a.png",
-            "back": "sprites/back/s026a.png"
+            "front": "assets/sprites/s026a.png",
+            "back": "assets/sprites/back/s026a.png"
          }
       }
    },
@@ -30445,12 +30445,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/027a.png",
-            "back": "sprites/back/027a.png"
+            "front": "assets/sprites/027a.png",
+            "back": "assets/sprites/back/027a.png"
          },
          "shiny": {
-            "front": "sprites/s027a.png",
-            "back": "sprites/back/s027a.png"
+            "front": "assets/sprites/s027a.png",
+            "back": "assets/sprites/back/s027a.png"
          }
       }
    },
@@ -30483,12 +30483,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/028a.png",
-            "back": "sprites/back/028a.png"
+            "front": "assets/sprites/028a.png",
+            "back": "assets/sprites/back/028a.png"
          },
          "shiny": {
-            "front": "sprites/s028a.png",
-            "back": "sprites/back/s028a.png"
+            "front": "assets/sprites/s028a.png",
+            "back": "assets/sprites/back/s028a.png"
          }
       }
    },
@@ -30520,12 +30520,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/037a.png",
-            "back": "sprites/back/037a.png"
+            "front": "assets/sprites/037a.png",
+            "back": "assets/sprites/back/037a.png"
          },
          "shiny": {
-            "front": "sprites/s037a.png",
-            "back": "sprites/back/s037a.png"
+            "front": "assets/sprites/s037a.png",
+            "back": "assets/sprites/back/s037a.png"
          }
       }
    },
@@ -30557,12 +30557,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/038a.png",
-            "back": "sprites/back/038a.png"
+            "front": "assets/sprites/038a.png",
+            "back": "assets/sprites/back/038a.png"
          },
          "shiny": {
-            "front": "sprites/s038a.png",
-            "back": "sprites/back/s038a.png"
+            "front": "assets/sprites/s038a.png",
+            "back": "assets/sprites/back/s038a.png"
          }
       }
    },
@@ -30595,12 +30595,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/050a.png",
-            "back": "sprites/back/050a.png"
+            "front": "assets/sprites/050a.png",
+            "back": "assets/sprites/back/050a.png"
          },
          "shiny": {
-            "front": "sprites/s050a.png",
-            "back": "sprites/back/s050a.png"
+            "front": "assets/sprites/s050a.png",
+            "back": "assets/sprites/back/s050a.png"
          }
       }
    },
@@ -30633,12 +30633,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/051a.png",
-            "back": "sprites/back/051a.png"
+            "front": "assets/sprites/051a.png",
+            "back": "assets/sprites/back/051a.png"
          },
          "shiny": {
-            "front": "sprites/s051a.png",
-            "back": "sprites/back/s051a.png"
+            "front": "assets/sprites/s051a.png",
+            "back": "assets/sprites/back/s051a.png"
          }
       }
    },
@@ -30670,12 +30670,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/052a.png",
-            "back": "sprites/back/052a.png"
+            "front": "assets/sprites/052a.png",
+            "back": "assets/sprites/back/052a.png"
          },
          "shiny": {
-            "front": "sprites/s052a.png",
-            "back": "sprites/back/s052a.png"
+            "front": "assets/sprites/s052a.png",
+            "back": "assets/sprites/back/s052a.png"
          }
       }
    },
@@ -30707,12 +30707,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/053a.png",
-            "back": "sprites/back/053a.png"
+            "front": "assets/sprites/053a.png",
+            "back": "assets/sprites/back/053a.png"
          },
          "shiny": {
-            "front": "sprites/s053a.png",
-            "back": "sprites/back/s053a.png"
+            "front": "assets/sprites/s053a.png",
+            "back": "assets/sprites/back/s053a.png"
          }
       }
    },
@@ -30744,12 +30744,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/065m.png",
-            "back": "sprites/back/065m.png"
+            "front": "assets/sprites/065m.png",
+            "back": "assets/sprites/back/065m.png"
          },
          "shiny": {
-            "front": "sprites/s065m.png",
-            "back": "sprites/back/s065m.png"
+            "front": "assets/sprites/s065m.png",
+            "back": "assets/sprites/back/s065m.png"
          }
       }
    },
@@ -30782,12 +30782,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/074a.png",
-            "back": "sprites/back/074a.png"
+            "front": "assets/sprites/074a.png",
+            "back": "assets/sprites/back/074a.png"
          },
          "shiny": {
-            "front": "sprites/s074a.png",
-            "back": "sprites/back/s074a.png"
+            "front": "assets/sprites/s074a.png",
+            "back": "assets/sprites/back/s074a.png"
          }
       }
    },
@@ -30820,12 +30820,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/075a.png",
-            "back": "sprites/back/075a.png"
+            "front": "assets/sprites/075a.png",
+            "back": "assets/sprites/back/075a.png"
          },
          "shiny": {
-            "front": "sprites/s075a.png",
-            "back": "sprites/back/s075a.png"
+            "front": "assets/sprites/s075a.png",
+            "back": "assets/sprites/back/s075a.png"
          }
       }
    },
@@ -30858,12 +30858,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/076a.png",
-            "back": "sprites/back/076a.png"
+            "front": "assets/sprites/076a.png",
+            "back": "assets/sprites/back/076a.png"
          },
          "shiny": {
-            "front": "sprites/s076a.png",
-            "back": "sprites/back/s076a.png"
+            "front": "assets/sprites/s076a.png",
+            "back": "assets/sprites/back/s076a.png"
          }
       }
    },
@@ -30896,12 +30896,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/080m.png",
-            "back": "sprites/back/080m.png"
+            "front": "assets/sprites/080m.png",
+            "back": "assets/sprites/back/080m.png"
          },
          "shiny": {
-            "front": "sprites/s080m.png",
-            "back": "sprites/back/s080m.png"
+            "front": "assets/sprites/s080m.png",
+            "back": "assets/sprites/back/s080m.png"
          }
       }
    },
@@ -30934,12 +30934,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/088a.png",
-            "back": "sprites/back/088a.png"
+            "front": "assets/sprites/088a.png",
+            "back": "assets/sprites/back/088a.png"
          },
          "shiny": {
-            "front": "sprites/s088a.png",
-            "back": "sprites/back/s088a.png"
+            "front": "assets/sprites/s088a.png",
+            "back": "assets/sprites/back/s088a.png"
          }
       }
    },
@@ -30972,12 +30972,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/089a.png",
-            "back": "sprites/back/089a.png"
+            "front": "assets/sprites/089a.png",
+            "back": "assets/sprites/back/089a.png"
          },
          "shiny": {
-            "front": "sprites/s089a.png",
-            "back": "sprites/back/s089a.png"
+            "front": "assets/sprites/s089a.png",
+            "back": "assets/sprites/back/s089a.png"
          }
       }
    },
@@ -31010,12 +31010,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/094m.png",
-            "back": "sprites/back/094m.png"
+            "front": "assets/sprites/094m.png",
+            "back": "assets/sprites/back/094m.png"
          },
          "shiny": {
-            "front": "sprites/s094m.png",
-            "back": "sprites/back/s094m.png"
+            "front": "assets/sprites/s094m.png",
+            "back": "assets/sprites/back/s094m.png"
          }
       }
    },
@@ -31048,12 +31048,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/103a.png",
-            "back": "sprites/back/103a.png"
+            "front": "assets/sprites/103a.png",
+            "back": "assets/sprites/back/103a.png"
          },
          "shiny": {
-            "front": "sprites/s103a.png",
-            "back": "sprites/back/s103a.png"
+            "front": "assets/sprites/s103a.png",
+            "back": "assets/sprites/back/s103a.png"
          }
       }
    },
@@ -31086,12 +31086,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/105a.png",
-            "back": "sprites/back/105a.png"
+            "front": "assets/sprites/105a.png",
+            "back": "assets/sprites/back/105a.png"
          },
          "shiny": {
-            "front": "sprites/s105a.png",
-            "back": "sprites/back/s105a.png"
+            "front": "assets/sprites/s105a.png",
+            "back": "assets/sprites/back/s105a.png"
          }
       }
    },
@@ -31123,12 +31123,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/115m.png",
-            "back": "sprites/back/115m.png"
+            "front": "assets/sprites/115m.png",
+            "back": "assets/sprites/back/115m.png"
          },
          "shiny": {
-            "front": "sprites/s115m.png",
-            "back": "sprites/back/s115m.png"
+            "front": "assets/sprites/s115m.png",
+            "back": "assets/sprites/back/s115m.png"
          }
       }
    },
@@ -31161,12 +31161,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/127m.png",
-            "back": "sprites/back/127m.png"
+            "front": "assets/sprites/127m.png",
+            "back": "assets/sprites/back/127m.png"
          },
          "shiny": {
-            "front": "sprites/s127m.png",
-            "back": "sprites/back/s127m.png"
+            "front": "assets/sprites/s127m.png",
+            "back": "assets/sprites/back/s127m.png"
          }
       }
    },
@@ -31199,12 +31199,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/130m.png",
-            "back": "sprites/back/130m.png"
+            "front": "assets/sprites/130m.png",
+            "back": "assets/sprites/back/130m.png"
          },
          "shiny": {
-            "front": "sprites/s130m.png",
-            "back": "sprites/back/s130m.png"
+            "front": "assets/sprites/s130m.png",
+            "back": "assets/sprites/back/s130m.png"
          }
       }
    },
@@ -31237,12 +31237,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/142m.png",
-            "back": "sprites/back/142m.png"
+            "front": "assets/sprites/142m.png",
+            "back": "assets/sprites/back/142m.png"
          },
          "shiny": {
-            "front": "sprites/s142m.png",
-            "back": "sprites/back/s142m.png"
+            "front": "assets/sprites/s142m.png",
+            "back": "assets/sprites/back/s142m.png"
          }
       }
    },
@@ -31275,12 +31275,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/150mx.png",
-            "back": "sprites/back/150mx.png"
+            "front": "assets/sprites/150mx.png",
+            "back": "assets/sprites/back/150mx.png"
          },
          "shiny": {
-            "front": "sprites/s150mx.png",
-            "back": "sprites/back/s150mx.png"
+            "front": "assets/sprites/s150mx.png",
+            "back": "assets/sprites/back/s150mx.png"
          }
       }
    },
@@ -31312,12 +31312,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/150my.png",
-            "back": "sprites/back/150my.png"
+            "front": "assets/sprites/150my.png",
+            "back": "assets/sprites/back/150my.png"
          },
          "shiny": {
-            "front": "sprites/s150my.png",
-            "back": "sprites/back/s150my.png"
+            "front": "assets/sprites/s150my.png",
+            "back": "assets/sprites/back/s150my.png"
          }
       }
    },
@@ -31350,12 +31350,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/181m.png",
-            "back": "sprites/back/181m.png"
+            "front": "assets/sprites/181m.png",
+            "back": "assets/sprites/back/181m.png"
          },
          "shiny": {
-            "front": "sprites/s181m.png",
-            "back": "sprites/back/s181m.png"
+            "front": "assets/sprites/s181m.png",
+            "back": "assets/sprites/back/s181m.png"
          }
       }
    },
@@ -31388,12 +31388,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/208m.png",
-            "back": "sprites/back/208m.png"
+            "front": "assets/sprites/208m.png",
+            "back": "assets/sprites/back/208m.png"
          },
          "shiny": {
-            "front": "sprites/s208m.png",
-            "back": "sprites/back/s208m.png"
+            "front": "assets/sprites/s208m.png",
+            "back": "assets/sprites/back/s208m.png"
          }
       }
    },
@@ -31426,12 +31426,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/212m.png",
-            "back": "sprites/back/212m.png"
+            "front": "assets/sprites/212m.png",
+            "back": "assets/sprites/back/212m.png"
          },
          "shiny": {
-            "front": "sprites/s212m.png",
-            "back": "sprites/back/s212m.png"
+            "front": "assets/sprites/s212m.png",
+            "back": "assets/sprites/back/s212m.png"
          }
       }
    },
@@ -31464,12 +31464,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/214m.png",
-            "back": "sprites/back/214m.png"
+            "front": "assets/sprites/214m.png",
+            "back": "assets/sprites/back/214m.png"
          },
          "shiny": {
-            "front": "sprites/s214m.png",
-            "back": "sprites/back/s214m.png"
+            "front": "assets/sprites/s214m.png",
+            "back": "assets/sprites/back/s214m.png"
          }
       }
    },
@@ -31502,12 +31502,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/229m.png",
-            "back": "sprites/back/229m.png"
+            "front": "assets/sprites/229m.png",
+            "back": "assets/sprites/back/229m.png"
          },
          "shiny": {
-            "front": "sprites/s229m.png",
-            "back": "sprites/back/s229m.png"
+            "front": "assets/sprites/s229m.png",
+            "back": "assets/sprites/back/s229m.png"
          }
       }
    },
@@ -31540,12 +31540,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/248m.png",
-            "back": "sprites/back/248m.png"
+            "front": "assets/sprites/248m.png",
+            "back": "assets/sprites/back/248m.png"
          },
          "shiny": {
-            "front": "sprites/s248m.png",
-            "back": "sprites/back/s248m.png"
+            "front": "assets/sprites/s248m.png",
+            "back": "assets/sprites/back/s248m.png"
          }
       }
    },
@@ -31578,12 +31578,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/254m.png",
-            "back": "sprites/back/254m.png"
+            "front": "assets/sprites/254m.png",
+            "back": "assets/sprites/back/254m.png"
          },
          "shiny": {
-            "front": "sprites/s254m.png",
-            "back": "sprites/back/s254m.png"
+            "front": "assets/sprites/s254m.png",
+            "back": "assets/sprites/back/s254m.png"
          }
       }
    },
@@ -31616,12 +31616,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/257m.png",
-            "back": "sprites/back/257m.png"
+            "front": "assets/sprites/257m.png",
+            "back": "assets/sprites/back/257m.png"
          },
          "shiny": {
-            "front": "sprites/s257m.png",
-            "back": "sprites/back/s257m.png"
+            "front": "assets/sprites/s257m.png",
+            "back": "assets/sprites/back/s257m.png"
          }
       }
    },
@@ -31654,12 +31654,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/260m.png",
-            "back": "sprites/back/260m.png"
+            "front": "assets/sprites/260m.png",
+            "back": "assets/sprites/back/260m.png"
          },
          "shiny": {
-            "front": "sprites/s260m.png",
-            "back": "sprites/back/s260m.png"
+            "front": "assets/sprites/s260m.png",
+            "back": "assets/sprites/back/s260m.png"
          }
       }
    },
@@ -31692,12 +31692,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/282m.png",
-            "back": "sprites/back/282m.png"
+            "front": "assets/sprites/282m.png",
+            "back": "assets/sprites/back/282m.png"
          },
          "shiny": {
-            "front": "sprites/s282m.png",
-            "back": "sprites/back/s282m.png"
+            "front": "assets/sprites/s282m.png",
+            "back": "assets/sprites/back/s282m.png"
          }
       }
    },
@@ -31730,12 +31730,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/302m.png",
-            "back": "sprites/back/302m.png"
+            "front": "assets/sprites/302m.png",
+            "back": "assets/sprites/back/302m.png"
          },
          "shiny": {
-            "front": "sprites/s302m.png",
-            "back": "sprites/back/s302m.png"
+            "front": "assets/sprites/s302m.png",
+            "back": "assets/sprites/back/s302m.png"
          }
       }
    },
@@ -31768,12 +31768,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/303m.png",
-            "back": "sprites/back/303m.png"
+            "front": "assets/sprites/303m.png",
+            "back": "assets/sprites/back/303m.png"
          },
          "shiny": {
-            "front": "sprites/s303m.png",
-            "back": "sprites/back/s303m.png"
+            "front": "assets/sprites/s303m.png",
+            "back": "assets/sprites/back/s303m.png"
          }
       }
    },
@@ -31805,12 +31805,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/306m.png",
-            "back": "sprites/back/306m.png"
+            "front": "assets/sprites/306m.png",
+            "back": "assets/sprites/back/306m.png"
          },
          "shiny": {
-            "front": "sprites/s306m.png",
-            "back": "sprites/back/s306m.png"
+            "front": "assets/sprites/s306m.png",
+            "back": "assets/sprites/back/s306m.png"
          }
       }
    },
@@ -31843,12 +31843,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/308m.png",
-            "back": "sprites/back/308m.png"
+            "front": "assets/sprites/308m.png",
+            "back": "assets/sprites/back/308m.png"
          },
          "shiny": {
-            "front": "sprites/s308m.png",
-            "back": "sprites/back/s308m.png"
+            "front": "assets/sprites/s308m.png",
+            "back": "assets/sprites/back/s308m.png"
          }
       }
    },
@@ -31880,12 +31880,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/310m.png",
-            "back": "sprites/back/310m.png"
+            "front": "assets/sprites/310m.png",
+            "back": "assets/sprites/back/310m.png"
          },
          "shiny": {
-            "front": "sprites/s310m.png",
-            "back": "sprites/back/s310m.png"
+            "front": "assets/sprites/s310m.png",
+            "back": "assets/sprites/back/s310m.png"
          }
       }
    },
@@ -31918,12 +31918,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/319m.png",
-            "back": "sprites/back/319m.png"
+            "front": "assets/sprites/319m.png",
+            "back": "assets/sprites/back/319m.png"
          },
          "shiny": {
-            "front": "sprites/s319m.png",
-            "back": "sprites/back/s319m.png"
+            "front": "assets/sprites/s319m.png",
+            "back": "assets/sprites/back/s319m.png"
          }
       }
    },
@@ -31956,12 +31956,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/323m.png",
-            "back": "sprites/back/323m.png"
+            "front": "assets/sprites/323m.png",
+            "back": "assets/sprites/back/323m.png"
          },
          "shiny": {
-            "front": "sprites/s323m.png",
-            "back": "sprites/back/s323m.png"
+            "front": "assets/sprites/s323m.png",
+            "back": "assets/sprites/back/s323m.png"
          }
       }
    },
@@ -31994,12 +31994,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/334m.png",
-            "back": "sprites/back/334m.png"
+            "front": "assets/sprites/334m.png",
+            "back": "assets/sprites/back/334m.png"
          },
          "shiny": {
-            "front": "sprites/s334m.png",
-            "back": "sprites/back/s334m.png"
+            "front": "assets/sprites/s334m.png",
+            "back": "assets/sprites/back/s334m.png"
          }
       }
    },
@@ -32031,12 +32031,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/354m.png",
-            "back": "sprites/back/354m.png"
+            "front": "assets/sprites/354m.png",
+            "back": "assets/sprites/back/354m.png"
          },
          "shiny": {
-            "front": "sprites/s354m.png",
-            "back": "sprites/back/s354m.png"
+            "front": "assets/sprites/s354m.png",
+            "back": "assets/sprites/back/s354m.png"
          }
       }
    },
@@ -32068,12 +32068,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/359m.png",
-            "back": "sprites/back/359m.png"
+            "front": "assets/sprites/359m.png",
+            "back": "assets/sprites/back/359m.png"
          },
          "shiny": {
-            "front": "sprites/s359m.png",
-            "back": "sprites/back/s359m.png"
+            "front": "assets/sprites/s359m.png",
+            "back": "assets/sprites/back/s359m.png"
          }
       }
    },
@@ -32105,12 +32105,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/362m.png",
-            "back": "sprites/back/362m.png"
+            "front": "assets/sprites/362m.png",
+            "back": "assets/sprites/back/362m.png"
          },
          "shiny": {
-            "front": "sprites/s362m.png",
-            "back": "sprites/back/s362m.png"
+            "front": "assets/sprites/s362m.png",
+            "back": "assets/sprites/back/s362m.png"
          }
       }
    },
@@ -32143,12 +32143,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/373m.png",
-            "back": "sprites/back/373m.png"
+            "front": "assets/sprites/373m.png",
+            "back": "assets/sprites/back/373m.png"
          },
          "shiny": {
-            "front": "sprites/s373m.png",
-            "back": "sprites/back/s373m.png"
+            "front": "assets/sprites/s373m.png",
+            "back": "assets/sprites/back/s373m.png"
          }
       }
    },
@@ -32181,12 +32181,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/376m.png",
-            "back": "sprites/back/376m.png"
+            "front": "assets/sprites/376m.png",
+            "back": "assets/sprites/back/376m.png"
          },
          "shiny": {
-            "front": "sprites/s376m.png",
-            "back": "sprites/back/s376m.png"
+            "front": "assets/sprites/s376m.png",
+            "back": "assets/sprites/back/s376m.png"
          }
       }
    },
@@ -32219,12 +32219,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/380m.png",
-            "back": "sprites/back/380m.png"
+            "front": "assets/sprites/380m.png",
+            "back": "assets/sprites/back/380m.png"
          },
          "shiny": {
-            "front": "sprites/s380m.png",
-            "back": "sprites/back/s380m.png"
+            "front": "assets/sprites/s380m.png",
+            "back": "assets/sprites/back/s380m.png"
          }
       }
    },
@@ -32257,12 +32257,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/381m.png",
-            "back": "sprites/back/381m.png"
+            "front": "assets/sprites/381m.png",
+            "back": "assets/sprites/back/381m.png"
          },
          "shiny": {
-            "front": "sprites/s381m.png",
-            "back": "sprites/back/s381m.png"
+            "front": "assets/sprites/s381m.png",
+            "back": "assets/sprites/back/s381m.png"
          }
       }
    },
@@ -32294,12 +32294,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/382p.png",
-            "back": "sprites/back/382p.png"
+            "front": "assets/sprites/382p.png",
+            "back": "assets/sprites/back/382p.png"
          },
          "shiny": {
-            "front": "sprites/s382p.png",
-            "back": "sprites/back/s382p.png"
+            "front": "assets/sprites/s382p.png",
+            "back": "assets/sprites/back/s382p.png"
          }
       }
    },
@@ -32332,12 +32332,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/383p.png",
-            "back": "sprites/back/383p.png"
+            "front": "assets/sprites/383p.png",
+            "back": "assets/sprites/back/383p.png"
          },
          "shiny": {
-            "front": "sprites/s383p.png",
-            "back": "sprites/back/s383p.png"
+            "front": "assets/sprites/s383p.png",
+            "back": "assets/sprites/back/s383p.png"
          }
       }
    },
@@ -32370,12 +32370,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/384m.png",
-            "back": "sprites/back/384m.png"
+            "front": "assets/sprites/384m.png",
+            "back": "assets/sprites/back/384m.png"
          },
          "shiny": {
-            "front": "sprites/s384m.png",
-            "back": "sprites/back/s384m.png"
+            "front": "assets/sprites/s384m.png",
+            "back": "assets/sprites/back/s384m.png"
          }
       }
    },
@@ -32519,12 +32519,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/445m.png",
-            "back": "sprites/back/445m.png"
+            "front": "assets/sprites/445m.png",
+            "back": "assets/sprites/back/445m.png"
          },
          "shiny": {
-            "front": "sprites/s445m.png",
-            "back": "sprites/back/s445m.png"
+            "front": "assets/sprites/s445m.png",
+            "back": "assets/sprites/back/s445m.png"
          }
       }
    },
@@ -32557,12 +32557,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/428m.png",
-            "back": "sprites/back/428m.png"
+            "front": "assets/sprites/428m.png",
+            "back": "assets/sprites/back/428m.png"
          },
          "shiny": {
-            "front": "sprites/s428m.png",
-            "back": "sprites/back/s428m.png"
+            "front": "assets/sprites/s428m.png",
+            "back": "assets/sprites/back/s428m.png"
          }
       }
    },
@@ -32595,12 +32595,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/448m.png",
-            "back": "sprites/back/448m.png"
+            "front": "assets/sprites/448m.png",
+            "back": "assets/sprites/back/448m.png"
          },
          "shiny": {
-            "front": "sprites/s448m.png",
-            "back": "sprites/back/s448m.png"
+            "front": "assets/sprites/s448m.png",
+            "back": "assets/sprites/back/s448m.png"
          }
       }
    },
@@ -32633,12 +32633,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/460m.png",
-            "back": "sprites/back/460m.png"
+            "front": "assets/sprites/460m.png",
+            "back": "assets/sprites/back/460m.png"
          },
          "shiny": {
-            "front": "sprites/s460m.png",
-            "back": "sprites/back/s460m.png"
+            "front": "assets/sprites/s460m.png",
+            "back": "assets/sprites/back/s460m.png"
          }
       }
    },
@@ -32671,12 +32671,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/475m.png",
-            "back": "sprites/back/475m.png"
+            "front": "assets/sprites/475m.png",
+            "back": "assets/sprites/back/475m.png"
          },
          "shiny": {
-            "front": "sprites/s475m.png",
-            "back": "sprites/back/s475m.png"
+            "front": "assets/sprites/s475m.png",
+            "back": "assets/sprites/back/s475m.png"
          }
       }
    },
@@ -32975,12 +32975,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/531m.png",
-            "back": "sprites/back/531m.png"
+            "front": "assets/sprites/531m.png",
+            "back": "assets/sprites/back/531m.png"
          },
          "shiny": {
-            "front": "sprites/s531m.png",
-            "back": "sprites/back/s531m.png"
+            "front": "assets/sprites/s531m.png",
+            "back": "assets/sprites/back/s531m.png"
          }
       }
    },
@@ -33316,12 +33316,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/658a.png",
-            "back": "sprites/back/658a.png"
+            "front": "assets/sprites/658a.png",
+            "back": "assets/sprites/back/658a.png"
          },
          "shiny": {
-            "front": "sprites/s658a.png",
-            "back": "sprites/back/s658a.png"
+            "front": "assets/sprites/s658a.png",
+            "back": "assets/sprites/back/s658a.png"
          }
       }
    },
@@ -33354,12 +33354,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/681b.png",
-            "back": "sprites/back/681b.png"
+            "front": "assets/sprites/681b.png",
+            "back": "assets/sprites/back/681b.png"
          },
          "shiny": {
-            "front": "sprites/s681b.png",
-            "back": "sprites/back/s681b.png"
+            "front": "assets/sprites/s681b.png",
+            "back": "assets/sprites/back/s681b.png"
          }
       }
    },
@@ -33392,12 +33392,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/71810.png",
-            "back": "sprites/back/71810.png"
+            "front": "assets/sprites/71810.png",
+            "back": "assets/sprites/back/71810.png"
          },
          "shiny": {
-            "front": "sprites/s71810.png",
-            "back": "sprites/back/s71810.png"
+            "front": "assets/sprites/s71810.png",
+            "back": "assets/sprites/back/s71810.png"
          }
       }
    },
@@ -33430,12 +33430,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/718c.png",
-            "back": "sprites/back/718c.png"
+            "front": "assets/sprites/718c.png",
+            "back": "assets/sprites/back/718c.png"
          },
          "shiny": {
-            "front": "sprites/s718c.png",
-            "back": "sprites/back/s718c.png"
+            "front": "assets/sprites/s718c.png",
+            "back": "assets/sprites/back/s718c.png"
          }
       }
    },
@@ -33468,12 +33468,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/719m.png",
-            "back": "sprites/back/719m.png"
+            "front": "assets/sprites/719m.png",
+            "back": "assets/sprites/back/719m.png"
          },
          "shiny": {
-            "front": "sprites/s719m.png",
-            "back": "sprites/back/s719m.png"
+            "front": "assets/sprites/s719m.png",
+            "back": "assets/sprites/back/s719m.png"
          }
       }
    },
@@ -33506,12 +33506,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/720u.png",
-            "back": "sprites/back/720u.png"
+            "front": "assets/sprites/720u.png",
+            "back": "assets/sprites/back/720u.png"
          },
          "shiny": {
-            "front": "sprites/s720u.png",
-            "back": "sprites/back/s720u.png"
+            "front": "assets/sprites/s720u.png",
+            "back": "assets/sprites/back/s720u.png"
          }
       }
    },
@@ -33543,12 +33543,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/745m.png",
-            "back": "sprites/back/745m.png"
+            "front": "assets/sprites/745m.png",
+            "back": "assets/sprites/back/745m.png"
          },
          "shiny": {
-            "front": "sprites/s745m.png",
-            "back": "sprites/back/s745m.png"
+            "front": "assets/sprites/s745m.png",
+            "back": "assets/sprites/back/s745m.png"
          }
       }
    },
@@ -33580,12 +33580,12 @@ const POKEDEX = [
       ],
       "images": {
          "normal": {
-            "front": "sprites/746s.png",
-            "back": "sprites/back/746s.png"
+            "front": "assets/sprites/746s.png",
+            "back": "assets/sprites/back/746s.png"
          },
          "shiny": {
-            "front": "sprites/s746s.png",
-            "back": "sprites/back/s746s.png"
+            "front": "assets/sprites/s746s.png",
+            "back": "assets/sprites/back/s746s.png"
          }
       }
    },

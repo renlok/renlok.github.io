@@ -37,7 +37,7 @@
                 <ul id="rosterList"></ul>
             </div>
             <div id="pokedexBox" style="display: none;">
-                <select id="dexView" style="display: none;">
+                <select id="dexView">
                     <option value="all">All</option>
                 </select>
                 <ul id="dexList"></ul>
@@ -50,12 +50,12 @@
             <p><button id="viewPokeDex">PokeDex</button></p>
         </div>
         <div id="invBox">
-            Catch: <label><input type="checkbox" id="enableCatchAll"><span>All</span></label> <label><input type="checkbox" id="enableCatchNew"><span>New</span></label>
+            <p>Catch: <label><input type="checkbox" id="enableCatchAll"><span>All</span></label> <label><input type="checkbox" id="enableCatchNew"><span>New</span></label></p>
             <p>Using:</p>
             <input type="radio" name="name" value="pokeball" checked="true" onclick="userInteractions.changeSelectedBall('pokeball')" id="pokeball"><label for="pokeball"><span>Pokeballs: </span><span class="ball-ammount pokeball">10</span></label><br>
             <input type="radio" name="name" value="greatball" onclick="userInteractions.changeSelectedBall('greatball')" id="greatball"><label for="greatball"><span>Greatballs: </span><span class="ball-ammount greatball">0</span></label><br>
-            <input type="radio" name="name" value="ultraball" onclick="userInteractions.changeSelectedBall('ultraball')" id="ultraball"><label for="ultraball"><span>Ultraballs: </span><span class="ball-ammount ultraball">0</span></label><br>
-            Currency: <span id="currency">¤0</span>
+            <input type="radio" name="name" value="ultraball" onclick="userInteractions.changeSelectedBall('ultraball')" id="ultraball"><label for="ultraball"><span>Ultraballs: </span><span class="ball-ammount ultraball">0</span></label>
+            <p>Currency: <span id="currency">¤0</span></p>
         </div>
         <div id="enemyBox">
             <div class="pokeBox">

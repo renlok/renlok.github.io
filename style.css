@@ -1,5 +1,8 @@
-#gameContainer {
+* {
     font-family: 'Lato', sans-serif;
+}
+
+#gameContainer {
     display: grid;
     width: 800px;
     height: 100%;
@@ -14,8 +17,13 @@
     border: 1px solid black;
 }
 
+#gameContainer > div > div {
+    border: none !important;
+}
+
 ul {
     list-style: none;
+    padding-left: 0;
 }
 
 #listBox {
@@ -27,6 +35,13 @@ ul {
 
 #listBox ul {
     padding-left: 10px;
+}
+
+#pokedexBox select, #routesBox select {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 95%;
 }
 
 .pokeDeleteButton,
@@ -104,6 +119,10 @@ ul {
     grid-row: 1;
     padding: 5px;
     font-size: 80%;
+}
+
+#invBox p {
+    margin: 5px;
 }
 
 #enemyBox {
@@ -238,7 +257,6 @@ progress.expBar {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(0, 0, 0, 0.8);
     z-index: 2;
 }
 
@@ -251,9 +269,8 @@ progress.expBar {
     left: 10vw;
     right: 10vw;
     padding: 15px;
-    background-color: rgb(217, 217, 217);
-    border: solid 1px rgb(10, 0, 130);
-    box-shadow: 0 0 3px rgb(10, 0, 130);
+    border: solid 1px rgb(0, 0, 0);
+    background-color: white;
     border-radius: 5px;
     overflow: auto;
 }
@@ -269,7 +286,7 @@ progress.expBar {
     margin: 0;
 }
 
-#settingsDialog > div> p {
+#settingsDialog > div > p {
     padding:0;
     margin:5px 10px;
 }
