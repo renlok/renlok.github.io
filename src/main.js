@@ -83,7 +83,8 @@ if (localStorage.getItem(`totalPokes`) !== null) {
 } else {
     let starterPoke = new Poke(pokeById(randomArrayElement([1, 4, 7])), 5);
     player.addPoke(starterPoke);
-    player.addPokedex(starterPoke.pokeName(), POKEDEXFLAGS.ownNormal)
+    player.addPokedex(starterPoke.pokeName(), POKEDEXFLAGS.ownNormal);
+    dom.gameConsoleLog('You received a ' + player.activePoke().pokeName(), 'purple');
 }
 
 enemy.generateNew(ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]);
