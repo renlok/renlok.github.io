@@ -35,7 +35,7 @@ const UserActions = {
                 player.settings.releasedNormal++;
             }
         } else {
-            alert('Hold shift while clicking the X to release a pokemon')
+            alert('Hold shift while clicking the X to release a pokemon');
         }
     },
     healAllPlayerPokemons: function() {
@@ -96,7 +96,7 @@ const UserActions = {
         moveToFirst(pokemonIndex, player.getPokemon());
         player.savePokes();
         combatLoop.changePlayerPoke(player.activePoke());
-        renderView(dom, enemy, player)
+        dom.renderPokeList();
     },
     pokemonToDown: function(pokemonIndex) {
         const moveToDown = index => arr => [
@@ -105,11 +105,13 @@ const UserActions = {
             arr[parseInt(index)],
             ...arr.slice(parseInt(index)+2)
         ];
-        const newPokemonList = moveToDown(pokemonIndex)(player.getPokemon());
-        player.reorderPokes(newPokemonList);
-        player.savePokes();
-        combatLoop.changePlayerPoke(player.activePoke());
-        renderView(dom, enemy, player)
+        if (player.getPokemon()[pokemonIndex + 1]) {
+            const newPokemonList = moveToDown(pokemonIndex)(player.getPokemon());
+            player.reorderPokes(newPokemonList);
+            player.savePokes();
+            combatLoop.changePlayerPoke(player.activePoke());
+            dom.renderPokeList();
+        }
     },
     pokemonToUp: function(pokemonIndex) {
         const moveToUp = index => arr => [
@@ -118,16 +120,29 @@ const UserActions = {
             arr[parseInt(index)-1],
             ...arr.slice(parseInt(index)+1)
         ];
-
-        const newPokemonList = moveToUp(pokemonIndex)(player.getPokemon());
-        player.reorderPokes(newPokemonList);
-        player.savePokes();
-        combatLoop.changePlayerPoke(player.activePoke());
-        renderView(dom, enemy, player)
+        if (player.getPokemon()[pokemonIndex - 1]) {
+            const newPokemonList = moveToUp(pokemonIndex)(player.getPokemon());
+            player.reorderPokes(newPokemonList);
+            player.savePokes();
+            combatLoop.changePlayerPoke(player.activePoke());
+            dom.renderPokeList();
+        }
     },
     evolvePokemon: function(pokemonIndex) {
         player.getPokemon()[pokemonIndex].tryEvolve(player.getPokemon()[pokemonIndex].shiny());
-        renderView(dom, enemy, player)
+        renderView(dom, enemy, player);
+    },
+    moveToStorage: function(pokemonIndex) {
+        const poke = player.getPokemon()[pokemonIndex];
+        player.pokemons.splice(pokemonIndex, 1);
+        player.storage.push(poke);
+        dom.renderPokeList();
+    },
+    moveToRoster: function(pokemonIndex) {
+        const poke = player.storage[pokemonIndex];
+        player.storage.splice(pokemonIndex, 1);
+        player.pokemons.push(poke);
+        dom.renderStorage();
     },
     forceSave: function() {
         player.savePokes();

@@ -1,5 +1,6 @@
 let Player = {
     pokemons: [],
+    storage: [],
     pokedexData: [],
     activePokeID: 0,
     lastHeal: Date.now(),
@@ -176,6 +177,10 @@ let Player = {
         this.pokemons.forEach((poke, index) => {
             localStorage.setItem(`poke${index}`, JSON.stringify(poke.save()))
         });
+        localStorage.setItem(`totalStorage`, this.storage.length);
+        this.storage.forEach((poke, index) => {
+            localStorage.setItem(`storage${index}`, JSON.stringify(poke.save()))
+        });
         localStorage.setItem(`ballsAmount`, JSON.stringify(this.ballsAmount));
         localStorage.setItem(`pokedexData`, JSON.stringify(this.pokedexData));
         localStorage.setItem(`statistics`, JSON.stringify(this.statistics));
@@ -186,6 +191,7 @@ let Player = {
     saveToString: function() {
         const saveData = JSON.stringify({
             pokes: this.pokemons.map((poke) => poke.save()),
+            storage: this.storage.map((poke) => poke.save()),
             pokedexData: this.pokedexData,
             statistics: this.statistics,
             settings: this.settings,
@@ -206,6 +212,18 @@ let Player = {
                 const shiny = (loadedPoke[2] === true);
                 const caughtAt = loadedPoke[3];
                 this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
+            }
+        });
+        // reset storage array
+        this.storage = [];
+        Array(Number(localStorage.getItem(`totalStorage`))).fill(0).forEach((el, index) => {
+            const loadedPoke = JSON.parse(localStorage.getItem('storage'+index));
+            if (loadedPoke) {
+                const pokeName = loadedPoke[0];
+                const exp = loadedPoke[1];
+                const shiny = (loadedPoke[2] === true);
+                const caughtAt = loadedPoke[3];
+                this.storage.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
             }
         });
         if (JSON.parse(localStorage.getItem('ballsAmount'))) {
@@ -248,6 +266,14 @@ let Player = {
                 const shiny = (loadedPoke[2] === true);
                 const caughtAt = loadedPoke[3];
                 this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt))
+            });
+            this.storage = [];
+            saveData.storage.forEach((loadedPoke) => {
+                const pokeName = loadedPoke[0];
+                const exp = loadedPoke[1];
+                const shiny = (loadedPoke[2] === true);
+                const caughtAt = loadedPoke[3];
+                this.storage.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt))
             });
             this.ballsAmount = saveData.ballsAmount;
             this.pokedexData = saveData.pokedexData ? saveData.pokedexData : [];

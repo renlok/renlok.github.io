@@ -166,6 +166,7 @@ const Display = {
                 const downButton = `<button onclick="userInteractions.pokemonToDown('${index}')" class="pokeDownButton"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>`;
                 const firstButton = `<button onclick="userInteractions.pokemonToFirst('${index}')" class="pokeFirstButton">#1</button>`;
                 const evolveButton = `<button onclick="userInteractions.evolvePokemon('${index}')" class="pokeEvolveButton">Evolve</button>`;
+                const storageButton = `<button onclick="userInteractions.moveToStorage('${index}')" class="toStorageButton">PC</button>`;
 
                 listElementsToAdd += `<li id="listPoke${index}">` +
                     deleteButton +
@@ -174,6 +175,7 @@ const Display = {
                     downButton +
                     firstButton +
                     evolveButton +
+                    storageButton +
                     `</li>`
             }
         });
@@ -183,6 +185,43 @@ const Display = {
         let i = list.length;
         let listItemToRemove;
         while (listItemToRemove = listElement.querySelector('#listPoke' + i)) {
+            listElement.removeChild(listItemToRemove);
+            i++
+        }
+    },
+    renderStorage: function() {
+        const list = player.storage;
+        const listElement = $('#storageList');
+        let listElementsToAdd = '';
+        list.forEach((poke, index) => {
+            const listItemElement = listElement.querySelector('#storagePoke' + index);
+            if (listItemElement) {
+                const listItemNameElement = listItemElement.querySelector('.pokeListName');
+                listItemNameElement.innerHTML = `${poke.pokeName()} (${poke.level()})`;
+                listItemNameElement.style.color = this.pokeColor(poke);
+            } else {
+                const deleteButton = `<a href="#" onclick="userInteractions.deletePokemon(event, ${index});return false" class="pokeDeleteButton">X</a>`;
+                const upButton = `<button onclick="userInteractions.pokemonToUp('${index}')" class="pokeUpButton"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>`;
+                const downButton = `<button onclick="userInteractions.pokemonToDown('${index}')" class="pokeDownButton"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>`;
+                const firstButton = `<button onclick="userInteractions.pokemonToFirst('${index}')" class="pokeFirstButton">#1</button>`;
+                const rosterButton = `<button onclick="userInteractions.moveToRoster('${index}')" class="toStorageButton">Active</button>`;
+
+                listElementsToAdd += `<li id="storagePoke${index}">` +
+                    deleteButton +
+                    `<a href="#" style="color: ${this.pokeColor(poke)}" class="pokeListName">${poke.pokeName()} (${poke.level()})</a><br>` +
+                    upButton +
+                    downButton +
+                    firstButton +
+                    rosterButton +
+                    `</li>`
+            }
+        });
+        if (listElementsToAdd.length > 0) {
+            this.setValue(listElement, listElementsToAdd, true);
+        }
+        let i = list.length;
+        let listItemToRemove;
+        while (listItemToRemove = listElement.querySelector('#storagePoke' + i)) {
             listElement.removeChild(listItemToRemove);
             i++
         }
@@ -234,21 +273,24 @@ const Display = {
         const routes = $('#routesBox');
         const roster = $('#rosterBox');
         const pokeDex = $('#pokedexBox');
+        const storage = $('#storageBox');
+        // hide all by default
+        routes.style.display = 'none';
+        roster.style.display = 'none';
+        pokeDex.style.display = 'none';
+        storage.style.display = 'none';
         // which is showing
         if (player.settings.listView === 'routes') {
             routes.style.display = 'block';
-            roster.style.display = 'none';
-            pokeDex.style.display = 'none';
             this.renderRouteList();
         } else if (player.settings.listView === 'pokeDex') {
-            routes.style.display = 'none';
-            roster.style.display = 'none';
             pokeDex.style.display = 'block';
             this.renderPokeDex();
+        } else if (player.settings.listView === 'storage') {
+            storage.style.display = 'block';
+            this.renderStorage();
         } else {
-            routes.style.display = 'none';
             roster.style.display = 'block';
-            pokeDex.style.display = 'none';
             this.renderPokeList();
 
         }
@@ -313,6 +355,9 @@ const Display = {
         });
         $('#viewPokeDex').addEventListener( 'click', () => {
             userInteractions.changeListView('pokeDex');
+        });
+        $('#viewStorage').addEventListener( 'click', () => {
+            userInteractions.changeListView('storage');
         });
 
         $('#dexView').addEventListener( 'change'
