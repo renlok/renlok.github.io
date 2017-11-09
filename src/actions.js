@@ -235,17 +235,42 @@ const UserActions = {
             name: 'Razz Berry',
             cost: 250000,
             unlockable: 'razzBerry'
+        },
+        {
+            name: 'Old Rod',
+            cost: 1000,
+            fishing: 1
+        },
+        {
+            name: 'Good Rod',
+            cost: 10000,
+            fishing: 2
+        },
+        {
+            name: 'Super Rod',
+            cost: 100000,
+            fishing: 3
         }
     ],
     viewTown: function() {
         let shopHTML = '';
         for (let i = 0; i < this.shopItems.length; i++) {
             let canBuy = true;
+            let own = false;
             if (player.currency < this.shopItems[i].cost)
                 canBuy = false;
-            if (this.shopItems[i].unlockable && player.unlocked[this.shopItems[i].unlockable])
+            if (this.shopItems[i].unlockable && player.unlocked[this.shopItems[i].unlockable]) {
                 canBuy = false;
-            shopHTML += '<li>' + this.shopItems[i].name + ': ¤' + this.shopItems[i].cost + (canBuy ? ' <button onclick="userInteractions.buyItem(\'' + i + '\')">Buy</button>' : '') + '</li>';
+                own = true;
+            }
+            if (this.shopItems[i].fishing && player.unlocked.fishing >= this.shopItems[i].fishing) {
+                canBuy = false;
+                own = true;
+            }
+            const disableButton = (!canBuy || own) ? ' disabled="true"' : '';
+            const buttonText = (own) ? 'Own' : 'Buy';
+            const buttonHTML = ' <button onclick="userInteractions.buyItem(\'' + i + '\')"' + disableButton + '>' + buttonText + '</button>';
+            shopHTML += '<li>' + this.shopItems[i].name + ': ¤' + this.shopItems[i].cost + buttonHTML + '</li>';
         }
         $('#shopItems').innerHTML = shopHTML;
         document.getElementById('townContainer').style.display = 'block';
@@ -264,6 +289,11 @@ const UserActions = {
                 player.unlocked[item.unlockable] = 1;
                 dom.renderListBox();
             }
+            if (item.fishing && item.fishing > player.unlocked.fishing) {
+                player.unlocked.fishing = item.fishing;
+                dom.renderListBox();
+            }
+            this.viewTown(); // force refresh of shop
             dom.renderCurrency();
             return true;
         }
