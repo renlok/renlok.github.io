@@ -40,24 +40,37 @@ const Combat = {
     },
     dealDamage: function(attacker, defender, who) {
         if (attacker.alive() && defender.alive()) {
+            const consoleColor = (who === 'player') ? 'green' : 'rgb(207, 103, 59)';
             // calculate damage done
-            const damageMultiplier = this.calculateDamageMultiplier(attacker.types(), defender.types());
-            const damage = defender.takeDamage(attacker.avgAttack() * damageMultiplier);
+            const missRNG = RNG(5);
+            if (missRNG) {
+                dom.gameConsoleLog(attacker.pokeName() + ' missed!', consoleColor);
+            } else {
+                const critRNG = RNG(5);
+                const critMultiplier = (critRNG) ? 1 + (attacker.level() / 100) : 1;
+                const damageMultiplier = this.calculateDamageMultiplier(attacker.types(), defender.types()) * critMultiplier;
+                const damage = defender.takeDamage(attacker.avgAttack() * damageMultiplier);
+                if (critRNG) {
+                    dom.gameConsoleLog('Critical Hit!!', consoleColor);
+                }
+                if (who === 'player') {
+                    // TODO add some flair
+                    dom.gameConsoleLog(attacker.pokeName() + ' Attacked for ' + damage, 'green');
+                    player.statistics.totalDamage += damage;
+                } else {
+                    // TODO add some flair
+                    dom.gameConsoleLog(attacker.pokeName() + ' Attacked for ' + damage, 'rgb(207, 103, 59)');
+                }
+                dom.renderPokeOnContainer('enemy', enemy.activePoke());
+                dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
+            }
             if (who === 'player') {
                 dom.attackAnimation('playerImg', 'right');
-                // TODO add some flair
-                dom.gameConsoleLog(attacker.pokeName() + ' Attacked for ' + damage, 'green');
-                player.statistics.totalDamage += damage;
-                this.playerTimer()
-            }
-            if (who === 'enemy') {
+                this.playerTimer();
+            } else {
                 dom.attackAnimation('enemyImg', 'left');
-                // TODO add some flair
-                dom.gameConsoleLog(attacker.pokeName() + ' Attacked for ' + damage, 'rgb(207, 103, 59)');
-                this.enemyTimer()
+                this.enemyTimer();
             }
-            dom.renderPokeOnContainer('enemy', enemy.activePoke());
-            dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
         }
         if (!attacker.alive() || !defender.alive()) {
             // one is dead
