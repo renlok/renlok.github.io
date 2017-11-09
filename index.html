@@ -15,15 +15,14 @@
     <div id="gameContainer">
         <div id="listBox">
             <div id="routesBox">
-                <select id="regionSelect" onchange="userInteractions.changeRegion()">
+                <select id="regionSelect" onchange="userInteractions.changeRegion()" style="display: none;">
                     <option value="Kanto">Kanto</option>
                     <option value="Johto">Johto</option>
                     <option value="Hoenn">Hoenn</option>
                     <option value="Sinnoh">Sinnoh</option>
                     <option value="Unova">Unova</option>
-                    <option value="Kalos">Kalos (Custom)</option>
-                    <option value="Alola">Alola (Custom)</option>
-                    <option value="Event">Event</option>
+                    <option value="Kalos">Kalos</option>
+                    <option value="Alola">Alola</option>
                 </select>
                 <ul id="routeList"></ul>
             </div>

@@ -47,8 +47,12 @@ const UserActions = {
     },
     changeRegion: function() {
         const regionSelect = document.getElementById('regionSelect');
-        player.settings.currentRegionId = regionSelect.options[regionSelect.selectedIndex].value;
-        this.changeRoute(Object.keys(ROUTES[player.settings.currentRegionId])[0]);
+        const regionId = regionSelect.options[regionSelect.selectedIndex].value;
+        if (player.unlocked.regions[regionId]) {
+            player.settings.currentRegionId = regionId;
+            this.changeRoute(Object.keys(ROUTES[player.settings.currentRegionId])[0]);
+        }
+        return false;
     },
     enablePokeListDelete: function() {
         player.settings.listView = 'roster';

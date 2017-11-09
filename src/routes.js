@@ -1984,13 +1984,5 @@ const ROUTES = {
             , maxLevel: 30
             , fishing: true
         }
-    },
-    Event: {
-        event1: {
-            name: 'Burned Tower'
-            , pokes: ['Entei']
-            , minLevel: 40
-            , maxLevel: 40
-        }
     }
-}
+};

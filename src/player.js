@@ -10,6 +10,14 @@ let Player = {
         ultraball: 0
     },
     unlocked: {
+        regions: {
+            Johto: 0,
+            Hoenn: 0,
+            Sinnoh: 0,
+            Unova: 0,
+            Kalos: 0,
+            Alola: 0,
+        },
         shinyDex: 0,
         completeDex: 0,
         razzBerry: 0,

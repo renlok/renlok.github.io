@@ -194,7 +194,22 @@ const Display = {
         }
         return true;
     },
+    renderRouteSelect: function() {
+        let selectHTML = '<option value="Kanto">Kanto</option>';
+        let showList = false;
+        for (let region in player.unlocked.regions) {
+            if (player.unlocked.regions[region]) {
+                selectHTML += '<option value="' + region + '"' + (player.settings.currentRegionId === region ? ' selected="true"' : '') + '>' + region + '</option>';
+                showList = true;
+            }
+        }
+        if (showList) {
+            $('#regionSelect').innerHTML = selectHTML;
+            $('#regionSelect').style.display = 'block';
+        }
+    },
     renderRouteList: function() {
+        this.renderRouteSelect();
         const routes = ROUTES[player.settings.currentRegionId];
         const listElement = $('#routeList');
         $('#regionSelect').value = player.settings.currentRegionId;
