@@ -9,6 +9,18 @@ function cloneJsonObject(object) {
 function randomArrayElement(array) {
     return array[Math.floor(Math.random() * array.length)]
 }
+function mergeArray(arr1, arr2) {
+    if (arr1.length === 0 && arr2.length > 0) {
+        return arr2;
+    }
+    if (arr2.length === 0 && arr1.length > 0) {
+        return arr1;
+    }
+    if (arr1.length > 0 && arr2.length > 0) {
+        return arr1.concat(arr2);
+    }
+    return [];
+}
 function flash(element) {
     let op = 1;  // initial opacity
     let fadeOut = true;

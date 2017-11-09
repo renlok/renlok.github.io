@@ -187,6 +187,13 @@ const Display = {
             i++
         }
     },
+    routeUnlocked: function(region, route) {
+        const routeData = ROUTES[region][route];
+        if (routeData.fishing && player.unlocked.fishing < routeData.fishing) {
+            return false;
+        }
+        return true;
+    },
     renderRouteList: function() {
         const routes = ROUTES[player.settings.currentRegionId];
         const listElement = $('#routeList');
@@ -194,9 +201,10 @@ const Display = {
         this.setValue(listElement, '');
         Object.keys(routes).forEach((routeId) => {
             const route = routes[routeId];
-            const routeOnClick = (route.unlocked) ? 'userInteractions.changeRoute(\'' + routeId + '\')' : '';
+            const unlocked = this.routeUnlocked(player.settings.currentRegionId, routeId);
+            const routeOnClick = (unlocked) ? 'userInteractions.changeRoute(\'' + routeId + '\')' : '';
             let routeColor, routeWeight;
-            if (route.unlocked) {
+            if (unlocked) {
                 routeColor = (routeId === player.settings.currentRouteId) ? COLORS.route.current : COLORS.route.unlocked;
                 routeWeight = (routeId === player.settings.currentRouteId) ? 'bold' : 'normal';
             } else {

@@ -54,11 +54,21 @@ $('#version').innerHTML = 'Version ' + gameVersion;
 const makeEnemy = (starter) => {
     let active = starter;
 
-    const generateNew = (recipe) => {
-        const poke = pokeByName(randomArrayElement(recipe.pokes));
+    const generateNew = (routeData) => {
+        let pokemonList = [];
+        if (routeData.fishing) {
+            for (let i = player.unlocked.fishing; i > 0; i--) {
+                if (routeData.pokes[i]) {
+                    pokemonList = mergeArray(pokemonList, routeData.pokes[i]);
+                }
+            }
+        } else {
+            pokemonList = routeData.pokes;
+        }
+        const poke = pokeByName(randomArrayElement(pokemonList));
         return new Poke(
             poke,
-            recipe.minLevel + Math.round((Math.random() * (recipe.maxLevel - recipe.minLevel))),
+            routeData.minLevel + Math.round((Math.random() * (routeData.maxLevel - routeData.minLevel))),
             false,
             Math.random() < (1 / (1 << 5 << 8))
         )
