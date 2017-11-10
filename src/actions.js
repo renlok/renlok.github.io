@@ -218,6 +218,8 @@ const UserActions = {
             'greatballSuccessfulThrows':'Caught with Greatball',
             'ultraballThrows':'Ultraball Throws',
             'ultraballSuccessfulThrows':'Caught with Ultraball',
+            'totalCurrency':'Total Currency Obtained',
+            'totalExp':'Total Experience Earned'
         };
         let statList = '';
         for (let statValue in player.statistics) {
@@ -233,21 +235,11 @@ const UserActions = {
     viewAchievements: function() {
         let achievementHTML = '';
         let completeState, complete;
-        for (let group in ACHIEVEMENTS) {
-            if (typeof ACHIEVEMENTS[group] === 'object') {
-                for (let subgroup in ACHIEVEMENTS[group]) {
-                    for (let i = 0, count = ACHIEVEMENTS[group][subgroup].length; i < count; i++) {
-                        complete = (player[group][subgroup] >= ACHIEVEMENTS[group][subgroup][i].value);
-                        completeState = complete ? ACHIEVEMENTS[group][subgroup][i].value : player[group][subgroup];
-                        achievementHTML += '<li' + (complete ? ' class="complete"' : '') + '><b>' + ACHIEVEMENTS[group][subgroup][i].name + '</b>: ' + camalCaseToString(subgroup) + ' ' + completeState + '/' + ACHIEVEMENTS[group][subgroup][i].value  + '</li>';
-                    }
-                }
-            } else {
-                for (let i = 0, count = ACHIEVEMENTS[group].length; i < count; i++) {
-                    complete = (player[group] >= ACHIEVEMENTS[group][i].value);
-                    completeState = complete ? ACHIEVEMENTS[group][i].value : player[group];
-                    achievementHTML += '<li' + (complete ? ' class="complete"' : '') + '><b>' + ACHIEVEMENTS[group][i].name + '</b>: ' + camalCaseToString(group) + ' ' + completeState + '/' + ACHIEVEMENTS[group][i].value  + '</li>';
-                }
+        for (let subgroup in ACHIEVEMENTS['statistics']) {
+            for (let i = 0, count = ACHIEVEMENTS['statistics'][subgroup].length; i < count; i++) {
+                complete = (player['statistics'][subgroup] >= ACHIEVEMENTS['statistics'][subgroup][i].value);
+                completeState = complete ? ACHIEVEMENTS['statistics'][subgroup][i].value : player['statistics'][subgroup];
+                achievementHTML += '<li' + (complete ? ' class="complete"' : '') + '><b>' + ACHIEVEMENTS['statistics'][subgroup][i].name + '</b>: ' + camalCaseToString(subgroup) + ' ' + completeState + '/' + ACHIEVEMENTS['statistics'][subgroup][i].value  + '</li>';
             }
         }
         document.getElementById('achievementsList').innerHTML = achievementHTML;

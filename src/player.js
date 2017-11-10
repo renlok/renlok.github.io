@@ -45,6 +45,8 @@ let Player = {
         'greatballSuccessfulThrows':0,
         'ultraballThrows':0,
         'ultraballSuccessfulThrows':0,
+        'totalCurrency': 0,
+        'totalExp': 0
     },
     canHeal: function() {
         if ((Date.now() - this.lastHeal) > 30000) {

@@ -10,5 +10,12 @@ const ACHIEVEMENTS = {
                 value: 100
             }
         ]
-    }
+    },
+    // TODO how to best deal with these
+    caught: [
+        {
+            name: 'Starting Set',
+            pokes: ['Squirtle', 'Bulbasaur', 'Charmander']
+        }
+    ]
 };
