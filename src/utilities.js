@@ -21,6 +21,10 @@ function mergeArray(arr1, arr2) {
     }
     return [];
 }
+function camalCaseToString(text) {
+    let result = text.replace( /([A-Z])/g, " $1" );
+    return result.charAt(0).toUpperCase() + result.slice(1);
+}
 function flash(element) {
     let op = 1;  // initial opacity
     let fadeOut = true;

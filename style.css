@@ -311,11 +311,17 @@ progress.expBar {
     margin-bottom: 7px;
 }
 
-#statisticsList li {
+#statisticsList li, #achievementsList li {
     padding: 2px 15px;
 }
 #statisticsList li:nth-child(even) {background: #CCC}
 #statisticsList li:nth-child(odd) {background: #FFF}
+#achievementsList li:nth-child(even) {background: #CCC}
+#achievementsList li:nth-child(odd) {background: #FFF}
+#achievementsList li.complete {
+    text-decoration: line-through;
+    font-style: italic;
+}
 
 #shop {
     width:50%;

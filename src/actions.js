@@ -231,6 +231,26 @@ const UserActions = {
         $(`#forceSave`).style.display = 'none';
     },
     viewAchievements: function() {
+        let achievementHTML = '';
+        let completeState, complete;
+        for (let group in ACHIEVEMENTS) {
+            if (typeof ACHIEVEMENTS[group] === 'object') {
+                for (let subgroup in ACHIEVEMENTS[group]) {
+                    for (let i = 0, count = ACHIEVEMENTS[group][subgroup].length; i < count; i++) {
+                        complete = (player[group][subgroup] >= ACHIEVEMENTS[group][subgroup][i].value);
+                        completeState = complete ? ACHIEVEMENTS[group][subgroup][i].value : player[group][subgroup];
+                        achievementHTML += '<li' + (complete ? ' class="complete"' : '') + '><b>' + ACHIEVEMENTS[group][subgroup][i].name + '</b>: ' + camalCaseToString(subgroup) + ' ' + completeState + '/' + ACHIEVEMENTS[group][subgroup][i].value  + '</li>';
+                    }
+                }
+            } else {
+                for (let i = 0, count = ACHIEVEMENTS[group].length; i < count; i++) {
+                    complete = (player[group] >= ACHIEVEMENTS[group][i].value);
+                    completeState = complete ? ACHIEVEMENTS[group][i].value : player[group];
+                    achievementHTML += '<li' + (complete ? ' class="complete"' : '') + '><b>' + ACHIEVEMENTS[group][i].name + '</b>: ' + camalCaseToString(group) + ' ' + completeState + '/' + ACHIEVEMENTS[group][i].value  + '</li>';
+                }
+            }
+        }
+        document.getElementById('achievementsList').innerHTML = achievementHTML;
         document.getElementById('achievementsContainer').style.display = 'block';
     },
     shopItems: [
