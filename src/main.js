@@ -112,7 +112,7 @@ dom.renderCurrency();
 
 renderView(dom, enemy, player);
 dom.renderListBox();
-dom.renderRouteSelect();
+dom.renderRegionSelect();
 dom.renderPokeSort();
 
 combatLoop.init();

@@ -280,6 +280,11 @@ const ROUTES = {
         }
     },
     Johto: {
+        _unlock: {
+            statistics: {
+                caught: 140
+            }
+        },
         starter2: {
             name: 'New Bark Town'
             , pokes: ['Chikorita', 'Cyndaquil', 'Totodile']
@@ -551,6 +556,13 @@ const ROUTES = {
         }
     },
     Hoenn: {
+        _unlock: {
+            statistics: {
+                caught: 240,
+                beaten: 1500,
+                shinySeen: 1
+            }
+        },
         starter3: {
             name: 'Littleroot Town'
             , pokes: ['Treecko', 'Torchic', 'Mudkip']
@@ -927,6 +939,13 @@ const ROUTES = {
         }
     },
     Sinnoh: {
+        _unlock: {
+            statistics: {
+                caught: 370,
+                beaten: 5000,
+                shinyCaught: 1
+            }
+        },
         starter4: {
             name: 'Twinleaf Town'
             , pokes: ['Turtwig', 'Chimchar', 'Piplup']
@@ -1372,6 +1391,14 @@ const ROUTES = {
         }
     },
     Unova: {
+        _unlock: {
+            currency: 10000,
+            statistics: {
+                caught: 480,
+                beaten: 25000,
+                shinyCaught: 25
+            }
+        },
         starter5: {
             name: 'Aspertia City'
             , pokes: ['Snivy', 'Tepig', 'Oshawott']
@@ -1782,6 +1809,14 @@ const ROUTES = {
         }
     },
     Kalos: {
+        _unlock: {
+            currency: 50000,
+            statistics: {
+                caught: 640,
+                beaten: 75000,
+                shinyCaught: 100
+            }
+        },
         starter6: {
             name: 'Aquacorde Town'
             , pokes: ['Chespin', 'Fennekin', 'Froakie']
@@ -1875,6 +1910,14 @@ const ROUTES = {
         }
     },
     Alola: {
+        _unlock: {
+            currency: 150000,
+            statistics: {
+                caught: 710,
+                beaten: 250000,
+                shinyCaught: 500
+            }
+        },
         starter7: {
             name: 'Iki Town'
             , pokes: ['Rowlet', 'Litten', 'Popplio']

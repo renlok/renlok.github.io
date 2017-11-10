@@ -233,40 +233,59 @@ const Display = {
         }
         return true;
     },
-    renderRouteSelect: function() {
-        let selectHTML = '<option value="Kanto">Kanto</option>';
-        let showList = false;
-        for (let region in player.unlocked.regions) {
-            if (player.unlocked.regions[region]) {
-                selectHTML += '<option value="' + region + '"' + (player.settings.currentRegionId === region ? ' selected="true"' : '') + '>' + region + '</option>';
-                showList = true;
+    regionUnlocked: function(region) {
+        const unlockData = ROUTES[region]._unlock;
+        if (unlockData) {
+            for (let group in unlockData) {
+                if (typeof unlockData[group] === 'object') {
+                    for (let criteria in unlockData[group]) {
+                        if (player[group][criteria] < unlockData[group][criteria])
+                            return false;
+                    }
+                } else {
+                    if (player[group] < unlockData[group])
+                        return false;
+                }
             }
         }
-        if (showList) {
+        return true;
+    },
+    renderRegionSelect: function() {
+        let selectHTML = '';
+        let count = 0;
+        for (let region in ROUTES) {
+            if (this.regionUnlocked(region)) {
+                selectHTML += '<option value="' + region + '"' + (player.settings.currentRegionId === region ? ' selected="true"' : '') + '>' + region + '</option>';
+                count++;
+            }
+        }
+        if (count > 1) {
             $('#regionSelect').innerHTML = selectHTML;
             $('#regionSelect').style.display = 'block';
         }
     },
     renderRouteList: function() {
-        this.renderRouteSelect();
+        this.renderRegionSelect();
         const routes = ROUTES[player.settings.currentRegionId];
         const listElement = $('#routeList');
         $('#regionSelect').value = player.settings.currentRegionId;
         this.setValue(listElement, '');
         Object.keys(routes).forEach((routeId) => {
-            const route = routes[routeId];
-            const unlocked = this.routeUnlocked(player.settings.currentRegionId, routeId);
-            const routeOnClick = (unlocked) ? 'userInteractions.changeRoute(\'' + routeId + '\')' : '';
-            let routeColor, routeWeight;
-            if (unlocked) {
-                routeColor = (routeId === player.settings.currentRouteId) ? COLORS.route.current : COLORS.route.unlocked;
-                routeWeight = (routeId === player.settings.currentRouteId) ? 'bold' : 'normal';
-            } else {
-                routeColor = COLORS.route.locked;
-                routeWeight = 'normal';
+            if (routeId !== '_unlock') {
+                const route = routes[routeId];
+                const unlocked = this.routeUnlocked(player.settings.currentRegionId, routeId);
+                const routeOnClick = (unlocked) ? 'userInteractions.changeRoute(\'' + routeId + '\')' : '';
+                let routeColor, routeWeight;
+                if (unlocked) {
+                    routeColor = (routeId === player.settings.currentRouteId) ? COLORS.route.current : COLORS.route.unlocked;
+                    routeWeight = (routeId === player.settings.currentRouteId) ? 'bold' : 'normal';
+                } else {
+                    routeColor = COLORS.route.locked;
+                    routeWeight = 'normal';
+                }
+                const routeHTML = '<li><a href="#" onclick="' + routeOnClick + '" style="color: ' + routeColor + '; font-weight: ' + routeWeight + ';" >' + route.name + ' (' + route.minLevel + '~' + route.maxLevel + ')' + '</a></li>';
+                this.setValue(listElement, routeHTML, true);
             }
-            const routeHTML = '<li><a href="#" onclick="' + routeOnClick + '" style="color: ' + routeColor + '; font-weight: ' + routeWeight + ';" >' + route.name + ' (' + route.minLevel + '~' + route.maxLevel + ')' + '</a></li>';
-            this.setValue(listElement, routeHTML, true);
         })
     },
     renderListBox: function() {
