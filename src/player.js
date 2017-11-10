@@ -133,12 +133,16 @@ let Player = {
     hasPokemon: function(pokemonName, shiny) {
         return typeof this.pokemons.find(function(obj){ return (this[0] == obj.pokeName() && this[1] == obj.shiny()); }, [pokemonName, shiny]) != 'undefined';
     },
-    deletePoke: function(index) {
-        if (index !== this.activePokeID) {
-            this.pokemons.splice(index, 1);
-            if (index < this.activePokeID) {
-                this.activePokeID -= 1;
+    deletePoke: function(index, from = 'roster') {
+        if (from == 'roster') {
+            if (index !== this.activePokeID) {
+                this.pokemons.splice(index, 1);
+                if (index < this.activePokeID) {
+                    this.activePokeID -= 1;
+                }
             }
+        } else {
+            this.storage.splice(index, 1);
         }
     },
     ballRNG: function(ballName) {
