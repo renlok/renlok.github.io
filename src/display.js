@@ -226,35 +226,11 @@ const Display = {
             i++
         }
     },
-    routeUnlocked: function(region, route) {
-        const routeData = ROUTES[region][route];
-        if (routeData.fishing && player.unlocked.fishing < routeData.fishing) {
-            return false;
-        }
-        return true;
-    },
-    regionUnlocked: function(region) {
-        const unlockData = ROUTES[region]._unlock;
-        if (unlockData) {
-            for (let group in unlockData) {
-                if (typeof unlockData[group] === 'object') {
-                    for (let criteria in unlockData[group]) {
-                        if (player[group][criteria] < unlockData[group][criteria])
-                            return false;
-                    }
-                } else {
-                    if (player[group] < unlockData[group])
-                        return false;
-                }
-            }
-        }
-        return true;
-    },
     renderRegionSelect: function() {
         let selectHTML = '';
         let count = 0;
         for (let region in ROUTES) {
-            if (this.regionUnlocked(region)) {
+            if (player.regionUnlocked(region)) {
                 selectHTML += '<option value="' + region + '"' + (player.settings.currentRegionId === region ? ' selected="true"' : '') + '>' + region + '</option>';
                 count++;
             }
@@ -273,7 +249,7 @@ const Display = {
         Object.keys(routes).forEach((routeId) => {
             if (routeId !== '_unlock') {
                 const route = routes[routeId];
-                const unlocked = this.routeUnlocked(player.settings.currentRegionId, routeId);
+                const unlocked = player.routeUnlocked(player.settings.currentRegionId, routeId);
                 const routeOnClick = (unlocked) ? 'userInteractions.changeRoute(\'' + routeId + '\')' : '';
                 let routeColor, routeWeight;
                 if (unlocked) {

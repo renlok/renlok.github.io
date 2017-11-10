@@ -163,6 +163,37 @@ let Player = {
     addBalls: function(ballName, amount) {
         this.ballsAmount[ballName] += amount;
     },
+    meetsCriteria: function(criteriaObj) {
+        for (let group in criteriaObj) {
+            if (typeof criteriaObj[group] === 'object') {
+                for (let criteria in criteriaObj[group]) {
+                    if (player[group][criteria] < criteriaObj[group][criteria])
+                        return false;
+                }
+            } else {
+                if (player[group] < criteriaObj[group])
+                    return false;
+            }
+        }
+        return true;
+    },
+    regionUnlocked: function(region) {
+        const unlockData = ROUTES[region]._unlock;
+        if (unlockData) {
+            return this.meetsCriteria(unlockData);
+        }
+        return true;
+    },
+    routeUnlocked: function(region, route) {
+        const routeData = ROUTES[region][route];
+        if (routeData.fishing && player.unlocked.fishing < routeData.fishing) {
+            return false;
+        }
+        if (routeData._unlock) {
+            return this.meetsCriteria(routeData._unlock);
+        }
+        return true;
+    },
     // Load and Save functions
     savePokes: function() {
         localStorage.setItem(`totalPokes`, this.pokemons.length);

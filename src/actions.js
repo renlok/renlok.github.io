@@ -48,7 +48,7 @@ const UserActions = {
     changeRegion: function() {
         const regionSelect = document.getElementById('regionSelect');
         const regionId = regionSelect.options[regionSelect.selectedIndex].value;
-        if (dom.regionUnlocked(regionId)) {
+        if (player.regionUnlocked(regionId)) {
             player.settings.currentRegionId = regionId;
             if (Object.keys(ROUTES[player.settings.currentRegionId])[0] !== '_unlock') {
                 this.changeRoute(Object.keys(ROUTES[player.settings.currentRegionId])[0]);
