@@ -53,8 +53,10 @@ ul {
     display: none;
 }
 
-#playerPokesList ul li:first-child .pokeUpButton,
-#playerPokesList ul li:last-child .pokeDownButton {
+#rosterBox ul li:first-child .pokeUpButton,
+#rosterBox ul li:last-child .pokeDownButton,
+#storageBox ul li:first-child .pokeUpButton,
+#storageBox ul li:last-child .pokeDownButton {
     display: none;
 }
 

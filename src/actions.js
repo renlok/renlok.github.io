@@ -264,6 +264,12 @@ const UserActions = {
                 achievementHTML += '<li' + (complete ? ' class="complete"' : '') + '><b>' + ACHIEVEMENTS['statistics'][subgroup][i].name + '</b>: ' + camalCaseToString(subgroup) + ' ' + completeState + '/' + ACHIEVEMENTS['statistics'][subgroup][i].value  + '</li>';
             }
         }
+        for (let i = 0, count = ACHIEVEMENTS['dex']['caughtCount'].length; i < count; i++) {
+            let progress = player.countPokedex(POKEDEXFLAGS.releasedNormal);
+            complete = (progress >= ACHIEVEMENTS['dex']['caughtCount'][i].value);
+            completeState = complete ? ACHIEVEMENTS['dex']['caughtCount'][i].value : progress;
+            achievementHTML += '<li' + (complete ? ' class="complete"' : '') + '><b>' + ACHIEVEMENTS['dex']['caughtCount'][i].name + '</b>: Unique Caught ' + completeState + '/' + ACHIEVEMENTS['dex']['caughtCount'][i].value  + '</li>';
+        }
         document.getElementById('achievementsList').innerHTML = achievementHTML;
         document.getElementById('achievementsContainer').style.display = 'block';
     },

@@ -84,6 +84,19 @@ let Player = {
         }
         dom.renderListBox();
     },
+    countPokedex: function(flag, exactMatch = false) {
+        let counter = 0;
+        let i, pData;
+        for (i in this.pokedexData) {
+            pData = this.pokedexData[i];
+            if (exactMatch && flag == pData.flag) {
+                counter++;
+            } else if (!exactMatch && flag <= pData.flag) {
+                counter++;
+            }
+        }
+        return counter;
+    },
     setActive: function(index) {
         this.activePokeID = index;
     },

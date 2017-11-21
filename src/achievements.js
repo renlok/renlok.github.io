@@ -6,16 +6,28 @@ const ACHIEVEMENTS = {
                 value: 1
             },
             {
-                name: '100',
+                name: 'A Good Start',
                 value: 100
+            },
+            {
+                name: 'Thousand Club',
+                value: 1000
             }
         ]
     },
-    // TODO how to best deal with these
-    caught: [
-        {
-            name: 'Starting Set',
-            pokes: ['Squirtle', 'Bulbasaur', 'Charmander']
-        }
-    ]
+    dex: {
+        caughtCount: [
+            {
+                name: 'Johto Unlocked',
+                value: 140
+            }
+        ],
+        // TODO make these work
+        caught: [
+            {
+                name: 'Starting Set',
+                pokes: ['Squirtle', 'Bulbasaur', 'Charmander']
+            }
+        ]
+    }
 };
