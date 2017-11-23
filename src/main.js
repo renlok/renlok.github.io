@@ -18,8 +18,8 @@ EXP_TABLE["Fast"] = [1, 2, 6, 21, 51, 100, 172, 274, 409, 583, 800, 1064, 1382, 
 
 const COLORS = {};
 COLORS['pokemon'] = {};
-COLORS['pokemon']['activeShiny'] = 'rgb(255, 230, 10)';
-COLORS['pokemon']['inactiveShiny'] = 'rgb(255, 255, 76)';
+COLORS['pokemon']['activeShiny'] = 'rgba(192, 160, 0, 0.9)';
+COLORS['pokemon']['inactiveShiny'] = 'rgba(192, 160, 0, 0.5)';
 COLORS['pokemon']['activeNormal'] = 'rgb(80, 157, 2)';
 COLORS['pokemon']['inactiveNormal'] = 'rgb(66, 116, 10)';
 COLORS['pokemon']['dead'] = 'red';

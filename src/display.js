@@ -1,6 +1,6 @@
 const Display = {
     healElement: $('#heal'),
-    logElement: $('#console .console-text'),
+    logElement: $('#console #console-text'),
     setValue: function(domElement, newValue, append) {
         if (append === undefined) { append = false }
         if (append) {
