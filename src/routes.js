@@ -281,8 +281,8 @@ const ROUTES = {
     },
     Johto: {
         _unlock: {
-            statistics: {
-                caught: 140
+            dex: {
+                caughtCount: 140
             }
         },
         starter2: {
@@ -558,9 +558,11 @@ const ROUTES = {
     Hoenn: {
         _unlock: {
             statistics: {
-                caught: 240,
                 beaten: 1500,
                 shinySeen: 1
+            },
+            dex: {
+                caughtCount: 240
             }
         },
         starter3: {
@@ -941,9 +943,11 @@ const ROUTES = {
     Sinnoh: {
         _unlock: {
             statistics: {
-                caught: 370,
                 beaten: 5000,
                 shinyCaught: 1
+            },
+            dex: {
+                caughtCount: 370
             }
         },
         starter4: {
@@ -1394,9 +1398,11 @@ const ROUTES = {
         _unlock: {
             currency: 10000,
             statistics: {
-                caught: 480,
                 beaten: 25000,
                 shinyCaught: 25
+            },
+            dex: {
+                caughtCount: 480
             }
         },
         starter5: {
@@ -1815,6 +1821,9 @@ const ROUTES = {
                 caught: 640,
                 beaten: 75000,
                 shinyCaught: 100
+            },
+            dex: {
+                caughtCount: 640
             }
         },
         starter6: {
@@ -1913,9 +1922,11 @@ const ROUTES = {
         _unlock: {
             currency: 150000,
             statistics: {
-                caught: 710,
                 beaten: 250000,
                 shinyCaught: 500
+            },
+            dex: {
+                caughtCount: 710
             }
         },
         starter7: {

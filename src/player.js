@@ -186,7 +186,14 @@ let Player = {
         for (let group in criteriaObj) {
             if (typeof criteriaObj[group] === 'object') {
                 for (let criteria in criteriaObj[group]) {
-                    if (player[group][criteria] < criteriaObj[group][criteria])
+                    // if pokedex criteria
+                    if (group == 'dex') {
+                        if (criteria == 'caughtCount'
+                            && this.countPokedex(POKEDEXFLAGS.releasedNormal) < criteriaObj[group][criteria]) {
+                            return false;
+                        }
+                    }
+                    else if (player[group][criteria] < criteriaObj[group][criteria])
                         return false;
                 }
             } else {
