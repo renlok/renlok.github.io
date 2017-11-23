@@ -80,6 +80,15 @@ ul {
 .fa-arrow-up:before{content:"\f062"}
 .fa-arrow-down:before{content:"\f063"}
 
+.activeNormal {
+    color: rgb(80, 157, 2);
+}
+.inactiveNormal {
+    color: rgb(66, 116, 10);
+}
+.dead {
+    color: red;
+}
 .pokeDex0 {
     color: #808080;
 }
@@ -92,7 +101,13 @@ ul {
 .pokeDex3, .pokeDex5 {
     color: rgba(42, 55, 190, 0.5);
 }
-.pokeDex4, .pokeDex7 {
+.activeShiny, .inactiveShiny {
+    font-weight: bold;
+}
+.activeShiny {
+    color: rgb(192, 160, 0);
+}
+.inactiveShiny, .pokeDex4, .pokeDex7 {
     color: rgba(192, 160, 0, 0.5);
 }
 .pokeDex3, .pokeDex4 {
@@ -179,8 +194,8 @@ ul {
 }
 .pokeBox .img {
     transition: margin 0.08s ease-out;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
 }
 .pokeBox .name {
     font-size: 18px;

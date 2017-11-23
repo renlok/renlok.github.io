@@ -108,23 +108,23 @@ const Display = {
             this.setValue(this.healElement, 'Heal: ' + Math.floor(((canHeal/30000)*100)) + '%')
         }
     },
-    pokeColor: function(poke) {
+    pokeStatus: function(poke) {
         if (poke.alive()) {
             if (poke === player.activePoke()) {
                 if (poke.shiny()) {
-                    return COLORS.pokemon.activeShiny;
+                    return 'activeShiny';
                 } else {
-                    return COLORS.pokemon.activeNormal;
+                    return 'activeNormal';
                 }
             } else {
                 if (poke.shiny()) {
-                    return COLORS.pokemon.inactiveShiny;
+                    return 'inactiveShiny';
                 } else {
-                    return COLORS.pokemon.inactiveNormal;
+                    return 'inactiveNormal';
                 }
             }
         } else {
-            return COLORS.pokemon.dead;
+            return 'dead';
         }
     },
     renderPokeSort: function() {
@@ -151,10 +151,10 @@ const Display = {
             const listItemElement = listElement.querySelector('#listPoke' + index);
             if (listItemElement) {
                 const listItemNameElement = listItemElement.querySelector('.pokeListName');
-                let hasChanged = (listItemNameElement.innerHTML !== `${poke.pokeName()} (${poke.level()})`) || (listItemNameElement.style.color !== this.pokeColor(poke));
+                let hasChanged = (listItemNameElement.innerHTML !== `${poke.pokeName()} (${poke.level()})`) || (listItemNameElement.getAttribute('status') !== this.pokeStatus(poke));
                 listItemNameElement.innerHTML = `${poke.pokeName()} (${poke.level()})`;
-                listItemNameElement.style.color = this.pokeColor(poke);
-                listItemNameElement.className = 'pokeListName'
+                listItemNameElement.setAttribute('status', this.pokeStatus(poke));
+                listItemNameElement.className = 'pokeListName ' + this.pokeStatus(poke)
                     + (poke === player.activePoke() ? ' activePoke' : '')
                     + (poke.canEvolve() ? ' canEvolve' : '');
                 if (!purge && hasChanged) {
@@ -170,7 +170,7 @@ const Display = {
 
                 listElementsToAdd += `<li id="listPoke${index}">` +
                     deleteButton +
-                    `<a href="#" onclick="userInteractions.changePokemon(${index})" style="color: ${this.pokeColor(poke)}" class="pokeListName">${poke.pokeName()} (${poke.level()})</a><br>` +
+                    `<a href="#" onclick="userInteractions.changePokemon(${index})" class="pokeListName ${this.pokeStatus(poke)}" status="${this.pokeStatus(poke)}">${poke.pokeName()} (${poke.level()})</a><br>` +
                     upButton +
                     downButton +
                     firstButton +
@@ -198,7 +198,8 @@ const Display = {
             if (listItemElement) {
                 const listItemNameElement = listItemElement.querySelector('.pokeListName');
                 listItemNameElement.innerHTML = `${poke.pokeName()} (${poke.level()})`;
-                listItemNameElement.style.color = this.pokeColor(poke);
+                listItemNameElement.setAttribute('status', this.pokeStatus(poke));
+                listItemNameElement.className = 'pokeListName ' + this.pokeStatus(poke);
             } else {
                 const deleteButton = `<a href="#" onclick="userInteractions.deletePokemon(event, ${index}, 'storage');return false" class="pokeDeleteButton">X</a>`;
                 const upButton = `<button onclick="userInteractions.pokemonToUp(${index}, 'storage')" class="pokeUpButton"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>`;
@@ -208,7 +209,7 @@ const Display = {
 
                 listElementsToAdd += `<li id="storagePoke${index}">` +
                     deleteButton +
-                    `<a href="#" style="color: ${this.pokeColor(poke)}" class="pokeListName">${poke.pokeName()} (${poke.level()})</a><br>` +
+                    `<a href="#" class="pokeListName ${this.pokeStatus(poke)}" status="${this.pokeStatus(poke)}">${poke.pokeName()} (${poke.level()})</a><br>` +
                     upButton +
                     downButton +
                     firstButton +
