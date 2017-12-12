@@ -145,7 +145,8 @@ let Player = {
         return this.canHeal()
     },
     hasPokemon: function(pokemonName, shiny) {
-        return typeof this.pokemons.find(function(obj){ return (this[0] == obj.pokeName() && this[1] == obj.shiny()); }, [pokemonName, shiny]) != 'undefined';
+        const allPokes = mergeArray(this.pokemons, this.storage);
+        return typeof allPokes.find(function(obj){ return (this[0] == obj.pokeName() && this[1] == obj.shiny()); }, [pokemonName, shiny]) != 'undefined';
     },
     deletePoke: function(index, from = 'roster') {
         if (from == 'roster') {
