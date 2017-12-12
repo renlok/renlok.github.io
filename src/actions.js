@@ -226,6 +226,7 @@ const UserActions = {
             'seen':'Pokemon Seen',
             'caught':'Pokemon Caught',
             'released':'Pokemon Released',
+            'sold':'Pokemon Sold',
             'beaten':'Pokemon Beaten',
             'shinySeen':'Shiny Pokemon Seen',
             'shinyCaught':'Shiny Pokemon Caught',

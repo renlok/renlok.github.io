@@ -133,6 +133,7 @@ let Town = {
         player.addCurrency(soldValue);
         dom.gameConsoleLog('Sold ' + poke.pokeName() + ' for ¤' + soldValue + '!!', 'purple');
         player.deletePoke(index, 'storage');
+        player.statistics.sold++;
         this.renderSellTrader();
         dom.renderPokeList();
         return false;

@@ -31,6 +31,7 @@ let Player = {
         'seen':0,
         'caught':0,
         'released':0,
+        'sold':0,
         'beaten':0,
         'shinySeen':0,
         'shinyCaught':0,
