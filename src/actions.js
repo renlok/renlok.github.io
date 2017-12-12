@@ -43,13 +43,6 @@ const UserActions = {
             alert('Hold shift while clicking the X to release a pokemon');
         }
     },
-    healAllPlayerPokemons: function() {
-        if (player.healAllPokemons() === "healed") {
-            dom.gameConsoleLog('Full heal!', 'white');
-            combatLoop.refresh();
-            renderView(dom, enemy, player)
-        }
-    },
     changeRegion: function() {
         const regionSelect = document.getElementById('regionSelect');
         const regionId = regionSelect.options[regionSelect.selectedIndex].value;

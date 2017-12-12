@@ -103,6 +103,7 @@ const Display = {
             player.healAllPokemons();
             combatLoop.refresh();
             renderView(dom, enemy, player, false);
+            dom.renderPokeList(false);
         }
         if (typeof canHeal === 'number') {
             this.setValue(this.healElement, 'Heal: ' + Math.floor(((canHeal/30000)*100)) + '%')
