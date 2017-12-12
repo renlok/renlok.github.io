@@ -241,7 +241,7 @@ const UserActions = {
             'greatballSuccessfulThrows':'Caught with Greatball',
             'ultraballThrows':'Ultraball Throws',
             'ultraballSuccessfulThrows':'Caught with Ultraball',
-            'totalCurrency':'Total Currency Obtained',
+            'totalCurrency':'Total Coin Obtained',
             'totalExp':'Total Experience Earned'
         };
         let statList = '';
