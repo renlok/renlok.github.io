@@ -180,12 +180,6 @@ const ROUTES = {
             ,
             maxLevel: 31
         }
-        , special10: {
-            name: 'Trading Center'
-            , pokes: ['Farfetchd', 'Jynx', 'Lickitung', 'Mr. Mime']
-            , minLevel: 30
-            , maxLevel: 30
-        }
         , route18: {
             name: 'Route 19'
             , pokes: ['Raticate', 'Pidgeotto', 'Oddish', 'Ditto']

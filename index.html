@@ -173,10 +173,22 @@
             <div>
                 <h3 id="townTitle" class="modalTitle">Town</h3>
             </div>
-            <div id="shop">
-                <h4>Poke Shop</h4>
-                <ul id="shopItems">
-                </ul>
+            <div id="townBuildings">
+                <div id="shop" class="townBuilding">
+                    <h4>Poke Shop</h4>
+                    <ul id="shopItems">
+                    </ul>
+                </div>
+                <div id="trader" class="townBuilding">
+                    <h4>Poke Trader</h4>
+                    Sell Pokemon
+                    <ul id="traderSellList" class="traderList">
+                    </ul>
+                    Buy Pokemon
+                    <ul id="traderBuyList" class="traderList">
+                        <li>Nothing yet</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -185,6 +197,7 @@
     <script src="src/evolutions.js"></script>
     <script src="src/typeModifiers.js"></script>
     <script src="src/routes.js"></script>
+    <script src="src/town.js"></script>
     <script src="src/achievements.js"></script>
     <script src="src/utilities.js"></script>
     <script src="src/display.js"></script>

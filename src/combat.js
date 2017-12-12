@@ -189,10 +189,8 @@ const Combat = {
     findCurrency: function(pokeLevel) {
         if (RNG(5)) {
             const foundCurrency = Math.floor(Math.random() * pokeLevel * 4) + 1;
-            player.currency += foundCurrency;
-            player.statistics.totalCurrency += foundCurrency;
+            player.addCurrency(foundCurrency);
             dom.gameConsoleLog('You found ¤' + foundCurrency + '!!', 'purple');
-            dom.renderCurrency();
         }
     },
     changePlayerPoke: function(newPoke) {

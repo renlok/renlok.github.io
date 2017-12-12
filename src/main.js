@@ -77,6 +77,7 @@ const makeEnemy = (starter) => {
 // load everything we need
 let player = Player;
 let enemy = makeEnemy();
+const town = Town;
 const dom = Display;
 const combatLoop = Combat;
 const userInteractions = UserActions;

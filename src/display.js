@@ -226,6 +226,9 @@ const Display = {
             listElement.removeChild(listItemToRemove);
             i++
         }
+        if (list.length == 0) {
+            this.setValue(listElement, '<li>Your storage is cold and empty</li>');
+        }
     },
     renderRegionSelect: function() {
         let selectHTML = '';

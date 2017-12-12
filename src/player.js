@@ -182,6 +182,11 @@ let Player = {
     addBalls: function(ballName, amount) {
         this.ballsAmount[ballName] += amount;
     },
+    addCurrency: function(amount) {
+        this.currency += amount;
+        this.statistics.totalCurrency += amount;
+        dom.renderCurrency();
+    },
     meetsCriteria: function(criteriaObj) {
         for (let group in criteriaObj) {
             if (typeof criteriaObj[group] === 'object') {
