@@ -44,6 +44,11 @@ ul {
     width: 95%;
 }
 
+.listPoke p {
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
 .pokeDeleteButton,
 .pokeUpButton,
 .pokeDownButton,
@@ -169,10 +174,28 @@ ul {
     grid-row: 4 / 5;
     text-align: center;
 }
-#navBox button, #viewSelectBox button {
+#navBox .button, #viewSelectBox .button{
     margin-top: 7px;
     width: 125px;
     margin-right: 5px;
+}
+.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    font: 400 13.3333px Arial;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
 }
 #navBox p {
     margin: 0 0 5px 0;
@@ -268,6 +291,29 @@ progress.expBar {
 
 #version {
     position: absolute;
+}
+
+#modalPopup {
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    margin-left: -150px;
+    padding: 15px;
+    border: solid 1px rgb(0, 0, 0);
+    background-color: #66c966;
+    border-radius: 2px;
+    overflow: auto;
+    width: 300px;
+    height: 50px;
+}
+
+#popupText {
+    vertical-align: middle;
+    margin: auto;
+    font-weight: bold;
 }
 
 .modalContainer {

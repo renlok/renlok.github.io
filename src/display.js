@@ -139,10 +139,6 @@ const Display = {
         }
     },
     renderPokeList: function(purge = true) {
-        if (purge && player.settings.autoSort) {
-            // if doing a list purge then reorder the pokemon
-            player.sortPokemon();
-        }
         const list = player.getPokemon();
         const listElement = $('#rosterList');
         const deleteEnabled = $('#enableDelete').checked;
@@ -158,6 +154,7 @@ const Display = {
                 listItemNameElement.className = 'pokeListName ' + this.pokeStatus(poke)
                     + (poke === player.activePoke() ? ' activePoke' : '')
                     + (poke.canEvolve() ? ' canEvolve' : '');
+                listItemElement.querySelector('img').setAttribute('src', poke.image()['front']);
                 if (!purge && hasChanged) {
                     flash(listItemElement);
                 }
@@ -168,8 +165,10 @@ const Display = {
                 const firstButton = `<button onclick="userInteractions.pokemonToFirst(${index})" class="pokeFirstButton">#1</button>`;
                 const evolveButton = `<button onclick="userInteractions.evolvePokemon(${index})" class="pokeEvolveButton">Evolve</button>`;
                 const storageButton = `<button onclick="userInteractions.moveToStorage(${index})" class="toStorageButton">PC</button>`;
+                const image = '<p><a href="#" onclick="userInteractions.changePokemon(' + index + ')"><img src="' + poke.image()['front'] + '"></a></p>';
 
-                listElementsToAdd += `<li id="listPoke${index}">` +
+                listElementsToAdd += `<li id="listPoke${index}" class="listPoke">` +
+                    image +
                     deleteButton +
                     `<a href="#" onclick="userInteractions.changePokemon(${index})" class="pokeListName ${this.pokeStatus(poke)}" status="${this.pokeStatus(poke)}">${poke.pokeName()} (${poke.level()})</a><br>` +
                     upButton +
@@ -339,6 +338,15 @@ const Display = {
             $(`#enableCatchAll`).checked = true;
         }
         userInteractions.changeCatchOption(setCatchOption);
+    },
+    showPopup: function(message) {
+        $('#modalPopup').style.display = 'flex';
+        $('#modalPopup #popupText').innerText = message;
+        setTimeout(this.hidePopup, 2000);
+    },
+    hidePopup: function() {
+        $('#modalPopup').style.display = 'none';
+        $('#modalPopup #popupText').innerText = '';
     },
     bindEvents: function() {
         $('#enableDelete').addEventListener( 'click', () => {

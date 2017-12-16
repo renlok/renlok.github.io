@@ -21,23 +21,28 @@ const UserActions = {
     deletePokemon: function(event, index, from = 'roster') {
         const pokeList = (from === 'roster') ? player.getPokemon() : player.storage;
         if (event.shiftKey) {
-            const pokemon = pokeList[index];
-            player.deletePoke(index, from);
-            const hasPoke = player.hasPokemon(pokemon.pokeName(), pokemon.shiny());
-            if (!hasPoke) {
-                player.addPokedex(pokemon.pokeName(), (pokemon.shiny() ? POKEDEXFLAGS.releasedShiny : POKEDEXFLAGS.releasedNormal));
-            }
-            if (from === 'roster') {
-                combatLoop.changePlayerPoke(player.activePoke());
-                renderView(dom, enemy, player);
+            // you must keep at least one active pokemon
+            if (from !== 'roster' || pokeList.length > 1) {
+                const pokemon = pokeList[index];
+                player.deletePoke(index, from);
+                const hasPoke = player.hasPokemon(pokemon.pokeName(), pokemon.shiny());
+                if (!hasPoke) {
+                    player.addPokedex(pokemon.pokeName(), (pokemon.shiny() ? POKEDEXFLAGS.releasedShiny : POKEDEXFLAGS.releasedNormal));
+                }
+                if (from === 'roster') {
+                    combatLoop.changePlayerPoke(player.activePoke());
+                    renderView(dom, enemy, player);
+                } else {
+                    dom.renderStorage();
+                }
+                player.savePokes();
+                if (pokemon.shiny()) {
+                    player.settings.releasedShiny++;
+                } else {
+                    player.settings.releasedNormal++;
+                }
             } else {
-                dom.renderStorage();
-            }
-            player.savePokes();
-            if (pokemon.shiny()) {
-                player.settings.releasedShiny++;
-            } else {
-                player.settings.releasedNormal++;
+                dom.showPopup('You must have one active pokemon!');
             }
         } else {
             alert('Hold shift while clicking the X to release a pokemon');
@@ -115,12 +120,11 @@ const UserActions = {
         ];
         if (pokeList[pokemonIndex + 1]) {
             const newPokemonList = moveToDown(pokemonIndex)(pokeList);
+            player.reorderPokes(newPokemonList, from);
             if (from === 'roster') {
-                player.reorderPokes(newPokemonList);
                 combatLoop.changePlayerPoke(player.activePoke());
                 dom.renderPokeList();
             } else {
-                player.storage = newPokemonList;
                 dom.renderStorage();
             }
             player.savePokes();
@@ -136,12 +140,11 @@ const UserActions = {
         ];
         if (pokeList[pokemonIndex - 1]) {
             const newPokemonList = moveToUp(pokemonIndex)(pokeList);
+            player.reorderPokes(newPokemonList, from);
             if (from === 'roster') {
-                player.reorderPokes(newPokemonList);
                 combatLoop.changePlayerPoke(player.activePoke());
                 dom.renderPokeList();
             } else {
-                player.storage = newPokemonList;
                 dom.renderStorage();
             }
             player.savePokes();
@@ -152,16 +155,26 @@ const UserActions = {
         renderView(dom, enemy, player);
     },
     moveToStorage: function(pokemonIndex) {
-        const poke = player.getPokemon()[pokemonIndex];
-        player.pokemons.splice(pokemonIndex, 1);
-        player.storage.push(poke);
-        dom.renderPokeList();
+        // you must keep at least one active pokemon
+        if (player.pokemons.length > 1) {
+            const poke = player.getPokemon()[pokemonIndex];
+            player.pokemons.splice(pokemonIndex, 1);
+            player.storage.push(poke);
+            dom.renderPokeList();
+        } else {
+            dom.showPopup('You must have at least one active pokemon!');
+        }
     },
     moveToRoster: function(pokemonIndex) {
-        const poke = player.storage[pokemonIndex];
-        player.storage.splice(pokemonIndex, 1);
-        player.pokemons.push(poke);
-        dom.renderStorage();
+        // check you have space
+        if (player.pokemons.length < 6) {
+            const poke = player.storage[pokemonIndex];
+            player.storage.splice(pokemonIndex, 1);
+            player.pokemons.push(poke);
+            dom.renderStorage();
+        } else {
+            dom.showPopup('You can only have six active pokemon!');
+        }
     },
     forceSave: function() {
         player.savePokes();
@@ -200,8 +213,7 @@ const UserActions = {
     changePokeSortOrder: function() {
         player.sortPokemon();
         player.savePokes();
-        combatLoop.changePlayerPoke(player.activePoke());
-        renderView(dom, enemy, player);
+        dom.renderStorage();
     },
     changeSpriteChoice: function() {
         if (document.getElementById('spriteChoiceFront').checked) {

@@ -1,10 +1,3 @@
-/*
-  global: POKEDEX
-  global: TYPES
-  global: EXP_TABLE
-  global: ROUTES
-  global: EVOLUTIONS
-*/
 'use strict';
 
 const pokeById = (id) => POKEDEX[id - 1];
@@ -41,7 +34,7 @@ const BALLRNG = {
 
 const gameVersionMajor = '0';
 const gameVersionMinor = '0';
-const gameVersionPatch = '1';
+const gameVersionPatch = '2';
 const gameVersion = gameVersionMajor + '.' + gameVersionMinor + '.' + gameVersionPatch;
 $('#version').innerHTML = 'Version ' + gameVersion;
 

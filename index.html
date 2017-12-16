@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>PokeIdle Extended</title>
-    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="font-awesome.min.css" charset="utf-8">
+    <link rel="stylesheet" href="style.css" charset="utf-8">
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
@@ -27,7 +28,10 @@
                 <ul id="routeList"></ul>
             </div>
             <div id="rosterBox" style="display: none;">
-                <input type="checkbox" id="enableDelete"><label for="enableDelete"><span class="checkDescription">Manage Team</span></label><br>
+                <input type="checkbox" id="enableDelete"><label for="enableDelete"><span class="checkDescription">Manage Team</span></label>
+                <ul id="rosterList"></ul>
+            </div>
+            <div id="storageBox" style="display: none;">
                 <input type="checkbox" id="autoSort"><label for="autoSort"><span class="checkDescription">Auto sort</span></label><br>
                 <select id="pokeSortOrderSelect" onchange="userInteractions.changePokeSortOrder()">
                     <option value="lvl">Level</option>
@@ -39,9 +43,6 @@
                     <option value="asc">Asc</option>
                     <option value="desc">Desc</option>
                 </select>
-                <ul id="rosterList"></ul>
-            </div>
-            <div id="storageBox" style="display: none;">
                 <ul id="storageList" class="manageTeamEnabled"></ul>
             </div>
             <div id="pokedexBox" style="display: none;">
@@ -52,11 +53,11 @@
             </div>
         </div>
         <div id="viewSelectBox">
-            <p><button id="heal">Heal</button></p>
-            <p><button id="viewRoutes">Routes</button></p>
-            <p><button id="viewRoster">Pokemon</button></p>
-            <p><button id="viewPokeDex">PokeDex</button></p>
-            <p><button id="viewStorage">Storage</button></p>
+            <p><button id="heal" class="button">Heal</button></p>
+            <p><button id="viewRoutes" class="button">Routes</button></p>
+            <p><button id="viewRoster" class="button">Pokemon</button></p>
+            <p><button id="viewPokeDex" class="button">PokeDex</button></p>
+            <p><button id="viewStorage" class="button">Storage</button></p>
         </div>
         <div id="invBox">
             <p>Catch: <label><input type="checkbox" id="enableCatchAll"><span>All</span></label> <label><input type="checkbox" id="enableCatchNew"><span>New</span></label></p>
@@ -93,13 +94,18 @@
             <div id="console-text"></div>
         </div>
         <div id="navBox">
-            <button onclick="userInteractions.viewAchievements()">Achievements</button>
-            <button onclick="userInteractions.viewStatistics()">View Stats</button>
-            <button onclick="userInteractions.viewTown()">Town</button>
+            <button onclick="userInteractions.viewAchievements()" class="button">Achievements</button>
+            <button onclick="userInteractions.viewStatistics()" class="button">View Stats</button>
+            <button onclick="userInteractions.viewTown()" class="button">Town</button>
             <p>
-                <button onclick="userInteractions.viewSettings()">Settings</button>
+                <button onclick="userInteractions.viewSettings()" class="button">Settings</button>
+                <a href="updates.html" target="_blank" class="button">Updates</a>
             </p>
         </div>
+    </div>
+
+    <div id="modalPopup">
+        <span id="popupText">Test text</span>
     </div>
 
     <div id="saveDialogContainer" class="modalContainer" style="display: none">

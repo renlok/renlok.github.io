@@ -66,7 +66,11 @@ let Player = {
         return (chk & 0xffffffff).toString(16);
     },
     addPoke: function(poke) {
-        this.pokemons.push(poke);
+        if (this.pokemons.length < 6) {
+            this.pokemons.push(poke);
+        } else {
+            this.storage.push(poke);
+        }
     },
     addPokedex: function(pokeName, flag) {
         // helper to search dex array for a string
@@ -104,8 +108,12 @@ let Player = {
     activePoke: function() { return this.pokemons[this.activePokeID] },
     getPokemon: function() { return this.pokemons },
     getPokedexData: function() { return this.pokedexData },
-    reorderPokes: function(newList) {
-        this.pokemons = newList;
+    reorderPokes: function(newList, list = 'roster') {
+        if (list === 'roster') {
+            this.pokemons = newList;
+        } else {
+            this.storage = newList;
+        }
     },
     cmpFunctions: {
         lvl: (lhs, rhs) => {
@@ -134,7 +142,7 @@ let Player = {
         if (direction === 'desc') {
             cmpFunc = this.inverseCmp(cmpFunc)
         }
-        player.reorderPokes(player.getPokemon().sort(cmpFunc));
+        player.reorderPokes(player.storage.sort(cmpFunc), 'storage');
     },
     healAllPokemons: function() {
         if (this.canHeal() === true) {
@@ -260,6 +268,9 @@ let Player = {
     loadPokes: function() {
         // reset pokemon array
         this.pokemons = [];
+        let pokeCount = 0;
+        // reset storage array
+        this.storage = [];
         Array(Number(localStorage.getItem(`totalPokes`))).fill(0).forEach((el, index) => {
             const loadedPoke = JSON.parse(localStorage.getItem('poke'+index));
             if (loadedPoke) {
@@ -267,11 +278,14 @@ let Player = {
                 const exp = loadedPoke[1];
                 const shiny = (loadedPoke[2] === true);
                 const caughtAt = loadedPoke[3];
-                this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
+                if (pokeCount < 6) {
+                    this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
+                } else {
+                    this.storage.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
+                }
+                pokeCount++;
             }
         });
-        // reset storage array
-        this.storage = [];
         Array(Number(localStorage.getItem(`totalStorage`))).fill(0).forEach((el, index) => {
             const loadedPoke = JSON.parse(localStorage.getItem('storage'+index));
             if (loadedPoke) {
@@ -316,20 +330,26 @@ let Player = {
                 return;
             }
             this.pokemons = [];
+            let pokeCount = 0;
+            this.storage = [];
             saveData.pokes.forEach((loadedPoke) => {
                 const pokeName = loadedPoke[0];
                 const exp = loadedPoke[1];
                 const shiny = (loadedPoke[2] === true);
                 const caughtAt = loadedPoke[3];
-                this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt))
+                if (pokeCount < 6) {
+                    this.pokemons.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
+                } else {
+                    this.storage.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
+                }
+                pokeCount++;
             });
-            this.storage = [];
             saveData.storage.forEach((loadedPoke) => {
                 const pokeName = loadedPoke[0];
                 const exp = loadedPoke[1];
                 const shiny = (loadedPoke[2] === true);
                 const caughtAt = loadedPoke[3];
-                this.storage.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt))
+                this.storage.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
             });
             this.ballsAmount = saveData.ballsAmount;
             this.pokedexData = saveData.pokedexData ? saveData.pokedexData : [];
