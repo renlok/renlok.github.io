@@ -2,6 +2,7 @@ let Player = {
     pokemons: [],
     storage: [],
     pokedexData: [],
+    pokedexHighestID: 0,
     activePokeID: 0,
     lastHeal: Date.now(),
     selectedBall: "pokeball",
@@ -72,22 +73,40 @@ let Player = {
             this.storage.push(poke);
         }
     },
+    findDexIndex: p => POKEDEX.findIndex(x=>x.pokemon[0].Pokemon == p.name),
     addPokedex: function(pokeName, flag) {
         // helper to search dex array for a string
         function findFlag(obj){ return (this == obj.name) }
         const dexEntry = this.pokedexData.find(findFlag, pokeName);
+        let reloadDex = false;
         if (typeof dexEntry === 'object') {
             if (dexEntry.flag < flag ||
                 (dexEntry.flag == POKEDEXFLAGS.ownShiny && flag == POKEDEXFLAGS.releasedShiny) || // own can be released
                 (dexEntry.flag == POKEDEXFLAGS.ownNormal && flag == POKEDEXFLAGS.releasedNormal) ||
                 (dexEntry.flag == POKEDEXFLAGS.ownShiny && flag == POKEDEXFLAGS.ownedShiny) || // own can be come owned
                 (dexEntry.flag == POKEDEXFLAGS.ownNormal && flag == POKEDEXFLAGS.ownedNormal)) {
-                this.pokedexData[this.pokedexData.indexOf(dexEntry)].flag = flag
+                if (this.pokedexData[this.pokedexData.indexOf(dexEntry)].flag !== flag) {
+                    reloadDex = true;
+                    this.pokedexData[this.pokedexData.indexOf(dexEntry)].flag = flag;
+                }
             }
         } else {
-            this.pokedexData.push({name: pokeName, flag: flag})
+            reloadDex = true;
+            this.pokedexData.push({name: pokeName, flag: flag});
         }
-        dom.renderListBox();
+        if (player.settings.listView == 'pokeDex' && reloadDex) {
+            // is it a new highest entry?
+            const dexID = this.findDexIndex(dexEntry);
+            if (this.pokedexHighestID < dexID) {
+                this.pokedexHighestID = dexID;
+            }
+            dom.renderPokeDex();
+        }
+    },
+    getHighestPokeDex: function() {
+        let dex = (lhs, rhs) => this.findDexIndex(rhs) - this.findDexIndex(lhs);
+        this.pokedexHighestID = player.getPokedexData().sort(dex)[0];
+        return this.pokedexHighestID;
     },
     countPokedex: function(flag, exactMatch = false) {
         let counter = 0;
@@ -260,6 +279,7 @@ let Player = {
             statistics: this.statistics,
             settings: this.settings,
             ballsAmount: this.ballsAmount,
+            ballsAmmount: this.ballsAmount, //preserve backwards compatibility
             unlocked: this.unlocked,
             currency: this.currency,
         });
@@ -351,7 +371,7 @@ let Player = {
                 const caughtAt = loadedPoke[3];
                 this.storage.push(new Poke(pokeByName(pokeName), false, Number(exp), shiny, caughtAt));
             });
-            this.ballsAmount = saveData.ballsAmount;
+            this.ballsAmount = saveData.ballsAmount || saveData.ballsAmmount; // import from old spelling mistake
             this.pokedexData = saveData.pokedexData ? saveData.pokedexData : [];
             let loadedStats = saveData.statistics ? saveData.statistics : {};
             this.statistics = Object.assign({}, this.statistics, loadedStats);

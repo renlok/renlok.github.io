@@ -202,7 +202,12 @@ const UserActions = {
         if (window.confirm('Loading a save will overwrite your current progress, are you sure you wish to continue?')) {
             player.loadFromString(document.getElementById('saveText').value.trim());
             document.getElementById('saveDialogContainer').style.display = 'none';
-            renderView(dom, enemy, player)
+            // reload everything
+            renderView(dom, enemy, player);
+            dom.renderListBox();
+            dom.renderPokeSort();
+            dom.renderBalls();
+            dom.renderCurrency();
         }
     },
     copySaveText: function() {

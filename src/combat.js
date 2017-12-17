@@ -108,7 +108,9 @@ const Combat = {
         // check if a pokemon leveled up
         if (beforeExp.join('') !== afterExp.join('')) {
             dom.gameConsoleLog('Your pokemon gained a level', 'rgb(153, 166, 11)');
-            dom.renderPokeList(false);
+            if (player.settings.listView == 'roster') {
+                dom.renderPokeList(false);
+            }
         }
 
         player.savePokes();
@@ -123,7 +125,6 @@ const Combat = {
         this.enemyTimer();
         this.playerTimer();
         dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
-        dom.renderPokeDex();
     },
     playerFaint: function() {
         dom.gameConsoleLog(this.playerActivePoke.pokeName() + ' Fainted! ');

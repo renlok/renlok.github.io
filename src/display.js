@@ -72,10 +72,11 @@ const Display = {
         function findFlag(obj){ return (this == obj.name) }
         let count = POKEDEX.length;
         if (player.settings.dexView === 'all') {
-            let findIndex = p => POKEDEX.findIndex(x=>x.pokemon[0].Pokemon == p.name);
-            let dex = (lhs, rhs) => findIndex(rhs) - findIndex(lhs);
-            const highestPoke = player.getPokedexData().sort(dex)[0];
-            let highestID = findIndex(highestPoke);
+            let highestPoke = player.pokedexHighestID;
+            if (highestPoke == 0) {
+                highestPoke = player.getHighestPokeDex();
+            }
+            let highestID = player.findDexIndex(highestPoke);
             count = highestID + 5;
         }
         for(let y = 0; y < count; y++) {
