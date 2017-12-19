@@ -34,7 +34,7 @@ const BALLRNG = {
 
 const gameVersionMajor = '0';
 const gameVersionMinor = '0';
-const gameVersionPatch = '3';
+const gameVersionPatch = '4';
 const gameVersion = gameVersionMajor + '.' + gameVersionMinor + '.' + gameVersionPatch;
 $('#version').innerHTML = 'Version ' + gameVersion;
 
@@ -68,6 +68,7 @@ const makeEnemy = (starter) => {
 };
 
 // load everything we need
+let lastSave = Date.now();
 let player = Player;
 let enemy = makeEnemy();
 const town = Town;

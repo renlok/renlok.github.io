@@ -281,6 +281,24 @@ const UserActions = {
             completeState = complete ? ACHIEVEMENTS['dex']['caughtCount'][i].value : progress;
             achievementHTML += '<li' + (complete ? ' class="complete"' : '') + '><b>' + ACHIEVEMENTS['dex']['caughtCount'][i].name + '</b>: Unique Caught ' + completeState + '/' + ACHIEVEMENTS['dex']['caughtCount'][i].value  + '</li>';
         }
+        for (let i = 0, count = ACHIEVEMENTS['dex']['caught'].length; i < count; i++) {
+            let progress = 0;
+            let needed = ACHIEVEMENTS['dex']['caught'][i]['pokes'].length;
+            let string = '';
+            for (let j = 0; j < needed; j++) {
+                let pokeName = ACHIEVEMENTS['dex']['caught'][i]['pokes'][j];
+                string += (j > 0) ? ', ' : '';
+                if (player.hasDexEntry(pokeName, POKEDEXFLAGS.releasedNormal)) {
+                    string += '<s>' + pokeName + '</s>';
+                    progress++;
+                } else {
+                    string += pokeName;
+                }
+            }
+            complete = (progress >= needed);
+            completeState = complete ? needed : progress;
+            achievementHTML += '<li' + (complete ? ' class="complete"' : '') + '><b>' + ACHIEVEMENTS['dex']['caught'][i].name + '</b>: Catch ' + string  + '</li>';
+        }
         document.getElementById('achievementsList').innerHTML = achievementHTML;
         document.getElementById('achievementsContainer').style.display = 'block';
     },

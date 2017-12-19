@@ -374,7 +374,8 @@ const Display = {
         );
 
         $(`#enableCatchAll`).addEventListener( 'click'
-            , () => { var setCatchSetting;
+            , () => {
+                let setCatchSetting;
                 if ($(`#enableCatchAll`).checked) {
                     $(`#enableCatchNew`).checked = false;
                     setCatchSetting = 'all';
@@ -387,7 +388,8 @@ const Display = {
         );
 
         $(`#enableCatchNew`).addEventListener( 'click'
-            , () => { var setCatchSetting;
+            , () => {
+                let setCatchSetting;
                 if ($(`#enableCatchNew`).checked) {
                     $(`#enableCatchAll`).checked = false;
                     setCatchSetting = 'new';
@@ -418,6 +420,8 @@ const Display = {
         $(`#townContainer`).addEventListener( 'click'
             , (event) => { event.target === $(`#townContainer`) && ($(`#townContainer`).style.display = 'none'); }
         );
+
+        window.addEventListener('beforeunload', () => { player.savePokes(true); });
     }
 };
 

@@ -28,6 +28,11 @@ let Player = {
         spriteChoice: 'back',
         catching: false
     },
+    skills: {
+        'breeding': 0,
+        'throwing': 0,
+        'training': 0,
+    },
     statistics: {
         'seen':0,
         'caught':0,
@@ -102,6 +107,17 @@ let Player = {
             }
             dom.renderPokeDex();
         }
+    },
+    hasDexEntry: function(pokeName, flag, exact = false) {
+        function findFlag(obj){ return (this == obj.name) }
+        const dexEntry = this.pokedexData.find(findFlag, pokeName);
+        if (typeof dexEntry !== 'undefined') {
+            if ((exact && dexEntry.flag == flag)
+                || (!exact && dexEntry.flag >= flag)) {
+                return true;
+            }
+        }
+        return false;
     },
     getHighestPokeDex: function() {
         let dex = (lhs, rhs) => this.findDexIndex(rhs) - this.findDexIndex(lhs);
@@ -255,21 +271,25 @@ let Player = {
         return true;
     },
     // Load and Save functions
-    savePokes: function() {
-        localStorage.setItem(`totalPokes`, this.pokemons.length);
-        this.pokemons.forEach((poke, index) => {
-            localStorage.setItem(`poke${index}`, JSON.stringify(poke.save()))
-        });
-        localStorage.setItem(`totalStorage`, this.storage.length);
-        this.storage.forEach((poke, index) => {
-            localStorage.setItem(`storage${index}`, JSON.stringify(poke.save()))
-        });
-        localStorage.setItem(`ballsAmount`, JSON.stringify(this.ballsAmount));
-        localStorage.setItem(`pokedexData`, JSON.stringify(this.pokedexData));
-        localStorage.setItem(`statistics`, JSON.stringify(this.statistics));
-        localStorage.setItem(`settings`, JSON.stringify(this.settings));
-        localStorage.setItem(`unlocked`, JSON.stringify(this.unlocked));
-        localStorage.setItem(`currency`, JSON.stringify(this.currency));
+    savePokes: function(force = false) {
+        // Don't save more then every 60 seconds
+        if (force || (lastSave + (1000 * 60) < Date.now())) {
+            lastSave = Date.now();
+            localStorage.setItem(`totalPokes`, this.pokemons.length);
+            this.pokemons.forEach((poke, index) => {
+                localStorage.setItem(`poke${index}`, JSON.stringify(poke.save()))
+            });
+            localStorage.setItem(`totalStorage`, this.storage.length);
+            this.storage.forEach((poke, index) => {
+                localStorage.setItem(`storage${index}`, JSON.stringify(poke.save()))
+            });
+            localStorage.setItem(`ballsAmount`, JSON.stringify(this.ballsAmount));
+            localStorage.setItem(`pokedexData`, JSON.stringify(this.pokedexData));
+            localStorage.setItem(`statistics`, JSON.stringify(this.statistics));
+            localStorage.setItem(`settings`, JSON.stringify(this.settings));
+            localStorage.setItem(`unlocked`, JSON.stringify(this.unlocked));
+            localStorage.setItem(`currency`, JSON.stringify(this.currency));
+        }
     },
     saveToString: function() {
         const saveData = JSON.stringify({
