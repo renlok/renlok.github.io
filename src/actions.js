@@ -86,7 +86,8 @@ const UserActions = {
     clearGameData: function() {
         if (dom.checkConfirmed('#confirmClearData')) {
             localStorage.clear();
-            window.location.reload(true)
+            player.purgeData = true;
+            window.location.reload(true);
         }
     },
     clearConsole: function() {
@@ -306,5 +307,10 @@ const UserActions = {
         town.renderShop();
         town.renderTrader();
         document.getElementById('townContainer').style.display = 'block';
+    },
+    closeStory: function() {
+        if (story.canClose) {
+            $(`#storyContainer`).style.display = 'none';
+        }
     }
 };

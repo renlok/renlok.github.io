@@ -21,6 +21,7 @@ const Display = {
         }
     },
     renderPokeOnContainer: function(id, poke, face) {
+        if (!poke) return null;
         face = face || 'front';
         const pokeStatusAsText = (poke) => {
             let output = '';
@@ -421,7 +422,10 @@ const Display = {
             , (event) => { event.target === $(`#townContainer`) && ($(`#townContainer`).style.display = 'none'); }
         );
 
-        window.addEventListener('beforeunload', () => { player.savePokes(true); });
+        window.addEventListener('beforeunload', () => {
+            if (!player.purgeData)
+                player.savePokes(true);
+        });
     }
 };
 

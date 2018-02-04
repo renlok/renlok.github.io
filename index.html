@@ -54,10 +54,10 @@
         </div>
         <div id="viewSelectBox">
             <p><button id="heal" class="button">Heal</button></p>
-            <p><button id="viewRoutes" class="button">Routes</button></p>
             <p><button id="viewRoster" class="button">Pokemon</button></p>
-            <p><button id="viewPokeDex" class="button">PokeDex</button></p>
             <p><button id="viewStorage" class="button">Storage</button></p>
+            <p><button id="viewPokeDex" class="button">PokeDex</button></p>
+            <p><button id="viewRoutes" class="button">Routes</button></p>
         </div>
         <div id="invBox">
             <p>Catch: <label><input type="checkbox" id="enableCatchAll"><span>All</span></label> <label><input type="checkbox" id="enableCatchNew"><span>New</span></label></p>
@@ -199,6 +199,18 @@
         </div>
     </div>
 
+    <div id="storyContainer" class="modalContainer" style="display: none">
+        <div id="storyDialog" class="modalDialog">
+            <div>
+                <h3 id="storyTitle" class="modalTitle"></h3>
+            </div>
+            <div>
+                <div id="storyContent"></div>
+                <button id="storyClose" onClick="userInteractions.closeStory()">Close</button>
+            </div>
+        </div>
+    </div>
+
     <script src="src/db.js"></script>
     <script src="src/evolutions.js"></script>
     <script src="src/typeModifiers.js"></script>
@@ -211,6 +223,7 @@
     <script src="src/player.js"></script>
     <script src="src/combat.js"></script>
     <script src="src/actions.js"></script>
+    <script src="src/story.js"></script>
     <script src="src/main.js"></script>
 </body>
 </html>

@@ -1,14 +1,25 @@
 const Combat = {
+    paused: false,
     playerActivePoke: null,
     enemyActivePoke: null,
     playerTimerId: null,
     enemyTimerId: null,
     catchEnabled: false,
     init: function() {
-        this.playerActivePoke = player.activePoke();
-        this.enemyActivePoke = enemy.activePoke();
-        this.playerTimer();
-        this.enemyTimer()
+        if (!this.paused) {
+            this.playerActivePoke = player.activePoke();
+            this.enemyActivePoke = enemy.activePoke();
+            this.playerTimer();
+            this.enemyTimer();
+        }
+    },
+    pause: function() {
+        this.paused = true;
+        this.stop();
+    },
+    unpause: function() {
+        this.paused = false;
+        this.init();
     },
     stop: function() {
         window.clearTimeout(this.playerTimerId);

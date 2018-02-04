@@ -34,12 +34,21 @@ const BALLRNG = {
 
 const gameVersionMajor = '0';
 const gameVersionMinor = '0';
-const gameVersionPatch = '4';
+const gameVersionPatch = '5';
 const gameVersion = gameVersionMajor + '.' + gameVersionMinor + '.' + gameVersionPatch;
 $('#version').innerHTML = 'Version ' + gameVersion;
 
 const makeEnemy = (starter) => {
     let active = starter;
+
+    const generator = (poke, level) => {
+        return new Poke(
+            poke,
+            level,
+            false,
+            Math.random() < (1 / (1 << 5 << 8))
+        )
+    };
 
     const generateNew = (routeData) => {
         let pokemonList = [];
@@ -53,12 +62,8 @@ const makeEnemy = (starter) => {
             pokemonList = routeData.pokes;
         }
         const poke = pokeByName(randomArrayElement(pokemonList));
-        return new Poke(
-            poke,
-            routeData.minLevel + Math.round((Math.random() * (routeData.maxLevel - routeData.minLevel))),
-            false,
-            Math.random() < (1 / (1 << 5 << 8))
-        )
+        const level = routeData.minLevel + Math.round((Math.random() * (routeData.maxLevel - routeData.minLevel)));
+        return generator(poke, level);
     };
 
     return {
@@ -75,18 +80,16 @@ const town = Town;
 const dom = Display;
 const combatLoop = Combat;
 const userInteractions = UserActions;
+const story = Story;
 // load old save data
 if (localStorage.getItem(`totalPokes`) !== null) {
     player.loadPokes();
     dom.refreshCatchOption(player.settings.catching);
+    enemy.generateNew(ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]);
 } else {
-    let starterPoke = new Poke(pokeById(randomArrayElement([1, 4, 7])), 5);
-    player.addPoke(starterPoke);
-    player.addPokedex(starterPoke.pokeName(), POKEDEXFLAGS.ownNormal);
-    dom.gameConsoleLog('You received a ' + player.activePoke().pokeName(), 'purple');
+    combatLoop.pause();
+    story.stories.firstPoke();
 }
-
-enemy.generateNew(ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]);
 
 if (player.settings.spriteChoice === 'front') {
     document.getElementById('spriteChoiceFront').checked = true;

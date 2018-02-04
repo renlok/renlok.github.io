@@ -20,8 +20,8 @@ let Player = {
     currency: 0,
     settings: {
         currentRegionId: 'Kanto',
-        currentRouteId: 'starter',
-        listView: 'routes',
+        currentRouteId: 'route',
+        listView: 'roster',
         autoSort: true,
         dexView: 'all',
         dexVersion: 194, // check if users dex is out of date
@@ -55,6 +55,7 @@ let Player = {
         'totalCurrency': 0,
         'totalExp': 0
     },
+    purgeData: false,
     canHeal: function() {
         if ((Date.now() - this.lastHeal) > 30000) {
             return true;
