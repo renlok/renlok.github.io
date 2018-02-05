@@ -26,11 +26,10 @@ const Story = {
             player.addPoke(starterPoke);
             player.addPokedex(starterPoke.pokeName(), POKEDEXFLAGS.ownNormal);
             dom.gameConsoleLog('You received a ' + player.activePoke().pokeName(), 'purple');
-            enemy.generateNew(ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]);
             player.setActive(0);
+            combatLoop.unpause();
             renderView(dom, enemy, player);
             dom.renderListBox();
-            combatLoop.unpause();
             $(`#storyContainer`).style.display = 'none';
         }
     }

@@ -16,9 +16,12 @@ const Combat = {
     pause: function() {
         this.paused = true;
         this.stop();
+        enemy.clear();
+        this.enemyActivePoke = null;
     },
     unpause: function() {
         this.paused = false;
+        this.newEnemy();
         this.init();
     },
     stop: function() {
@@ -50,6 +53,7 @@ const Combat = {
         )
     },
     dealDamage: function(attacker, defender, who) {
+        if (!attacker || !defender) return null;
         if (attacker.alive() && defender.alive()) {
             const consoleColor = (who === 'player') ? 'green' : 'rgb(207, 103, 59)';
             // calculate damage done
@@ -125,7 +129,12 @@ const Combat = {
         }
 
         player.savePokes();
-        enemy.generateNew(ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]);
+        this.newEnemy();
+        this.playerTimer();
+        dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
+    },
+    newEnemy: function() {
+        enemy.generateNew(player.settings.currentRegionId, player.settings.currentRouteId);
         this.enemyActivePoke = enemy.activePoke();
         player.addPokedex(enemy.activePoke().pokeName(), (enemy.activePoke().shiny() ? POKEDEXFLAGS.seenShiny : POKEDEXFLAGS.seenNormal));
         if (enemy.activePoke().shiny()) {
@@ -134,8 +143,6 @@ const Combat = {
             player.statistics.seen++;
         }
         this.enemyTimer();
-        this.playerTimer();
-        dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
     },
     playerFaint: function() {
         dom.gameConsoleLog(this.playerActivePoke.pokeName() + ' Fainted! ');
@@ -149,6 +156,13 @@ const Combat = {
             this.playerActivePoke = player.activePoke();
             dom.gameConsoleLog('Go ' + this.playerActivePoke.pokeName() + '!');
             this.refresh();
+        } else {
+            if (ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['respawn']) {
+                player.settings.currentRouteId = ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['respawn'];
+                this.newEnemy();
+                this.refresh();
+                dom.renderListBox();
+            }
         }
         dom.renderPokeList(false);
     },

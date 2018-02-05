@@ -186,7 +186,7 @@ let Player = {
             this.lastHeal = Date.now();
             return "healed"
         }
-        return this.canHeal()
+        return this.canHeal();
     },
     hasPokemon: function(pokemonName, shiny) {
         const allPokes = mergeArray(this.pokemons, this.storage);

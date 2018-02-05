@@ -21,7 +21,18 @@ const Display = {
         }
     },
     renderPokeOnContainer: function(id, poke, face) {
-        if (!poke) return null;
+        const container = $('#' + id + 'Box').querySelector('.pokeBox');
+        const townBox = $('#townBox');
+        if (!poke) {
+            container.style.display = 'none';
+            if (id == 'enemy')
+                townBox.style.display = 'block';
+            return null;
+        } else {
+            container.style.display = 'block';
+            if (id == 'enemy')
+                townBox.style.display = 'none';
+        }
         face = face || 'front';
         const pokeStatusAsText = (poke) => {
             let output = '';
@@ -30,7 +41,6 @@ const Display = {
             output += '\nDefense: ' + poke.avgDefense() + '<br>';
             return output
         };
-        const container = $('#' + id + 'Box').querySelector('.pokeBox');
         const domElements  = {
             name: container.querySelector('.name'),
             img: container.querySelector('.img'),
@@ -48,7 +58,7 @@ const Display = {
             this.setProp(domElements.expBar, 'value', Math.floor(poke.currentExp() - poke.thisLevelExp()));
             this.setProp(domElements.expBar, 'max', poke.nextLevelExp() - poke.thisLevelExp());
         }
-        this.setValue(domElements.status, pokeStatusAsText(poke))
+        this.setValue(domElements.status, pokeStatusAsText(poke));
     },
     renderPokeDexSort: function() {
         let sortHTML = '<option value="all">All</option>';
@@ -253,7 +263,7 @@ const Display = {
         $('#regionSelect').value = player.settings.currentRegionId;
         this.setValue(listElement, '');
         Object.keys(routes).forEach((routeId) => {
-            if (routeId !== '_unlock') {
+            if (routeId !== '_unlock' && routeId !== '_global') {
                 const route = routes[routeId];
                 const unlocked = player.routeUnlocked(player.settings.currentRegionId, routeId);
                 const routeOnClick = (unlocked) ? 'userInteractions.changeRoute(\'' + routeId + '\')' : '';

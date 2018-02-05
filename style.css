@@ -168,13 +168,15 @@ ul {
 #console-text {
     padding-left: 9px;
 }
-
+#townBox {
+    text-align: center;
+}
 #navBox {
     grid-column: 3 / 5;
     grid-row: 4 / 5;
     text-align: center;
 }
-#navBox .button, #viewSelectBox .button{
+#navBox .button, #viewSelectBox .button, #townBox button {
     margin-top: 7px;
     width: 125px;
     margin-right: 5px;

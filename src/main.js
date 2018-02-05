@@ -33,8 +33,8 @@ const BALLRNG = {
 };
 
 const gameVersionMajor = '0';
-const gameVersionMinor = '0';
-const gameVersionPatch = '5';
+const gameVersionMinor = '1';
+const gameVersionPatch = '0';
 const gameVersion = gameVersionMajor + '.' + gameVersionMinor + '.' + gameVersionPatch;
 $('#version').innerHTML = 'Version ' + gameVersion;
 
@@ -50,7 +50,9 @@ const makeEnemy = (starter) => {
         )
     };
 
-    const generateNew = (routeData) => {
+    const generateNew = (regionId, routeId) => {
+        const regionData = ROUTES[regionId];
+        const routeData = regionData[routeId];
         let pokemonList = [];
         if (routeData.fishing) {
             for (let i = player.unlocked.fishing; i > 0; i--) {
@@ -61,6 +63,15 @@ const makeEnemy = (starter) => {
         } else {
             pokemonList = routeData.pokes;
         }
+        if (regionData['_global']['pokes'] && Math.random() < (1 / (1 << 8))) {
+            pokemonList = mergeArray(pokemonList, regionData['_global']['pokes']);
+        }
+        if (regionData['_global']['rarePokes'] && Math.random() < (1 / (1 << 16))) {
+            pokemonList = mergeArray(pokemonList, regionData['_global']['rarePokes']);
+        }
+        if (regionData['_global']['superRare'] && Math.random() < (1 / (1 << 32))) {
+            pokemonList = mergeArray(pokemonList, regionData['_global']['superRare']);
+        }
         const poke = pokeByName(randomArrayElement(pokemonList));
         const level = routeData.minLevel + Math.round((Math.random() * (routeData.maxLevel - routeData.minLevel)));
         return generator(poke, level);
@@ -68,7 +79,8 @@ const makeEnemy = (starter) => {
 
     return {
         activePoke: () => active,
-        generateNew: (recipe) => active = generateNew(recipe)
+        clear: () => active = null,
+        generateNew: (regionId, routeId) => active = generateNew(regionId, routeId)
     }
 };
 
@@ -85,7 +97,7 @@ const story = Story;
 if (localStorage.getItem(`totalPokes`) !== null) {
     player.loadPokes();
     dom.refreshCatchOption(player.settings.catching);
-    enemy.generateNew(ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]);
+    userInteractions.changeRoute(player.settings.currentRouteId);
 } else {
     combatLoop.pause();
     story.stories.firstPoke();

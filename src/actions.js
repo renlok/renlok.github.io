@@ -1,14 +1,11 @@
 const UserActions = {
     changeRoute: function(newRouteId) {
         player.settings.currentRouteId = newRouteId;
-        enemy.generateNew(ROUTES[player.settings.currentRegionId][newRouteId]);
-        player.addPokedex(enemy.activePoke().pokeName(), (enemy.activePoke().shiny() ? POKEDEXFLAGS.seenShiny : POKEDEXFLAGS.seenNormal));
-        if (enemy.activePoke().shiny()) {
-            player.statistics.shinySeen++;
+        if (ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['town']) {
+            combatLoop.pause();
         } else {
-            player.statistics.seen++;
+            combatLoop.unpause();
         }
-        combatLoop.changeEnemyPoke(enemy.activePoke());
         renderView(dom, enemy, player);
         player.savePokes();
         dom.renderRouteList();
@@ -53,10 +50,12 @@ const UserActions = {
         const regionId = regionSelect.options[regionSelect.selectedIndex].value;
         if (player.regionUnlocked(regionId)) {
             player.settings.currentRegionId = regionId;
-            if (Object.keys(ROUTES[player.settings.currentRegionId])[0] !== '_unlock') {
+            if (Object.keys(ROUTES[player.settings.currentRegionId])[0].charAt(0) !== '_') {
                 this.changeRoute(Object.keys(ROUTES[player.settings.currentRegionId])[0]);
-            } else {
+            } else if (Object.keys(ROUTES[player.settings.currentRegionId])[1].charAt(0) !== '_') {
                 this.changeRoute(Object.keys(ROUTES[player.settings.currentRegionId])[1]);
+            } else {
+                this.changeRoute(Object.keys(ROUTES[player.settings.currentRegionId])[2]);
             }
         }
         return false;
