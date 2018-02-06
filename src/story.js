@@ -19,7 +19,7 @@ const Story = {
     },
     helpers: {
         getPokeImg: function(id) {
-            return POKEDEX[id]['images']['normal']['front'];
+            return POKEDEX[id - 1]['images']['normal']['front'];
         },
         selectFirstPoke: function(id) {
             let starterPoke = new Poke(pokeById(id), 5);

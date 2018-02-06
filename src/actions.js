@@ -1,5 +1,9 @@
 const UserActions = {
-    changeRoute: function(newRouteId) {
+    changeRoute: function(newRouteId, force = false) {
+        if (!force && player.alivePokeIndexes().length == 0) {
+            dom.gameConsoleLog('It is too dangerous to travel without a pokemon.', 'red');
+            return false;
+        }
         player.settings.currentRouteId = newRouteId;
         if (ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['town']) {
             combatLoop.pause();

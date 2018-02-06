@@ -146,22 +146,18 @@ const Combat = {
     },
     playerFaint: function() {
         dom.gameConsoleLog(this.playerActivePoke.pokeName() + ' Fainted! ');
-        const playerLivePokesIndexes = player.getPokemon().filter((poke, index) => {
-            if (poke.alive()) {
-                return true;
-            }
-        });
-        if (playerLivePokesIndexes.length > 0) {
-            player.setActive(player.getPokemon().indexOf(playerLivePokesIndexes[0]));
+        if (player.alivePokeIndexes.length > 0) {
+            player.setActive(player.getPokemon().indexOf(player.alivePokeIndexes[0]));
             this.playerActivePoke = player.activePoke();
             dom.gameConsoleLog('Go ' + this.playerActivePoke.pokeName() + '!');
             this.refresh();
         } else {
             if (ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['respawn']) {
-                player.settings.currentRouteId = ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['respawn'];
-                this.newEnemy();
-                this.refresh();
-                dom.renderListBox();
+                dom.gameConsoleLog('You have no more usable pokemon. You blacked out!', 'red');
+                flash($('#playerBox'));
+                dom.gameConsoleLog('You reawaken at the nearest pokecenter.', 'red');
+                flash($('#routeList'));
+                userInteractions.changeRoute(ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['respawn'], true);
             }
         }
         dom.renderPokeList(false);

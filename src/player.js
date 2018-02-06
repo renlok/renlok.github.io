@@ -141,6 +141,14 @@ let Player = {
     setActive: function(index) {
         this.activePokeID = index;
     },
+    alivePokeIndexes: function() {
+        let alive = this.getPokemon().filter((poke, index) => {
+            if (poke.alive()) {
+                return true;
+            }
+        });
+        return alive;
+    },
     activePoke: function() { return this.pokemons[this.activePokeID] },
     getPokemon: function() { return this.pokemons },
     getPokedexData: function() { return this.pokedexData },
