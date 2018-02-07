@@ -1,5 +1,8 @@
 const Combat = {
     paused: false,
+    trainer: false,
+    trainerPoke: {},
+    trainerCurrentID: 0,
     playerActivePoke: null,
     enemyActivePoke: null,
     playerTimerId: null,
@@ -128,13 +131,29 @@ const Combat = {
             }
         }
 
+        // was it a trainer poke
+        if (this.trainer) {
+            // remove the pokemon
+            this.trainerPoke.splice(this.trainerCurrentID, 1);
+            if (this.trainerPoke.length < 1) {
+                this.trainer = false;
+                dom.gameConsoleLog('You have defeated the trainer', 'blue');
+                this.pause();
+                return false;
+            }
+        }
+
         player.savePokes();
         this.newEnemy();
         this.playerTimer();
         dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
     },
     newEnemy: function() {
-        enemy.generateNew(player.settings.currentRegionId, player.settings.currentRouteId);
+        if (combatLoop.trainer) {
+            enemy.trainerPoke(combatLoop.trainerPoke);
+        } else {
+            enemy.generateNew(player.settings.currentRegionId, player.settings.currentRouteId);
+        }
         this.enemyActivePoke = enemy.activePoke();
         player.addPokedex(enemy.activePoke().pokeName(), (enemy.activePoke().shiny() ? POKEDEXFLAGS.seenShiny : POKEDEXFLAGS.seenNormal));
         if (enemy.activePoke().shiny()) {
@@ -146,17 +165,21 @@ const Combat = {
     },
     playerFaint: function() {
         dom.gameConsoleLog(this.playerActivePoke.pokeName() + ' Fainted! ');
-        if (player.alivePokeIndexes.length > 0) {
-            player.setActive(player.getPokemon().indexOf(player.alivePokeIndexes[0]));
+        const alivePokeIndexes = player.alivePokeIndexes();
+        if (alivePokeIndexes.length > 0) {
+            player.setActive(player.getPokemon().indexOf(alivePokeIndexes[0]));
             this.playerActivePoke = player.activePoke();
             dom.gameConsoleLog('Go ' + this.playerActivePoke.pokeName() + '!');
             this.refresh();
         } else {
+            dom.gameConsoleLog('You have no more usable pokemon. You blacked out!', 'red');
+            if (this.trainer) {
+                dom.gameConsoleLog('You have been defeated', 'red');
+                this.pause();
+            }
+            flash($('#gameContainer'));
+            dom.gameConsoleLog('You reawaken at the nearest pokecenter.', 'blue');
             if (ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['respawn']) {
-                dom.gameConsoleLog('You have no more usable pokemon. You blacked out!', 'red');
-                flash($('#playerBox'));
-                dom.gameConsoleLog('You reawaken at the nearest pokecenter.', 'red');
-                flash($('#routeList'));
                 userInteractions.changeRoute(ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['respawn'], true);
             }
         }
@@ -171,6 +194,10 @@ const Combat = {
                 player.statistics.totalThrows++;
                 player.statistics[selectedBall+'Throws']++;
                 dom.renderBalls();
+                if (combatLoop.trainer) {
+                    dom.gameConsoleLog('But the trainer bats away your ball', 'purple');
+                    return false;
+                }
                 const catchBonus = (player.unlocked.razzBerry) ? 1.25 : 1;
                 const rngHappened = RNG(((enemy.activePoke().catchRate() * player.ballRNG(selectedBall)) / 3) * catchBonus);
                 if (rngHappened) {

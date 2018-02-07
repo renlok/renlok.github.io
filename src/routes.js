@@ -10,7 +10,12 @@ const ROUTES = {
             , pokes: ['Bulbasaur', 'Charmander', 'Squirtle']
             , minLevel: 5
             , maxLevel: 5,
-            town: true
+            town: true,
+            trainer: [
+                ['Bulbasaur', 15],
+                ['Charmander', 15],
+                ['Squirtle', 15]
+            ]
         }
         , route: {
             name: 'Route 1'
@@ -18,27 +23,42 @@ const ROUTES = {
             , minLevel: 2
             , maxLevel: 5,
             respawn: 'starter'
+        },
+        viridianCity: {
+            name: 'Viridian City',
+            town: true,
+            trainer: [
+                ['Rhyhorn', 45],
+                ['Dugtrio', 42],
+                ['Nidoqueen', 44],
+                ['Nidoking', 45],
+                ['Rhydon', 50]
+            ]
         }
         , route1: {
             name: 'Route 2'
             , pokes: ['Pidgey', 'Rattata', 'Caterpie', 'Weedle']
             , minLevel: 3
             , maxLevel: 5,
-            respawn: 'starter'
+            respawn: 'viridianCity'
         }
         , special: {
             name: 'Virdian Forest'
             , pokes: ['Caterpie', 'Metapod', 'Weedle', 'Kakuna', 'Pikachu']
             , minLevel: 3
             , maxLevel: 6,
-            respawn: 'starter'
+            respawn: 'viridianCity'
         }
         , special1: {
             name: 'Pewter City'
             , pokes: ['Omanyte', 'Kabuto', 'Aerodactyl']
             , minLevel: 5
             , maxLevel: 5,
-            town: true
+            town: true,
+            trainer: [
+                ['Geodude', 12],
+                ['Onix', 14]
+            ]
         }
         , route2: {
             name: 'Route 3'
@@ -60,160 +80,202 @@ const ROUTES = {
             , minLevel: 6
             , maxLevel: 12,
             respawn: 'special1'
+        },
+        ceruleanCity: {
+            name: 'Cerulean City',
+            town: true,
+            trainer: [
+                ['Staryu', 18],
+                ['Starmie', 21]
+            ]
         }
         , route4: {
             name: 'Route 5'
             , pokes: ['Pidgey', 'Oddish', 'Meowth', 'Mankey', 'Bellsprout']
             , minLevel: 10
             , maxLevel: 16,
-            respawn: 'special1'
+            respawn: 'ceruleanCity'
+        },
+        special8: {
+            name: 'Saffron City'
+            , pokes: ['Hitmonlee', 'Hitmonchan', 'Lapras']
+            , minLevel: 30
+            , maxLevel: 30,
+            town: true,
+            trainer: [
+                ['Kadabra', 38],
+                ['Mr. Mime', 37],
+                ['Venomoth', 38],
+                ['Alakazam', 43]
+            ]
         }
         , route5: {
             name: 'Route 6'
             , pokes: ['Pidgey', 'Pidgeotto', 'Oddish', 'Meowth', 'Mankey', 'Abra', 'Bellsprout']
             , minLevel: 10
             , maxLevel: 16,
-            respawn: 'special1'
+            respawn: 'special8'
+        },
+        vermilionCity: {
+            name: 'Vermilion City',
+            town: true,
+            trainer: [
+                ['Voltorb', 21],
+                ['Pikachu', 18],
+                ['Raichu', 24]
+            ]
         }
         , route6: {
             name: 'Route 7'
             , pokes: ['Pidgey', 'Vulpix', 'Oddish', 'Meowth', 'Mankey', 'Growlithe', 'Bellsprout']
             , minLevel: 18
             , maxLevel: 22,
-            respawn: 'special1'
+            respawn: 'vermilionCity'
         }
         , route7: {
             name: 'Route 8',
             pokes: ['Pidgey', 'Pidgeotto', 'Vulpix', 'Oddish', 'Meowth', 'Mankey', 'Growlithe', 'Abra', 'Kadabra', 'Bellsprout'],
             minLevel: 15,
             maxLevel: 20,
-            respawn: 'special1'
+            respawn: 'vermilionCity'
         }
         , special3: {
             name: 'Diglett Cave'
             , pokes: ['Diglett', 'Dugtrio']
             , minLevel: 15
             , maxLevel: 31,
-            respawn: 'special1'
+            respawn: 'vermilionCity'
         }
         , route8: {
             name: 'Route 9'
             , pokes: ['Spearow', 'Ekans', 'Sandshrew', 'Drowzee']
             , minLevel: 9
             , maxLevel: 17,
-            respawn: 'special1'
+            respawn: 'vermilionCity'
         }
         , route9: {
             name: 'Route 10'
             , pokes: ['Spearow', 'Ekans', 'Sandshrew', 'Voltorb']
             , minLevel: 11
             , maxLevel: 17,
-            respawn: 'special1'
+            respawn: 'vermilionCity'
+        },
+        lavenderTown: {
+            name: 'Lavender Town',
+            town: true
         }
         , special4: {
             name: 'Rock Tunnel'
             , pokes: ['Zubat', 'Machop', 'Geodude', 'Onix']
             , minLevel: 11
             , maxLevel: 17,
-            respawn: 'special1'
+            respawn: 'lavenderTown'
         }
         , special5: {
             name: 'Power Plant'
             , pokes: ['Pikachu', 'Raichu', 'Magnemite', 'Magneton', 'Voltorb', 'Electrode', 'Electabuzz']
             , minLevel: 25
             , maxLevel: 35,
-            respawn: 'special1'
+            respawn: 'lavenderTown'
         }
         , special6: {
             name: 'Pokemon Tower'
             , pokes: ['Gastly', 'Haunter', 'Cubone']
             , minLevel: 13
             , maxLevel: 18,
-            respawn: 'special1'
+            respawn: 'lavenderTown'
         }
         , route10: {
             name: 'Route 11'
             , pokes: ['Spearow', 'Ekans', 'Sandshrew', 'Drowzee']
             , minLevel: 18
             , maxLevel: 25,
-            respawn: 'special1'
+            respawn: 'lavenderTown'
         }
         , special7: {
             name: 'Celadon City'
             , pokes: ['Eevee', 'Porygon']
             , minLevel: 25
             , maxLevel: 30,
-            town: true
-        }
-        , special8: {
-            name: 'Saffron City'
-            , pokes: ['Hitmonlee', 'Hitmonchan', 'Lapras']
-            , minLevel: 30
-            , maxLevel: 30,
-            town: true
+            town: true,
+            trainer: [
+                ['Victreebel', 29],
+                ['Tangela', 24],
+                ['Vileplume', 29]
+            ]
         }
         , route11: {
             name: 'Route 12'
             , pokes: ['Pidgey', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Snorlax']
             , minLevel: 22
             , maxLevel: 30,
-            respawn: 'special8'
+            respawn: 'special7'
         }
         , route12: {
             name: 'Route 13'
             , pokes: ['Pidgey', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Ditto']
             , minLevel: 22
             , maxLevel: 30,
-            respawn: 'special8'
+            respawn: 'special7'
         }
         , route13: {
             name: 'Route 14'
             , pokes: ['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Ditto']
             , minLevel: 23
             , maxLevel: 30,
-            respawn: 'special8'
+            respawn: 'special7'
         }
         , route14: {
             name: 'Route 15'
             , pokes: ['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Ditto']
             , minLevel: 22
             , maxLevel: 30,
-            respawn: 'special8'
+            respawn: 'special7'
         }
         , route15: {
             name: 'Route 16'
             , pokes: ['Rattata', 'Raticate', 'Spearow', 'Doduo', 'Snorlax']
             , minLevel: 18
             , maxLevel: 30,
-            respawn: 'special8'
+            respawn: 'special7'
         }
         , route16: {
             name: 'Route 17'
             , pokes: ['Raticate', 'Spearow', 'Fearow', 'Doduo']
             , minLevel: 20
             , maxLevel: 29,
-            respawn: 'special8'
+            respawn: 'special7'
         }
         , route17: {
             name: 'Route 18'
             , pokes: ['Rattata', 'Raticate', 'Spearow', 'Fearow', 'Doduo']
             , minLevel: 20
             , maxLevel: 29,
-            respawn: 'special8'
+            respawn: 'special7'
+        },
+        fuchsiaCity: {
+            name: 'Fuchsia City',
+            town: true,
+            trainer: [
+                ['Koffing', 37],
+                ['Muk', 39],
+                ['Koffing', 37],
+                ['Weezing', 43]
+            ]
         }
         , special9: {
             name: 'Safari Zone',
             pokes: ['Nidoran f', 'Nidorina', 'Nidoran m', 'Nidorino', 'Parasect', 'Venonat', 'Exeggcute', 'Rhyhorn', 'Kangaskhan', 'Scyther', 'Pinsir', 'Tauros'],
             minLevel: 22,
             maxLevel: 31,
-            respawn: 'special8'
-        }
-        , route18: {
+            respawn: 'fuchsiaCity'
+        },
+        route18: {
             name: 'Route 19'
             , pokes: ['Raticate', 'Pidgeotto', 'Oddish', 'Ditto']
             , minLevel: 26
             , maxLevel: 30,
-            respawn: 'special8'
+            respawn: 'fuchsiaCity'
         }
         , special11: {
             name: 'Seafom Island'
@@ -228,60 +290,72 @@ const ROUTES = {
             , minLevel: 27
             , maxLevel: 31,
             respawn: 'special11'
+        },
+        cinnabarIsland: {
+            name: 'Cinnabar Island',
+            town: true,
+            trainer: [
+                ['Growlithe', 42],
+                ['Ponyta', 40],
+                ['Rapidash', 42],
+                ['Arcanine', 47]
+            ]
         }
         , special12: {
             name: 'Pkmn Mansion'
             , pokes: ['Vulpix', 'Growlithe', 'Ponyta', 'Grimer', 'Muk', 'Koffing', 'Weezing', 'Magmar']
             , minLevel: 32
             , maxLevel: 40,
-            respawn: 'special11'
+            respawn: 'cinnabarIsland'
         }
         , route20: {
             name: 'Route 21'
             , pokes: ['Pidgey', 'Pidgeotto', 'Rattata', 'Raticate', 'Tangela']
             , minLevel: 21
             , maxLevel: 32,
-            respawn: 'special11'
+            respawn: 'cinnabarIsland'
         }
         , route21: {
             name: 'Route 22'
             , pokes: ['Pidgey', 'Rattata', 'Nidoran f', 'Nidoran m']
             , minLevel: 2
             , maxLevel: 5,
-            respawn: 'special11'
+            respawn: 'cinnabarIsland'
         }
         , route22: {
             name: 'Route 23'
             , pokes: ['Spearow', 'Fearow', 'Ekans', 'Arbok', 'Sandshrew', 'Sandslash', 'Ditto']
             , minLevel: 33
             , maxLevel: 43,
-            respawn: 'special11'
+            respawn: 'cinnabarIsland'
         }
         , route23: {
             name: 'Route 24'
             , pokes: ['Caterpie', 'Metapod', 'Weedle', 'Kakuna', 'Oddish', 'Abra', 'Bellsprout']
             , minLevel: 7
             , maxLevel: 14,
-            respawn: 'special11'
+            respawn: 'cinnabarIsland'
         }
         , route24: {
             name: 'Route 25'
             , pokes: ['Caterpie', 'Metapod', 'Weedle', 'Kakuna', 'Pidgey', 'Oddish', 'Abra', 'Bellsprout']
             , minLevel: 7
             , maxLevel: 14,
-            respawn: 'special11'
+            respawn: 'cinnabarIsland'
         }
         , special13: {
             name: 'Victory Road'
             , pokes: ['Zubat', 'Golbat', 'Venomoth', 'Machop', 'Machoke', 'Geodude', 'Graveler', 'Marowak']
             , minLevel: 36
-            , maxLevel: 45
+            , maxLevel: 45,
+            respawn: 'cinnabarIsland'
         }
         , special14: {
             name: 'Cerulean Cave',
             pokes: ['Wigglytuff', 'Venomoth', 'Kadabra', 'Dodrio', 'Electrode', 'Marowak', 'Rhydon', 'Chansey', 'Ditto'],
             minLevel: 51,
-            maxLevel: 60
+            maxLevel: 60,
+            respawn: 'cinnabarIsland'
         }
         , water: {
             name: 'Fishing',

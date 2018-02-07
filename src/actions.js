@@ -311,6 +311,15 @@ const UserActions = {
         town.renderTrader();
         document.getElementById('townContainer').style.display = 'block';
     },
+    trainerBattle: function() {
+        const routeData = ROUTES[player.settings.currentRegionId][player.settings.currentRouteId];
+        if (routeData['trainer']) {
+            combatLoop.trainer = true;
+            combatLoop.trainerPoke = routeData['trainer'];
+            combatLoop.unpause();
+            combatLoop.refresh();
+        }
+    },
     closeStory: function() {
         if (story.canClose) {
             $(`#storyContainer`).style.display = 'none';

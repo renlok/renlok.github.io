@@ -23,10 +23,14 @@ const Display = {
     renderPokeOnContainer: function(id, poke, face) {
         const container = $('#' + id + 'Box').querySelector('.pokeBox');
         const townBox = $('#townBox');
+        const trainerButton = $('#trainerButton');
         if (!poke) {
             container.style.display = 'none';
-            if (id == 'enemy')
+            if (id == 'enemy') {
                 townBox.style.display = 'block';
+                trainerButton.style.display = (ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['trainer']) ? '' : 'none';
+
+            }
             return null;
         } else {
             container.style.display = 'block';
@@ -275,7 +279,8 @@ const Display = {
                     routeColor = COLORS.route.locked;
                     routeWeight = 'normal';
                 }
-                const routeHTML = '<li><a href="#" onclick="' + routeOnClick + '" style="color: ' + routeColor + '; font-weight: ' + routeWeight + ';" >' + route.name + ' (' + route.minLevel + '~' + route.maxLevel + ')' + '</a></li>';
+                const routeLevels = (!route.town) ? ' (' + route.minLevel + '~' + route.maxLevel + ')' : '';
+                const routeHTML = '<li><a href="#" onclick="' + routeOnClick + '" style="color: ' + routeColor + '; font-weight: ' + routeWeight + ';" >' + route.name + routeLevels + '</a></li>';
                 this.setValue(listElement, routeHTML, true);
             }
         })

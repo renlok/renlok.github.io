@@ -34,7 +34,7 @@ const BALLRNG = {
 
 const gameVersionMajor = '0';
 const gameVersionMinor = '1';
-const gameVersionPatch = '0';
+const gameVersionPatch = '2';
 const gameVersion = gameVersionMajor + '.' + gameVersionMinor + '.' + gameVersionPatch;
 $('#version').innerHTML = 'Version ' + gameVersion;
 
@@ -48,6 +48,14 @@ const makeEnemy = (starter) => {
             false,
             Math.random() < (1 / (1 << 5 << 8))
         )
+    };
+
+    const trainerPoke = (pokemonList) => {
+        const selected = Math.floor(Math.random() * pokemonList.length);
+        combatLoop.trainerCurrentID = selected;
+        const poke = pokeByName(pokemonList[selected][0]);
+        return generator(poke, pokemonList[selected][1]);
+
     };
 
     const generateNew = (regionId, routeId) => {
@@ -80,6 +88,7 @@ const makeEnemy = (starter) => {
     return {
         activePoke: () => active,
         clear: () => active = null,
+        trainerPoke: (pokemonList) => active = trainerPoke(pokemonList),
         generateNew: (regionId, routeId) => active = generateNew(regionId, routeId)
     }
 };
