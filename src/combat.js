@@ -175,6 +175,7 @@ const Combat = {
             dom.gameConsoleLog('You have no more usable pokemon. You blacked out!', 'red');
             if (this.trainer) {
                 dom.gameConsoleLog('You have been defeated', 'red');
+                this.trainer = false;
                 this.pause();
             }
             flash($('#gameContainer'));
