@@ -25,7 +25,7 @@ const Combat = {
     unpause: function() {
         this.paused = false;
         this.newEnemy();
-        this.init();
+        this.refresh();
     },
     stop: function() {
         window.clearTimeout(this.playerTimerId);
@@ -36,15 +36,17 @@ const Combat = {
         this.init()
     },
     playerTimer: function() {
+        const nextAttack = this.playerActivePoke.attackSpeed();
         this.playerTimerId = window.setTimeout(
             () => this.dealDamage(this.playerActivePoke, this.enemyActivePoke, 'player'),
-            this.playerActivePoke.attackSpeed()
+            nextAttack
         )
     },
     enemyTimer: function() {
+        const nextAttack = this.enemyActivePoke.attackSpeed();
         this.enemyTimerId = window.setTimeout(
             () => this.dealDamage(this.enemyActivePoke, this.playerActivePoke, 'enemy'),
-            this.enemyActivePoke.attackSpeed()
+            nextAttack
         )
     },
     calculateDamageMultiplier: function(attackingTypes, defendingTypes) {
