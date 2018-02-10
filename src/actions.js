@@ -317,9 +317,9 @@ const UserActions = {
     },
     trainerBattle: function() {
         const routeData = ROUTES[player.settings.currentRegionId][player.settings.currentRouteId];
-        if (routeData['trainer']) {
+        if (routeData['trainer'] && routeData['trainer'].length > 0) {
             combatLoop.trainer = true;
-            combatLoop.trainerPoke = routeData['trainer'];
+            combatLoop.trainerPoke = Object.values(Object.assign({}, routeData['trainer']));
             combatLoop.unpause();
             combatLoop.refresh();
         }
