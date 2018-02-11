@@ -74,10 +74,10 @@ const makeEnemy = (starter) => {
         if (regionData['_global']['pokes'] && Math.random() < (1 / (1 << 8))) {
             pokemonList = mergeArray(pokemonList, regionData['_global']['pokes']);
         }
-        if (regionData['_global']['rarePokes'] && Math.random() < (1 / (1 << 16))) {
+        if (regionData['_global']['rarePokes'] && Math.random() < (1 / (1 << 14))) {
             pokemonList = mergeArray(pokemonList, regionData['_global']['rarePokes']);
         }
-        if (regionData['_global']['superRare'] && Math.random() < (1 / (1 << 25))) {
+        if (regionData['_global']['superRare'] && Math.random() < (1 / (1 << 16))) {
             pokemonList = mergeArray(pokemonList, regionData['_global']['superRare']);
         }
         const poke = pokeByName(randomArrayElement(pokemonList));

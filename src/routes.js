@@ -2,14 +2,11 @@ const ROUTES = {
     Kanto: {
         _global: {
             pokes: ['Pidgey', 'Rattata'],
-            rarePokes: ['Bulbasaur', 'Charmander', 'Squirtle'],
-            superRare: ['Mewtwo', 'Mew', 'Articuno', 'Zapdos', 'Moltres']
+            rarePokes: ['Bulbasaur', 'Charmander', 'Squirtle', 'Omanyte', 'Kabuto', 'Aerodactyl', 'Hitmonlee', 'Hitmonchan', 'Lapras', 'Eevee'],
+            superRare: ['Mewtwo', 'Mew', 'Articuno', 'Zapdos', 'Moltres', 'Porygon']
         },
         starter: {
-            name: 'Pallet Town'
-            , pokes: ['Bulbasaur', 'Charmander', 'Squirtle']
-            , minLevel: 5
-            , maxLevel: 5,
+            name: 'Pallet Town',
             town: true,
             trainer: [
                 ['Bulbasaur', 15],
@@ -50,10 +47,7 @@ const ROUTES = {
             respawn: 'viridianCity'
         }
         , special1: {
-            name: 'Pewter City'
-            , pokes: ['Omanyte', 'Kabuto', 'Aerodactyl']
-            , minLevel: 5
-            , maxLevel: 5,
+            name: 'Pewter City',
             town: true,
             trainer: [
                 ['Geodude', 12],
@@ -97,10 +91,7 @@ const ROUTES = {
             respawn: 'ceruleanCity'
         },
         special8: {
-            name: 'Saffron City'
-            , pokes: ['Hitmonlee', 'Hitmonchan', 'Lapras']
-            , minLevel: 30
-            , maxLevel: 30,
+            name: 'Saffron City',
             town: true,
             trainer: [
                 ['Kadabra', 38],
@@ -193,10 +184,7 @@ const ROUTES = {
             respawn: 'lavenderTown'
         }
         , special7: {
-            name: 'Celadon City'
-            , pokes: ['Eevee', 'Porygon']
-            , minLevel: 25
-            , maxLevel: 30,
+            name: 'Celadon City',
             town: true,
             trainer: [
                 ['Victreebel', 29],
@@ -278,10 +266,7 @@ const ROUTES = {
             respawn: 'fuchsiaCity'
         }
         , special11: {
-            name: 'Seafom Island'
-            , pokes: ['Zubat', 'Golbat', 'Psyduck', 'Golduck', 'Slowpoke', 'Slowbro', 'Seel', 'Dewgong']
-            , minLevel: 29
-            , maxLevel: 37,
+            name: 'Seafom Island',
             town: true
         }
         , route19: {
