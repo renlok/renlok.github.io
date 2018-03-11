@@ -28,7 +28,9 @@ const Display = {
             container.style.display = 'none';
             if (id == 'enemy') {
                 townBox.style.display = 'block';
-                trainerButton.style.display = (ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['trainer']) ? '' : 'none';
+                let route = ROUTES[player.settings.currentRegionId][player.settings.currentRouteId];
+                trainerButton.style.display = (route['trainer']) ? '' : 'none';
+                trainerButton.innerHTML = (route['trainer']) ? route['trainer']['name'] : '';
 
             }
             return null;
@@ -419,6 +421,10 @@ const Display = {
 
         $(`#saveDialogContainer`).addEventListener( 'click'
             , (event) => { event.target === $(`#saveDialogContainer`) && ($(`#saveDialogContainer`).style.display = 'none'); }
+        );
+
+        $(`#inventoryContainer`).addEventListener( 'click'
+            , (event) => { event.target === $(`#inventoryContainer`) && ($(`#inventoryContainer`).style.display = 'none'); }
         );
 
         $(`#statisticsContainer`).addEventListener( 'click'

@@ -21,6 +21,9 @@ function mergeArray(arr1, arr2) {
     }
     return [];
 }
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0 && obj.constructor === Object;
+}
 function camalCaseToString(text) {
     let result = text.replace( /([A-Z])/g, " $1" );
     return result.charAt(0).toUpperCase() + result.slice(1);

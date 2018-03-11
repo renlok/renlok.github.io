@@ -8,6 +8,10 @@ const UserActions = {
             dom.gameConsoleLog('You cannot run away from a trainer battle.', 'red');
             return false;
         }
+        if (!player.routeUnlocked(player.settings.currentRegionId, newRouteId)) {
+            dom.gameConsoleLog('You cannot do that yet.', 'red');
+            return false;
+        }
         player.settings.currentRouteId = newRouteId;
         if (ROUTES[player.settings.currentRegionId][player.settings.currentRouteId]['town']) {
             combatLoop.pause();
@@ -310,6 +314,18 @@ const UserActions = {
         document.getElementById('achievementsList').innerHTML = achievementHTML;
         document.getElementById('achievementsContainer').style.display = 'block';
     },
+    viewInventory: function() {
+        if (!isEmpty(player.badges)) {
+            let badgesHTML = '';
+            for (let badge in player.badges) {
+                badgesHTML += '<li>' + badge + '</li>';
+            }
+            document.getElementById('badgeList').innerHTML = badgesHTML;
+        }
+        let inventoryHTML = 'To do';
+        document.getElementById('inventoryList').innerHTML = inventoryHTML;
+        document.getElementById('inventoryContainer').style.display = 'block';
+    },
     viewTown: function() {
         town.renderShop();
         town.renderTrader();
@@ -317,9 +333,9 @@ const UserActions = {
     },
     trainerBattle: function() {
         const routeData = ROUTES[player.settings.currentRegionId][player.settings.currentRouteId];
-        if (routeData['trainer'] && routeData['trainer'].length > 0) {
-            combatLoop.trainer = true;
-            combatLoop.trainerPoke = Object.values(Object.assign({}, routeData['trainer']));
+        if (routeData['trainer'] && routeData['trainer']['poke'].length > 0) {
+            combatLoop.trainer = {name: routeData['trainer']['name'], badge: routeData['trainer']['badge']};
+            combatLoop.trainerPoke = Object.values(Object.assign({}, routeData['trainer']['poke']));
             combatLoop.unpause();
             combatLoop.refresh();
         }

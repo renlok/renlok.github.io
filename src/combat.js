@@ -1,6 +1,6 @@
 const Combat = {
     paused: false,
-    trainer: false,
+    trainer: null,
     trainerPoke: {},
     trainerCurrentID: 0,
     playerActivePoke: null,
@@ -138,8 +138,15 @@ const Combat = {
             // remove the pokemon
             this.trainerPoke.splice(this.trainerCurrentID, 1);
             if (this.trainerPoke.length < 1) {
-                this.trainer = false;
-                dom.gameConsoleLog('You have defeated the trainer', 'blue');
+                dom.gameConsoleLog('You have defeated '+this.trainer.name, 'blue');
+                if (this.trainer.badge) {
+                    if (!player.badges[this.trainer.badge]) {
+                        player.badges[this.trainer.badge] = true;
+                        dom.gameConsoleLog('You have earned the <b>' + this.trainer.badge + '</b>.', 'purple');
+                        dom.renderRouteList();
+                    }
+                }
+                this.trainer = null;
                 this.pause();
                 return false;
             }
@@ -177,7 +184,7 @@ const Combat = {
             dom.gameConsoleLog('You have no more usable pokemon. You blacked out!', 'red');
             if (this.trainer) {
                 dom.gameConsoleLog('You have been defeated', 'red');
-                this.trainer = false;
+                this.trainer = null;
                 this.pause();
             }
             flash($('#gameContainer'));
@@ -198,7 +205,7 @@ const Combat = {
                 player.statistics[selectedBall+'Throws']++;
                 dom.renderBalls();
                 if (combatLoop.trainer) {
-                    dom.gameConsoleLog('But the trainer bats away your ball', 'purple');
+                    dom.gameConsoleLog('But the '+combatLoop.trainer.name+' bats away your ball', 'purple');
                     return false;
                 }
                 const catchBonus = (player.unlocked.razzBerry) ? 1.25 : 1;

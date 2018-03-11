@@ -98,9 +98,9 @@
             <div id="console-text"></div>
         </div>
         <div id="navBox">
+            <button onclick="userInteractions.viewInventory()" class="button">Inventory</button>
             <button onclick="userInteractions.viewAchievements()" class="button">Achievements</button>
             <button onclick="userInteractions.viewStatistics()" class="button">View Stats</button>
-
             <p>
                 <button onclick="userInteractions.viewSettings()" class="button">Settings</button>
                 <a href="updates.html" target="_blank" class="button">Updates</a>
@@ -121,6 +121,21 @@
             <textarea id="saveText" placeholder="Paste the save data here"></textarea>
             <div id="loadButtonContainer" style="display: none">
                 <button onclick="userInteractions.importSave()">Load</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="inventoryContainer" class="modalContainer" style="display: none">
+        <div id="inventoryDialog" class="modalDialog">
+            <div>
+                <h3>Badges</h3>
+                <ul id="badgeList">
+                    <li>Nothing</li>
+                </ul>
+                <h3>Inventory</h3>
+                <ul id="inventoryList">
+                    <li>Nothing</li>
+                </ul>
             </div>
         </div>
     </div>

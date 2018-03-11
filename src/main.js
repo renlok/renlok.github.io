@@ -34,7 +34,7 @@ const BALLRNG = {
 
 const gameVersionMajor = '0';
 const gameVersionMinor = '1';
-const gameVersionPatch = '2';
+const gameVersionPatch = '4';
 const gameVersion = gameVersionMajor + '.' + gameVersionMinor + '.' + gameVersionPatch;
 $('#version').innerHTML = 'Version ' + gameVersion;
 

@@ -55,6 +55,7 @@ let Player = {
         'totalCurrency': 0,
         'totalExp': 0
     },
+    badges: {},
     purgeData: false,
     canHeal: function() {
         if ((Date.now() - this.lastHeal) > 30000) {
@@ -252,6 +253,10 @@ let Player = {
                             return false;
                         }
                     }
+                    else if (typeof player[group][criteria] === 'undefined')
+                        return false;
+                    else if (typeof criteriaObj[group][criteria] === 'boolean' && player[group][criteria] < criteriaObj[group][criteria])
+                        return false;
                     else if (player[group][criteria] < criteriaObj[group][criteria])
                         return false;
                 }
@@ -296,6 +301,7 @@ let Player = {
             localStorage.setItem(`pokedexData`, JSON.stringify(this.pokedexData));
             localStorage.setItem(`statistics`, JSON.stringify(this.statistics));
             localStorage.setItem(`settings`, JSON.stringify(this.settings));
+            localStorage.setItem(`badges`, JSON.stringify(this.badges));
             localStorage.setItem(`unlocked`, JSON.stringify(this.unlocked));
             localStorage.setItem(`currency`, JSON.stringify(this.currency));
         }
@@ -309,6 +315,7 @@ let Player = {
             settings: this.settings,
             ballsAmount: this.ballsAmount,
             ballsAmmount: this.ballsAmount, //preserve backwards compatibility
+            badges: this.badges,
             unlocked: this.unlocked,
             currency: this.currency,
         });
@@ -360,6 +367,9 @@ let Player = {
         if (JSON.parse(localStorage.getItem('settings'))) {
             this.settings = JSON.parse(localStorage.getItem('settings'));
         }
+        if (JSON.parse(localStorage.getItem('badges'))) {
+            this.badges = JSON.parse(localStorage.getItem('badges'));
+        }
         if (JSON.parse(localStorage.getItem('unlocked'))) {
             let loadedUnlocked = JSON.parse(localStorage.getItem('unlocked'));
             this.unlocked = Object.assign({}, this.unlocked, loadedUnlocked);
@@ -407,6 +417,7 @@ let Player = {
             if (saveData.settings) {
                 this.settings = saveData.settings;
             }
+            this.badges = saveData.badges ? saveData.badges : {};
             let loadedUnlocked = saveData.unlocked ? saveData.unlocked : [];
             this.unlocked = Object.assign({}, this.unlocked, loadedUnlocked);
             this.currency = saveData.currency ? saveData.currency : 0;
