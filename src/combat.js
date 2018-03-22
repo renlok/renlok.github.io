@@ -24,8 +24,9 @@ const Combat = {
     },
     unpause: function() {
         this.paused = false;
+        this.stop();
         this.newEnemy();
-        this.refresh();
+        this.init();
     },
     stop: function() {
         window.clearTimeout(this.playerTimerId);
@@ -33,7 +34,7 @@ const Combat = {
     },
     refresh: function() {
         this.stop();
-        this.init()
+        this.init();
     },
     playerTimer: function() {
         const nextAttack = this.playerActivePoke.attackSpeed();
@@ -154,6 +155,7 @@ const Combat = {
 
         player.savePokes();
         this.newEnemy();
+        this.enemyTimer();
         this.playerTimer();
         dom.renderPokeOnContainer('player', player.activePoke(), player.settings.spriteChoice || 'back');
     },
@@ -170,7 +172,6 @@ const Combat = {
         } else {
             player.statistics.seen++;
         }
-        this.enemyTimer();
     },
     playerFaint: function() {
         dom.gameConsoleLog(this.playerActivePoke.pokeName() + ' Fainted! ');

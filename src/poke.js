@@ -12,7 +12,7 @@ Poke.prototype.currentLevel = function() {
         .length;
 };
 Poke.prototype.statValue = function(raw) {
-    return Math.floor((((raw + 50) * this.currentLevel()) / (150)))
+    return Math.floor((((raw + 50) * this.currentLevel()) / 150))
 };
 Poke.prototype.setHpValue = function(rawHp) {
     return Math.floor(((rawHp * this.currentLevel()) / 40))
