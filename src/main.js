@@ -34,7 +34,7 @@ const BALLRNG = {
 
 const gameVersionMajor = '0';
 const gameVersionMinor = '1';
-const gameVersionPatch = '4';
+const gameVersionPatch = '5';
 const gameVersion = gameVersionMajor + '.' + gameVersionMinor + '.' + gameVersionPatch;
 $('#version').innerHTML = 'Version ' + gameVersion;
 
@@ -71,14 +71,16 @@ const makeEnemy = (starter) => {
         } else {
             pokemonList = routeData.pokes;
         }
-        if (regionData['_global']['pokes'] && Math.random() < (1 / (1 << 8))) {
-            pokemonList = mergeArray(pokemonList, regionData['_global']['pokes']);
-        }
-        if (regionData['_global']['rarePokes'] && Math.random() < (1 / (1 << 14))) {
-            pokemonList = mergeArray(pokemonList, regionData['_global']['rarePokes']);
-        }
-        if (regionData['_global']['superRare'] && Math.random() < (1 / (1 << 16))) {
-            pokemonList = mergeArray(pokemonList, regionData['_global']['superRare']);
+        if (regionData['_global']) {
+            if (regionData['_global']['pokes'] && Math.random() < (1 / (1 << 8))) {
+                pokemonList = mergeArray(pokemonList, regionData['_global']['pokes']);
+            }
+            if (regionData['_global']['rarePokes'] && Math.random() < (1 / (1 << 14))) {
+                pokemonList = mergeArray(pokemonList, regionData['_global']['rarePokes']);
+            }
+            if (regionData['_global']['superRare'] && Math.random() < (1 / (1 << 16))) {
+                pokemonList = mergeArray(pokemonList, regionData['_global']['superRare']);
+            }
         }
         const poke = pokeByName(randomArrayElement(pokemonList));
         const level = routeData.minLevel + Math.round((Math.random() * (routeData.maxLevel - routeData.minLevel)));
