@@ -5804,7 +5804,7 @@ const words = [
 	["欄", "らん", "column, field"], 
 	["栓抜き", "せんぬき", "bottle opener, corkscrew"], 
 	["巣", "す", "nest, den"], 
-	["囲碁", "いご", "game of "go""], 
+	["囲碁", "いご", "game of 'go'"], 
 	["嘘つき", "うそつき", "liar"], 
 	["考慮", "こうりょ", "consideration, deliberation"], 
 	["癖", "くせ", "habit, mannerism"], 
