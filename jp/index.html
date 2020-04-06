@@ -3,6 +3,11 @@
 <title>JP Words</title>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
 <script type="text/javascript" src="core.js"></script>
+<style>
+div {
+font-size: 2em;
+}
+</style>
 </head>
 <body>
 <div id="display">
@@ -48,11 +53,21 @@ meaning.handle('click', function() {
 });
 next.handle('click', function() {
 	word = getRandomInt(0, words.length);
-  display.text(words[word][0]);
-  answer.text('');
+	display.text(words[word][0]);
+	answer.text('');
 });
 
-
+u('body').handle('keypress', function(e) {
+	if (e.key == '1') { // reading
+		answer.text(words[word][1]);
+	} else if (e.key == '2') { // meaning
+		answer.text(words[word][2]);
+	} else if (e.key == '3') { // next
+		word = getRandomInt(0, words.length);
+		display.text(words[word][0]);
+		answer.text('');
+	}
+});
 
   //]]></script>
 </html>
