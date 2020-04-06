@@ -24,9 +24,17 @@ Meaning
 </button>
 <button id="next">
 next
-</button>
+</button><br>
+<label for="max">Max: </label> <input type="number" id="max" value="6000" min="0" max="6000">
 </body>
 <script type="text/javascript">//<![CDATA[
+
+let max = u('#max');
+let maxTest = max.attr('value');
+
+max.on('input', function() {
+	maxTest = max.attr('value');
+});
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -41,7 +49,7 @@ let reading = u('#reading');
 let meaning = u('#meaning');
 let next = u('#next');
 
-let word = getRandomInt(0, words.length); // random
+let word = getRandomInt(0, maxTest); // random
 
 // load display
 display.text(words[word][0]);
@@ -52,7 +60,7 @@ meaning.handle('click', function() {
 	answer.text(words[word][2]);
 });
 next.handle('click', function() {
-	word = getRandomInt(0, words.length);
+	word = getRandomInt(0, maxTest);
 	display.text(words[word][0]);
 	answer.text('');
 });
@@ -63,7 +71,7 @@ u('body').handle('keypress', function(e) {
 	} else if (e.key == '2') { // meaning
 		answer.text(words[word][2]);
 	} else if (e.key == '3') { // next
-		word = getRandomInt(0, words.length);
+		word = getRandomInt(0, maxTest);
 		display.text(words[word][0]);
 		answer.text('');
 	}
