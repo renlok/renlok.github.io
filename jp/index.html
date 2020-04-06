@@ -1,0 +1,58 @@
+<html>
+<header>
+<title>JP Words</title>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
+<script type="text/javascript" src="core.js"></script>
+</header>
+<body>
+<div id="display">
+
+</div>
+<div id="answer">
+
+</div>
+<button id="reading">
+reading
+</button>
+<button id="meaning">
+Meaning
+</button>
+<button id="next">
+next
+</button>
+</body>
+<script type="text/javascript">//<![CDATA[
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+// get the elements
+let display = u('#display');
+let answer = u('#answer');
+let reading = u('#reading');
+let meaning = u('#meaning');
+let next = u('#next');
+
+let word = getRandomInt(0, words.length); // random
+
+// load display
+display.text(words[word][0]);
+reading.handle('click', function() {
+	answer.text(words[word][1]);
+});
+meaning.handle('click', function() {
+	answer.text(words[word][2]);
+});
+next.handle('click', function() {
+	word = getRandomInt(0, words.length);
+  display.text(words[word][0]);
+  answer.text('');
+});
+
+
+
+  //]]></script>
+</html>
