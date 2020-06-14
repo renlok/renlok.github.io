@@ -116,7 +116,6 @@ if (localStorage.getItem(`totalPokes`) !== null) {
 
 if (player.settings.spriteChoice === 'front') {
     document.getElementById('spriteChoiceFront').checked = true;
-    document.getElementById('player').className += ' frontSprite'
 } else {
     document.getElementById('spriteChoiceBack').checked = true
 }
